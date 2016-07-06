@@ -1,0 +1,2 @@
+cython
+pymorphy2[fast]
