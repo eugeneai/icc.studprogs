@@ -9,8 +9,6 @@ NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 version = '0.1'
 
 install_requires = [
-    "pymorphy2[fast]",
-    "pymorphy2-dicts-ru",
     "pybison==0.1",
 ]
 

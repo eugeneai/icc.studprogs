@@ -1,2 +1,6 @@
 cython
 pymorphy2[fast]
+pymorphy2-dicts-ru
+numpy
+scipy
+scikit-learn
