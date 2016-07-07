@@ -29,7 +29,7 @@ class Loader(BaseLoader):
                 yield from self._texts(e, style.new_child({"fontstyle": e.tag}))
                 continue
             if e.tag in ["a"]:
-                yield from self._texts(e, style.new_child({"anchor": e}))
+                yield from self._texts(e, style)
                 continue
             if e.tag=="page":
                 yield from self.lexems(e, style)
@@ -56,34 +56,40 @@ class Loader(BaseLoader):
         <text top="110" left="489" width="5" height="16" font="0"><b> </b></text>
         """
         font = e.get("font")
-        style = style.new_child({"font":self.fontspec[font]}).new_child(e.attrib)
+        style = style.new_child({"font":self.fontspec[font],"text":e}).new_child(e.attrib)
         yield from self._texts(e, style)
 
     def _texts(self, e, style):
-        def _text(t, style):
+        def _text(t, style, pos):
             if not type(t)==type(""):
                 return
             if type(t)==type(b""):
                 t=t.decode(self.encoding)
+            d={}
+            style = style.new_child(d)
             for token in simple_word_tokenize(t):
-                yield token, style
-        yield from _text(e.text,style)
-        yield from self.lexems(e,style)
+                d["pos"]=pos
+                pos += 1
+                yield token, style, pos
+        style = style.new_child({"element":e})
+        yield from _text(e.text,style,0)
+        yield self.lexems(e,style)
         yield from _text(e.tail,style)
 
-
-
-
-
-def test():
+def test(limit=100):
     from pkg_resources import resource_stream
     from itertools import islice
     import pprint
     TEST_FILE=resource_stream("icc.studprogs","data/059285.xml")
     loader=Loader(TEST_FILE)
 
-    for lexem in islice(loader.lexems(), 200):
-        if len(lexem) == 2:
+    def _iterator(initer, limit):
+        if limit==0:
+            return initer
+        return islice(initer, limit)
+
+    for lexem in _iterator(loader.lexems(),limit):
+        if type(lexem) == tuple:
             lexem,style = lexem
         else:
             style = {}
@@ -91,7 +97,7 @@ def test():
         for k,v in style.items():
             print ("{}={}".format(k,v), end=",")
         print ()
-    pprint.pprint(loader.fontspec)
+    # pprint.pprint(loader.fontspec)
 
 
 if __name__=="__main__":
