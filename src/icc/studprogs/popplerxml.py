@@ -7,11 +7,13 @@ class Helper(object):
     """
     def __str__(self):
         s=""
-        for k,v in self.__dict__:
+        for k,v in self.__dict__.items():
             if k.startswith("_"):
                 continue
             s+="{}={}".format(k,v)
         return s
+
+    __repr__=__str__
 
 class Loader(BaseLoader):
     """Loads poppler xml, translates it via iterators.
@@ -26,6 +28,7 @@ class Loader(BaseLoader):
         self.tree=html.parse(self.file)
         self.root=self.tree.getroot()
         self.page={}
+        self.textlines={}
 
     def lexems(self, node=None, style=None):
         if node==None:
@@ -43,59 +46,18 @@ class Loader(BaseLoader):
                 yield from self._texts(e, style)
                 continue
             if e.tag=="page":
-                self._proc_page(e,style)
-                yield from self.lexems(e, style)
+                yield from self._proc_page(e, style)
                 yield page_symbol
                 continue
-            if e.tag == "fontspec":
-                self._proc_fontspec(e)
-                yield from self.lexems(e, style)
-                continue
-            if e.tag == "text":
-                yield from self._proc_text(e, style)
-                continue
+            #if e.tag == "text":
+            #    yield from self._proc_text(e, style)
+            #    continue
             yield e
             yield from self.lexems(e,style)
 
     def _proc_fontspec(self, e):
         a = self.attrib(e)
         self.fontspec[a.get("id")]=a
-
-    def _proc_text(self, e, style):
-        """Process text element
-
-        Arguments:
-        - `e`: Node to be processed
-        <text top="110" left="489" width="5" height="16" font="0"><b> </b></text>
-        """
-        a = self.attrib(e)
-        font = a.get("font")
-        style = style.new_child({"fontspec":self.fontspec[font],"text":e}).new_child(a)
-        yield from self._texts(e, style)
-
-    def _proc_page(self, e, style=None):
-        self.page=self.attrib(e)
-        pn=self.page["number"]
-        ext=Helper()
-        inf=1e10
-        ext.x=ext.y=inf
-        ext.h=ext.w=-inf
-        for text in e.iterchildren(tag="text"):
-            ta=self.attrib(text)
-            tt=text.text
-            if tt !=None:
-                if tt.strip()==str(pn):
-                    continue
-            x,y,w,h=ta["left"],ta["top"],ta["width"],ta["height"]
-            w+=x
-            h+=y
-            if ext.x>x: ext.x=x
-            if ext.y>y: ext.y=y
-            if ext.w<w: ext.w=w
-            if ext.h<h: ext.h=h
-            #print("--->", text.tag, text.attrib, text.text, text.tail)
-        self.page.update({"eleft":ext.x, "etop":ext.y, "ewidth":ext.w, "eheight":ext.h})
-        print ("--->", self.page)
 
     def _texts(self, e, style):
         def _text(t, style):
@@ -109,6 +71,90 @@ class Loader(BaseLoader):
         yield from _text(e.text,style)
         yield from self.lexems(e,style)
         yield from _text(e.tail,style)
+
+    def _proc_text(self, e, style):
+        """Process text element
+
+        Arguments:
+        - `e`: Node to be processed
+        <text top="110" left="489" width="5" height="16" font="0"><b> </b></text>
+        """
+        a = self.attrib(e)
+        l,t,w,h=self.get(a, "left", "top", "width", "height")
+        r,b=l+w,t+h
+        pl,pt,pw,ph=self.get(self.page, "eleft", "etop", "ewidth", "eheight")
+        pr,pb=pl+pw,pt+ph
+        if r<pl or l>pr or b<pt or t>pb:
+            return
+        font = a.get("font")
+        style = style.new_child({"fontspec":self.fontspec[font],"text":e}).new_child(a)
+        yield from self._texts(e, style)
+
+    def texts_of_page(self, e):
+        """Iterate over text blocks except
+        printed page number.
+        """
+        pn=self.page["number"]
+        for text in e.iterchildren(tag="text"):
+            tt=text.text
+            if tt !=None:
+                if tt.strip()==str(pn):
+                    continue
+            yield text
+
+    def _proc_page(self, epage, style=None):
+        self.page=self.attrib(epage)
+
+        for fontspec in epage.iterchildren(tag="fontspec"):
+            self._proc_fontspec(fontspec)
+
+        ext=Helper()
+        inf=1e10
+        ext.x=ext.y=inf
+        ext.h=ext.w=-inf
+        texts=set()
+        for text in self.texts_of_page(epage):
+            ta=self.attrib(text)
+            texts.add(text)
+            x,y,w,h=self.get(ta, "left", "top", "width", "height")
+            w+=x
+            h+=y
+            if ext.x>x: ext.x=x
+            if ext.y>y: ext.y=y
+            if ext.w<w: ext.w=w
+            if ext.h<h: ext.h=h
+
+        self.page.update({"eleft":ext.x, "etop":ext.y, "ewidth":ext.w-ext.x, "eheight":ext.h-ext.y})
+        tl=self.textlines={}
+        for text in self.texts_of_page(epage):
+            ta=self.attrib(text)
+            l,t,w,h=self.get(ta, "left", "top", "width", "height")
+            b=t+h
+            found=False
+            for btl,ld in tl.items():
+                ttl=ld.t
+                if b>=ttl and b<=btl:
+                    found=True
+                    break
+                if t>=ttl and t<=btl:
+                    found=True
+                    break
+            if found:
+                if ld.b<b: ld.b=b
+                if ld.t>t: ld.t=t
+            else:
+                ld=tl[b]=Helper()
+                ld.b,ld.t=b,t
+                ld.l=[]
+            ld.l.append(text)
+        for v in tl.values():
+            v.l.sort(key=lambda text: int(text.get("left")))
+
+        lines=list(tl.keys())
+        lines.sort()
+        for line in lines:
+            for text in tl[line].l:
+                yield from self._proc_text(text, style)
 
     def attrib(self, e):
         """Return attrib dictionary with
@@ -133,6 +179,19 @@ class Loader(BaseLoader):
             n[k]=v
         return n
 
+    def get(self, d, *keys):
+        """
+        Return tuple of values from the dictionary.
+        Arguments:
+        - `d`: The dictionary to take values from;
+        - `*keys`: values.
+        """
+        rc=[]
+        for k in keys:
+            rc.append(d[k])
+        return rc
+
+
 def test(limit=100):
     from pkg_resources import resource_stream
     from itertools import islice
@@ -154,7 +213,8 @@ def test(limit=100):
         for k,v in style.items():
             print ("{}={}".format(k,v), end=",")
         print ()
-    # pprint.pprint(loader.fontspec)
+    print ("Collected fontspecs:")
+    pprint.pprint(loader.fontspec)
 
 
 if __name__=="__main__":
