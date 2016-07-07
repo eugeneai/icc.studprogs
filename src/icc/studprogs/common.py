@@ -18,6 +18,10 @@ class Symbol(object):
 
 page_symbol=Symbol("page")
 paragraph_symbol=Symbol("paragraph")
+line_tab=Symbol("line tab")
+line_tail=Symbol("line tail")
+line_start=Symbol("line start")
+line_end=Symbol("line end")
 
 class BaseLoader(object):
     """Implements basic loader functions.

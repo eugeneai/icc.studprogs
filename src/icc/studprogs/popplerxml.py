@@ -2,6 +2,8 @@ from common import *
 from lxml import html
 from collections import ChainMap
 
+PAR_THRESHOULD=3 # px
+
 class Helper(object):
     """Helper object like JS hash.
     """
@@ -159,8 +161,18 @@ class Loader(BaseLoader):
         lines=list(tl.keys())
         lines.sort()
         for line in lines:
-            for text in tl[line].li:
+            yield line_start
+            lb=tl[line]
+            li=lb.li
+            pl=self.page.get("eleft")
+            pr=pl+self.page.get("ewidth")
+            if abs(pl-lb.l)>PAR_THRESHOULD:
+                yield line_tab
+            for text in lb.li:
                 yield from self._proc_text(text, style)
+            if abs(pr-(lb.l+lb.w))>PAR_THRESHOULD:
+                yield line_tail
+            yield line_end
 
     def attrib(self, e):
         """Return attrib dictionary with
@@ -215,6 +227,8 @@ def test(limit=100):
             lexem,style = lexem
         else:
             style = {}
+        print (lexem)
+        continue
         print (lexem, end=" ")
         for k,v in style.items():
             print ("{}={}".format(k,v), end=",")
@@ -224,5 +238,5 @@ def test(limit=100):
 
 
 if __name__=="__main__":
-    test()
+    test(limit=100000)
     quit()
