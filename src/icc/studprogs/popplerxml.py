@@ -130,6 +130,7 @@ class Loader(BaseLoader):
             ta=self.attrib(text)
             l,t,w,h=self.get(ta, "left", "top", "width", "height")
             b=t+h
+            r=l+w
             found=False
             for btl,ld in tl.items():
                 ttl=ld.t
@@ -145,15 +146,20 @@ class Loader(BaseLoader):
             else:
                 ld=tl[b]=Helper()
                 ld.b,ld.t=b,t
-                ld.l=[]
-            ld.l.append(text)
-        for v in tl.values():
-            v.l.sort(key=lambda text: int(text.get("left")))
+                ld.li=[]
+            ld.li.append(text)
+        for lb in tl.values():
+            lb.li.sort(key=lambda text: int(text.get("left")))
+            lb.l=int(lb.li[0].get("left"))
+            bl=lb.li[-1]
+            bli=int(bl.get("left"))
+            blw=int(bl.get("width"))
+            lb.w=bli-lb.l+blw
 
         lines=list(tl.keys())
         lines.sort()
         for line in lines:
-            for text in tl[line].l:
+            for text in tl[line].li:
                 yield from self._proc_text(text, style)
 
     def attrib(self, e):
