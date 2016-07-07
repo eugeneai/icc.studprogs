@@ -35,9 +35,16 @@ class BaseLoader(object):
         self.file = file
         self.encoding = encoding
 
+    def initialize(self):
+        """Initializes internal structures of
+        a descendant loader.
+        """
+        pass
+
     def lines(self):
         """Generates lines and page/paragraph events
         """
+        self.initialize()
         raise RuntimeError("Implemented by a subclass")
 
     def sentences(self):
