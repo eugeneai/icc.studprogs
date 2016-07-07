@@ -21,6 +21,6 @@ def main(stream, limit):
 
 
 if __name__=="__main__":
-    limit = 1000000
+    limit = 10
     main(TEST_FILE, limit)
     quit()
