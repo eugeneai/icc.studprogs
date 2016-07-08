@@ -260,18 +260,15 @@ def test(limit=100):
             return initer
         return islice(initer, limit)
 
-    for lexem in _iterator(loader.lexems(),limit):
-        if type(lexem) == tuple:
-            lexem,style = lexem
-            viz=lexem+" "
+    def just_lex(l):
+        if type(l) == tuple:
+            return l[0]
         else:
-            if lexem==page_symbol:
-                continue
-            viz=lexem.mark
-            style = {}
-        print (viz, end=" ")
-        continue
-        print (lexem, repr(viz), end="\n")
+            return l.mark
+
+    for par in _iterator(loader.paragraphs(),limit):
+        lexems=[just_lex(l) for l in par]
+        print (" ".join(lexems), end="\n\n")
         continue
         print (lexem, end=" ")
         for k,v in style.items():
@@ -283,5 +280,5 @@ def test(limit=100):
 
 if __name__=="__main__":
     #test()
-    test(limit=100)
+    test(limit=10000)
     quit()
