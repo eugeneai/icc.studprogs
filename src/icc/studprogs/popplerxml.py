@@ -34,20 +34,32 @@ class Loader(BaseLoader):
         self.page={}
         self.textlines={}
 
-    def lexems(self, node=None, style=None):
+    HTML_MARKUP={
+        "b":(font_bold_start,font_bold_end),
+        "i":(font_italic_start,font_italic_end),
+        "a":(symbol_anchor_start, symbol_anchor_end),
+    }
+
+    def raw_lexems(self, node=None, style=None):
         if node==None:
             self.initialize()
             style=ChainMap({"fontstyle":"n"})
             node=self.root
         for e in node.iterchildren():
             if e.tag in ["html", "body","pdf2xml"]:
-                yield from self.lexems(e, style)
+                yield from self.raw_lexems(e, style)
                 continue
             if e.tag in ["b","i"]:
+                sstart,send=self.__class__.HTML_MARKUP[e.tag]
+                yield sstart
                 yield from self._texts(e, style.new_child({"fontstyle": e.tag}))
+                yield send
                 continue
             if e.tag in ["a"]:
+                sstart,send=self.__class__.HTML_MARKUP[e.tag]
+                yield sstart
                 yield from self._texts(e, style)
+                yield send
                 continue
             if e.tag=="page":
                 yield from self._proc_page(e, style)
@@ -57,7 +69,7 @@ class Loader(BaseLoader):
             #    yield from self._proc_text(e, style)
             #    continue
             yield e
-            yield from self.lexems(e,style)
+            yield from self.raw_lexems(e,style)
 
     def _proc_fontspec(self, e):
         a = self.attrib(e)
@@ -73,7 +85,7 @@ class Loader(BaseLoader):
                 yield token, style
         style = style.new_child({"element":e})
         yield from _text(e.text,style)
-        yield from self.lexems(e,style)
+        yield from self.raw_lexems(e,style)
         yield from _text(e.tail,style)
 
     def _proc_text(self, e, style):
@@ -176,6 +188,30 @@ class Loader(BaseLoader):
                 yield line_tail
             yield line_end
 
+    def lexems(self):
+        """Generates lexems in a "standart" form.
+        """
+        paragraph_started=False
+        for lexem in self.raw_lexems():
+            if lexem in [line_start, line_end]:
+                continue
+            if lexem == line_tail:
+                if paragraph_started:
+                    yield paragraph_symbol
+                    paragraph_started = False
+                continue
+
+            if lexem == line_tab:
+                if paragraph_started:
+                    yield paragraph_symbol
+                    paragraph_started = True
+                continue
+            if lexem == page_symbol:
+                continue
+            paragraph_started = True
+            yield lexem
+
+
     def attrib(self, e):
         """Return attrib dictionary with
         values coverted to numbers if
@@ -229,9 +265,13 @@ def test(limit=100):
             lexem,style = lexem
             viz=lexem+" "
         else:
+            if lexem==page_symbol:
+                continue
             viz=lexem.mark
             style = {}
-        print (viz, end="")
+        print (viz, end=" ")
+        continue
+        print (lexem, repr(viz), end="\n")
         continue
         print (lexem, end=" ")
         for k,v in style.items():
@@ -243,5 +283,5 @@ def test(limit=100):
 
 if __name__=="__main__":
     #test()
-    test(limit=100000)
+    test(limit=100)
     quit()
