@@ -2,7 +2,9 @@ from common import *
 from lxml import html
 from collections import ChainMap
 
-PAR_THRESHOULD=3 # px
+LINE_THRESHOULD=3 # px
+TAB_THRESHOULD=3 # px
+TAIL_THRESHOULD=10 # px
 
 class Helper(object):
     """Helper object like JS hash.
@@ -136,12 +138,12 @@ class Loader(BaseLoader):
             found=False
             for btl,ld in tl.items():
                 ttl=ld.t
-                if b>=ttl and b<=btl:
+                if b>=ttl and abs(b-btl) < LINE_THRESHOULD:
                     found=True
                     break
-                if t>=ttl and t<=btl:
-                    found=True
-                    break
+                #if t>=ttl and t<=btl:
+                #    found=True
+                #    break
             if found:
                 if ld.b<b: ld.b=b
                 if ld.t>t: ld.t=t
@@ -166,11 +168,11 @@ class Loader(BaseLoader):
             li=lb.li
             pl=self.page.get("eleft")
             pr=pl+self.page.get("ewidth")
-            if abs(pl-lb.l)>PAR_THRESHOULD:
+            if abs(pl-lb.l)>TAB_THRESHOULD:
                 yield line_tab
             for text in lb.li:
                 yield from self._proc_text(text, style)
-            if abs(pr-(lb.l+lb.w))>PAR_THRESHOULD:
+            if abs(pr-(lb.l+lb.w))>TAIL_THRESHOULD:
                 yield line_tail
             yield line_end
 
@@ -225,9 +227,11 @@ def test(limit=100):
     for lexem in _iterator(loader.lexems(),limit):
         if type(lexem) == tuple:
             lexem,style = lexem
+            viz=lexem+" "
         else:
+            viz=lexem.mark
             style = {}
-        print (lexem)
+        print (viz, end="")
         continue
         print (lexem, end=" ")
         for k,v in style.items():
@@ -238,5 +242,6 @@ def test(limit=100):
 
 
 if __name__=="__main__":
+    #test()
     test(limit=100000)
     quit()
