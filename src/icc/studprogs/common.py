@@ -33,6 +33,12 @@ line_tab=Symbol("line tab", r"-->")
 line_tail=Symbol("line tail", r"<--")
 line_start=Symbol("line start", "")
 line_end=Symbol("line end", "\n")
+symbol_anchor_start=Symbol("anchor", "[")
+symbol_anchor_end=Symbol("anchor", "]")
+font_bold_start = Symbol("start bold", "**")
+font_bold_end = Symbol("end bold", "** ")
+font_italic_start = Symbol("start italic", "*")
+font_italic_end = Symbol("end italic", "* ")
 
 class BaseLoader(object):
     """Implements basic loader functions.
