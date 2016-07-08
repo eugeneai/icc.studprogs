@@ -2,36 +2,48 @@
 
 import ucto
 
-text = """To be or not to be, that's the question. This is a test to tokenise. We can span
-multiple lines!!! The number 6 is Mr Li's favourite. We can't stop yet.
-This is the next paragraph. And so it ends. Начнем [потихому] с прикола (который мы видим и так)."""
-
-
-#Set a file to use as tokeniser rules, this one is for English, other languages are available too:
 settingsfile = "/etc/ucto/tokconfig-generic"
 
-#Initialise the tokeniser, options are passed as keyword arguments, defaults:
-#   lowercase=False,uppercase=False,sentenceperlineinput=False,
-#   sentenceperlineoutput=False,
-#   sentencedetection=True, paragraphdetection=True, quotedetectin=False,
-#   debug=False
-tokenizer = ucto.Tokenizer(settingsfile)
+class Tokenizer(object):
+    """Utilization of ucto tokenizer as
+    tokenizer class.
+    """
 
+    def __init__(self, textiter):
+        """Initializes tokinizer. A text
+        generator needed as input source.
+
+        Arguments:
+        - `textiter`: Inout source generator.
+        """
+        self.textiter = textiter
+        #Initialise the tokeniser, options are passed as keyword arguments, defaults:
+        #   lowercase=False,uppercase=False,sentenceperlineinput=False,
+        #   sentenceperlineoutput=False,
+        #   sentencedetection=True, paragraphdetection=True, quotedetectin=False,
+        #   debug=False
+
+        tokenizer = ucto.Tokenizer(settingsfile)
+
+        self.tokenizer = tokenizer
+
+    def tokens(self):
+        """Generate tokens from source text.
+        """
+        for text in self.textiter:
+            self.tokenizer.process(text)
+            yield from self.tokenizer
+
+    def sentences(self):
+        """Generate sentences from source text.
+        """
+        for text in self.textiter:
+            self.tokenizer.process(text)
+            yield from self.tokenizer.sentences()
+
+'''
 #pass the text (may be called multiple times),
 tokenizer.process(text)
-
-#read the tokenised data
-for token in tokenizer:
-    #token is an instance of ucto.Token, serialise to string using str()
-    print(  "[" + str(token) + "]", end="" )
-
-    #tokens remember whether they are followed by a space
-    if token.isendofsentence():
-        print()
-    elif not token.nospace():
-        print(" ",end="")
-
-    #the type of the token (i.e. the rule that build it) is available as token.type
 
 #we can continue with more text:
 tokenizer.process("This was not enough. We want more text. More sentences are better!!!")
@@ -39,3 +51,49 @@ tokenizer.process("This was not enough. We want more text. More sentences are be
 #there is a high-levelinterface to iterate over sentences as string, with all tokens space-separated:
 for sentence in tokenizer.sentences():
     print(sentence)
+'''
+
+def test():
+    text = """To be or not to be, that's the question. This is a test to tokenise. We can span
+    multiple lines!!! The number 6 is Mr Li's favourite. We can't stop yet.
+    This is the next paragraph. And so it ends.
+
+
+        А теперь руссие идут... бутявки.
+    1.1 Linux для гиков.
+    1.1.2 Для продвинутых разработчиков
+    1.2. Другой формат
+
+    """
+
+    def textgen():
+        for line in text.split("\n"):
+            yield line
+
+    print ("\n\nThe first demo, TOKEN recognition. -------")
+    t = Tokenizer(textgen())
+
+    #read the tokenised data
+    for token in t.tokens():
+        if token.isnewparagraph():
+            print("\t", end="")
+        #token is an instance of ucto.Token, serialise to string using str()
+        print(  "[" + str(token) + "]", end="" )
+
+        #tokens remember whether they are followed by a space
+        if token.isendofsentence():
+            print(r"\\")
+        elif not token.nospace():
+            print(" ",end="")
+
+        #the type of the token (i.e. the rule that build it) is available as token.type
+
+    print ("\n\nThe Second demo, sentence recognition. -------")
+
+    t = Tokenizer(textgen())
+    for sentence in t.sentences():
+        print (sentence)
+
+if __name__=="__main__":
+    test()
+    quit()
