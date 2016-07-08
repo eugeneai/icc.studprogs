@@ -10,10 +10,12 @@ version = '0.1'
 
 install_requires = [
     "pybison==0.1",
+    "python-ucto==0.3.0",
 ]
 
 dependency_links = [
     'https://github.com/eugeneai/pybison/archive/master.zip#egg=pybison-0.1',
+    'https://github.com/proycon/python-ucto/archive/master.zip#egg=python-ucto-0.3.0',
 ]
 
 setup(name='icc.studprogs',
