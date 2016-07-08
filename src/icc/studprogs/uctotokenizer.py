@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-
 import ucto
+from pkg_resources import resource_filename
 
-settingsfile = "/etc/ucto/tokconfig-generic"
+settingsfile=resource_filename("icc.studprogs","etc/tokconfig-generic")
 
 class Tokenizer(object):
     """Utilization of ucto tokenizer as
     tokenizer class.
     """
 
-    def __init__(self, textiter):
+    def __init__(self, textiter=None, **kwargs):
         """Initializes tokinizer. A text
         generator needed as input source.
 
@@ -22,24 +22,47 @@ class Tokenizer(object):
         #   sentenceperlineoutput=False,
         #   sentencedetection=True, paragraphdetection=True, quotedetectin=False,
         #   debug=False
+        defaults={
+            'lowercase':False,
+            'uppercase':False,
+            'sentencedetection':True,
+            'paragraphdetection':True,
+            'quotedetection':False,
+            'sentenceperlineinput':False,
+            'sentenceperlineoutput':False,
+            'debug':False
+            }
 
-        tokenizer = ucto.Tokenizer(settingsfile)
+        defaults.update(kwargs)
+
+        tokenizer = ucto.Tokenizer(settingsfile, **defaults)
 
         self.tokenizer = tokenizer
 
     def tokens(self):
         """Generate tokens from source text.
         """
-        for text in self.textiter:
-            self.tokenizer.process(text)
+        if self.textiter != None:
+            for text in self.textiter:
+                self.tokenizer.process(text)
+                yield from self.tokenizer
+        else:
             yield from self.tokenizer
 
     def sentences(self):
         """Generate sentences from source text.
         """
-        for text in self.textiter:
-            self.tokenizer.process(text)
-            yield from self.tokenizer.sentences()
+        if self.textiter != None:
+            for text in self.textiter:
+                self.tokenizer.process(text)
+                yield from self.sentences()
+        else:
+            yield from self.sentences()
+
+    def process(self, text):
+        """Add text to further processing.
+        """
+        self.tokenizer.process(text)
 
 '''
 #pass the text (may be called multiple times),
@@ -64,10 +87,13 @@ def test():
     1.1.2 Для продвинутых разработчиков
     1.2. Другой формат
 
+    Технический текст <123.234>.
+    <<Тест кавычек>>
+    <<Тест кавычек>>
     """
 
     def textgen():
-        for line in text.split("\n"):
+        for line in text.split("\n\n"):
             yield line
 
     print ("\n\nThe first demo, TOKEN recognition. -------")

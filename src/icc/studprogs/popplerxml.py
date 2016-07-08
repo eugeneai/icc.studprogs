@@ -1,6 +1,7 @@
 from common import *
 from lxml import html
 from collections import ChainMap
+import uctotokenizer as ucto
 
 LINE_THRESHOULD=3 # px
 TAB_THRESHOULD=3 # px
@@ -40,14 +41,14 @@ class Loader(BaseLoader):
         "a":(symbol_anchor_start, symbol_anchor_end),
     }
 
-    def raw_lexems(self, node=None, style=None):
+    def raw_lines(self, node=None, style=None):
         if node==None:
             self.initialize()
             style=ChainMap({"fontstyle":"n"})
             node=self.root
         for e in node.iterchildren():
             if e.tag in ["html", "body","pdf2xml"]:
-                yield from self.raw_lexems(e, style)
+                yield from self.raw_lines(e, style)
                 continue
             if e.tag in ["b","i"]:
                 sstart,send=self.__class__.HTML_MARKUP[e.tag]
@@ -69,7 +70,18 @@ class Loader(BaseLoader):
             #    yield from self._proc_text(e, style)
             #    continue
             yield e
-            yield from self.raw_lexems(e,style)
+            yield from self.raw_lines(e,style)
+
+    def raw_lexems(self):
+        tokenizer=ucto.Tokenizer()
+        for lors in self.raw_lines():
+            if type(lors)!=tuple:
+                yield lors
+                continue
+            phrase, style = lors
+            tokenizer.process(phrase)
+            for token in tokenizer.tokens():
+                yield token, style
 
     def _proc_fontspec(self, e):
         a = self.attrib(e)
@@ -81,11 +93,10 @@ class Loader(BaseLoader):
                 return
             if type(t)==type(b""):
                 t=t.decode(self.encoding)
-            for token in simple_word_tokenize(t):
-                yield token, style
+            yield t, style
         style = style.new_child({"element":e})
         yield from _text(e.text,style)
-        yield from self.raw_lexems(e,style)
+        yield from self.raw_lines(e,style)
         yield from _text(e.tail,style)
 
     def _proc_text(self, e, style):
@@ -262,13 +273,28 @@ def test(limit=100):
 
     def just_lex(l):
         if type(l) == tuple:
-            return l[0]
+            token=l[0]
+            #token is an instance of ucto.Token, serialise to string using str()
+            s="[" + str(token) + "]"
+            end=""
+            if token.isnewparagraph():
+                s="\t"+s
+
+            #tokens remember whether they are followed by a space
+            if token.isendofsentence():
+                end=r"\\"
+            elif not token.nospace():
+                end=" "
+            return s, end
+
         else:
-            return l.mark
+            return (l.mark, " ")
 
     for par in _iterator(loader.paragraphs(),limit):
-        lexems=[just_lex(l) for l in par]
-        print (" ".join(lexems), end="\n\n")
+        lexems=(just_lex(l) for l in par)
+        for lexem, end in lexems:
+            print (lexem, end=end)
+        print ("\n")
         continue
         print (lexem, end=" ")
         for k,v in style.items():
