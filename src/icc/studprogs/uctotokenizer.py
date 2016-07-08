@@ -25,8 +25,8 @@ class Tokenizer(object):
         defaults={
             'lowercase':False,
             'uppercase':False,
-            'sentencedetection':True,
-            'paragraphdetection':True,
+            'sentencedetection':False,
+            'paragraphdetection':False,
             'quotedetection':False,
             'sentenceperlineinput':False,
             'sentenceperlineoutput':False,

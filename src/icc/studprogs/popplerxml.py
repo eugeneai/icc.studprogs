@@ -191,11 +191,17 @@ class Loader(BaseLoader):
             li=lb.li
             pl=self.page.get("eleft")
             pr=pl+self.page.get("ewidth")
-            if abs(pl-lb.l)>TAB_THRESHOULD:
-                yield line_tab
+            dl=abs(pl-lb.l)
+            if dl>TAB_THRESHOULD:
+                sym=line_tab
+                sym.left=dl
+                yield sym
             for text in lb.li:
                 yield from self._proc_text(text, style)
-            if abs(pr-(lb.l+lb.w))>TAIL_THRESHOULD:
+            dr=abs(pr-(lb.l+lb.w))
+            if dr>TAIL_THRESHOULD:
+                sym=line_tail
+                sym.right=dr
                 yield line_tail
             yield line_end
 
@@ -203,10 +209,12 @@ class Loader(BaseLoader):
         """Generates lexems in a "standart" form.
         """
         paragraph_started=False
+
         for lexem in self.raw_lexems():
             if lexem in [line_start, line_end]:
                 continue
             if lexem == line_tail:
+                yield lexem
                 if paragraph_started:
                     yield paragraph_symbol
                     paragraph_started = False
@@ -216,6 +224,7 @@ class Loader(BaseLoader):
                 if paragraph_started:
                     yield paragraph_symbol
                     paragraph_started = True
+                yield lexem
                 continue
             if lexem == page_symbol:
                 continue
@@ -275,7 +284,12 @@ def test(limit=100):
         if type(l) == tuple:
             token=l[0]
             #token is an instance of ucto.Token, serialise to string using str()
-            s="[" + str(token) + "]"
+            tok_type=token.type()
+            if not tok_type in ["WORD","PUNCTUATION", "NUMBER"]:
+                sl="/"+tok_type
+            else:
+                sl=""
+            s="[" + str(token) + sl + "]"
             end=""
             if token.isnewparagraph():
                 s="\t"+s
@@ -306,5 +320,5 @@ def test(limit=100):
 
 if __name__=="__main__":
     #test()
-    test(limit=100)
+    test(limit=300000)
     quit()
