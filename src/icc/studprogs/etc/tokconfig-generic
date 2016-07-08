@@ -1,11 +1,15 @@
 [RULE-ORDER]
 URL URL-WWW URL-DOMAIN
-E-MAIL WORD-PARPREFIX WORD-PARSUFFIX WORD-COMPOUND
-ABBREVIATION INITIAL SMILEY REVERSE-SMILEY PUNCTUATION-MULTI DATE-REVERSE DATE
+E-MAIL
+BULLET
+WORD-PARPREFIX WORD-PARSUFFIX WORD-COMPOUND
+ABBREVIATION INITIAL
+# SMILEY
+# REVERSE-SMILEY
+PUNCTUATION-MULTI DATE-REVERSE DATE
 COMPETENTION-DESIGNATION
 STUDY-CODE
-LIST-ITEM
-BULLET-ITEM
+ENUM
 NUMBER-YEAR TIME FRACNUMBER NUMBER CURRENCY WORD SPECIAL PUNCTUATION UNKNOWN
 
 
@@ -23,7 +27,7 @@ SUFFIX = ((?:\p{L})+)( %SUFFIXES% )(?:\Z|\P{L})
 [RULES]
 %include url
 %include e-mail
-%include smiley
+# include smiley
 
 #Ex: (dis)information
 WORD-PARPREFIX=(?:\p{Ps}\p{L}+[\p{Pc}\p{Pd}]?\p{Pe}[\p{Pc}\p{Pd}]?)\p{L}+(?:[\p{Pc}\p{Pd}]\p{L}+)*
@@ -56,11 +60,13 @@ TIME=\p{N}{1,2}:\p{N}{1,2}(?::\p{N})?(?i:a\.?m\.?|p\.?m\.?)?
 
 COMPETENTION-DESIGNATION=^О?П?К-\p{N}{1,2}\z
 
-BULLET-ITEM=^(?:\xF0B7|\x2022)\z
+BULLET=\uF0B7|\uF02D|\u2022
 
-LIST-ITEM=^\p{Lu}?(?:\p{N}{1,3}\.){1,4}\p{N}{0,4}\.?
+SPECIAL=\u2116
 
-STUDY-CODE=^(?:(?:\p{Lu}|\p{N}){1,3}\.){1,4}(?:\p{Lu}|\p{N}){1,3}\z
+ENUM=^\p{Lu}?(?:\p{N}{1,3}\.){1,4}\p{N}{0,4}\.?
+
+STUDY-CODE=^(?:\p{Lu}(?:\p{Lu}|\p{N}){0,3}\.){1,4}(?:\p{Lu}|\p{N}){1,3}\z
 
 #retain digits, including those starting with initial period (.22), and negative numbers
 NUMBER=-?(?:[\.,]?\p{N}+)+
@@ -68,8 +74,6 @@ NUMBER=-?(?:[\.,]?\p{N}+)+
 CURRENCY=\p{Sc}
 
 WORD=[\p{L}\p{Mn}]+
-
-SPECIAL=№
 
 PUNCTUATION=(\p{P})
 
