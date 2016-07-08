@@ -4,10 +4,11 @@ class Symbol(object):
     """Class of marker instances
     """
     individuals = {}
-    def __init__(self, name):
+    def __init__(self, name, mark=None):
         """
         """
         self.name=name
+        self._mark=mark
 
     def __str__(self, ):
         """
@@ -16,12 +17,22 @@ class Symbol(object):
 
     __repr__=__str__
 
-page_symbol=Symbol("page")
-paragraph_symbol=Symbol("paragraph")
-line_tab=Symbol("line tab")
-line_tail=Symbol("line tail")
-line_start=Symbol("line start")
-line_end=Symbol("line end")
+    @property
+    def mark(self):
+        """Print it in a markdown like mode.
+        """
+        if self._mark != None:
+            return self._mark
+        else:
+            return str(self)
+
+
+page_symbol=Symbol("page",r"\newpage"+"\n")
+paragraph_symbol=Symbol("paragraph", r"\par"+"\n")
+line_tab=Symbol("line tab", r"-->")
+line_tail=Symbol("line tail", r"<--")
+line_start=Symbol("line start", "")
+line_end=Symbol("line end", "\n")
 
 class BaseLoader(object):
     """Implements basic loader functions.
