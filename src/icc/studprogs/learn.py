@@ -56,8 +56,10 @@ class LinkGrammar(object):
         self.paragraphiterator=paragraphiterator
         self.options=lg.ParseOptions(linkage_limit=1,
                                      verbosity=1,
-                                     islands_ok=True)
-        self.dictionary=lg.Dictionary(lang)
+                                     islands_ok=True,
+                                     max_parse_time=5)
+        self.lang=lang
+        self.dictionary=lg.Dictionary(self.lang)
         self.analyzer=None
 
     def linkages(self, text):
@@ -66,7 +68,9 @@ class LinkGrammar(object):
         Arguments:
         - `text`: Input sentence.
         """
-        sent=lg.Sentence(text, self.dictionary, self.options)
+        #dictionary=lg.Dictionary(self.lang)
+        dictionary=self.dictionary
+        sent=lg.Sentence(text, dictionary, self.options)
         return sent.parse()
 
     def paragraphs(self):
@@ -88,13 +92,14 @@ def link_parsing(stream, limit):
         par=par.strip()
         if not par:
             continue
-        if len(par)>280:
-            print ("Skip")
-            continue
+        # if len(par)>280:
+        #     print ("Skip")
+        #     continue
         tries=2
         bad=[]
 
         while tries>0:
+            print ("PARSING:", repr(par))
             for linkage in linkgram.linkages(par):
                 print (linkage.diagram())
                 prev=par
@@ -104,7 +109,6 @@ def link_parsing(stream, limit):
                 answer.append((True,par))
                 break
             else:
-                print (repr(par))
                 print ("----FAILED------")
                 bad.append(par)
                 par=prev+" "+par
@@ -137,20 +141,21 @@ def main(stream, limit):
                 ## t=t+"/"+str(m[0].normal_form)
                 ## t=str(m[0].normal_form)
             except TypeError:
-                t=str(word.mark)
+                t=str(word.mark())
             print (t, end=" ")
-        print ()
+        print ("\n"+"-"*20)
 
 
 
 if __name__=="__main__":
-    limit = 100
-    #main(TEST_FILE, limit)
-    rc=link_parsing(TEST_FILE, limit)
-    for a,t in rc:
-        if a:
-            a="+"
-        else:
-            a="-"
-        print (a, t)
+    limit = 1000000
+    main(TEST_FILE, limit)
+    if 0:
+         rc=link_parsing(TEST_FILE, limit)
+         for a,t in rc:
+             if a:
+                 a="+"
+             else:
+                 a="-"
+             print (a, t)
     quit()

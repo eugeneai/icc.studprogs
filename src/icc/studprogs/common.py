@@ -100,7 +100,7 @@ class BaseLoader(object):
                                 #space=""
                                 token="."
                             t9=str(token)
-                            if not t9.isalpha():
+                            if tok_type == "WORD" and not t9.isalpha():
                                 continue
                     else:
                         token = lexem.mark(style=style)
