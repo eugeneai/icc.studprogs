@@ -3,7 +3,7 @@ from lxml import html
 from collections import ChainMap
 import uctotokenizer as ucto
 
-LINE_THRESHOULD=3 # px
+LINE_THRESHOULD=0 # px
 TAB_THRESHOULD=3 # px
 TAIL_THRESHOULD=10 # px
 
@@ -161,7 +161,7 @@ class Loader(BaseLoader):
             found=False
             for btl,ld in tl.items():
                 ttl=ld.t
-                if b>=ttl and abs(b-btl) < LINE_THRESHOULD:
+                if abs(b-btl) <= LINE_THRESHOULD:
                     found=True
                     break
                 #if t>=ttl and t<=btl:
@@ -188,18 +188,18 @@ class Loader(BaseLoader):
         for line in lines:
             yield line_start
             lb=tl[line]
-            li=lb.li
+            li=lb.li[:1]
             pl=self.page.get("eleft")
             pr=pl+self.page.get("ewidth")
             dl=abs(pl-lb.l)
-            if dl>TAB_THRESHOULD:
+            if dl>=TAB_THRESHOULD:
                 sym=line_tab
                 sym.left=dl
                 yield sym
             for text in lb.li:
                 yield from self._proc_text(text, style)
             dr=abs(pr-(lb.l+lb.w))
-            if dr>TAIL_THRESHOULD:
+            if dr>=TAIL_THRESHOULD:
                 sym=line_tail
                 sym.right=dr
                 yield line_tail
@@ -209,6 +209,7 @@ class Loader(BaseLoader):
         """Generates lexems in a "standart" form.
         """
         paragraph_started=False
+        paragraph_ended=False
 
         for lexem in self.raw_lexems():
             if lexem in [line_start, line_end]:
@@ -216,19 +217,23 @@ class Loader(BaseLoader):
             if lexem == line_tail:
                 yield lexem
                 if paragraph_started:
+                    paragraph_ended=True
                     yield paragraph_symbol
                     paragraph_started = False
+                    paragraph_ended = False
                 continue
 
             if lexem == line_tab:
                 if paragraph_started:
                     yield paragraph_symbol
                     paragraph_started = True
+                    paragraph_ended = False
                 yield lexem
                 continue
             if lexem == page_symbol:
                 continue
             paragraph_started = True
+            paragraph_ended = False
             yield lexem
 
 
@@ -304,21 +309,25 @@ def test(limit=100):
         else:
             return (l.mark, " ")
 
-    for par in _iterator(loader.paragraphs(),limit):
-        lexems=(just_lex(l) for l in par)
-        for lexem, end in lexems:
-            print (lexem, end=end)
-        print ("\n")
-        continue
-        print (lexem, end=" ")
-        for k,v in style.items():
-            print ("{}={}".format(k,v), end=",")
-        print ()
-    print ("Collected fontspecs:")
-    pprint.pprint(loader.fontspec)
+    # for par in _iterator(loader.paragraphs(),limit):
+    #     lexems=(just_lex(l) for l in par)
+    #     for lexem, end in lexems:
+    #         print (lexem, end=end)
+    #     print ("\n")
+    #     continue
+    #     print (lexem, end=" ")
+    #     for k,v in style.items():
+    #         print ("{}={}".format(k,v), end=",")
+    #     print ()
+
+    for line in _iterator(loader.raw_lines(), limit):
+        print (line)
+
+    #print ("Collected fontspecs:")
+    #pprint.pprint(loader.fontspec)
 
 
 if __name__=="__main__":
     #test()
-    test(limit=30)
+    test(limit=800)
     quit()
