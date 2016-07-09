@@ -320,5 +320,5 @@ def test(limit=100):
 
 if __name__=="__main__":
     #test()
-    test(limit=300000)
+    test(limit=30)
     quit()

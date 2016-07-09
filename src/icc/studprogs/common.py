@@ -4,11 +4,14 @@ class Symbol(object):
     """Class of marker instances
     """
     individuals = {}
-    def __init__(self, name, mark=None):
+    def __init__(self, name, mark=None, nospace=False, **kwargs):
         """
         """
         self.name=name
         self._mark=mark
+        self._nospace=nospace
+        for k, v in kwargs.items():
+            setattr(self, k,v)
 
     def __str__(self, ):
         """
@@ -17,28 +20,32 @@ class Symbol(object):
 
     __repr__=__str__
 
-    @property
-    def mark(self):
+    def mospace(self):
+        return self._nospace()
+
+    def mark(self, style=None):
         """Print it in a markdown like mode.
         """
-        if self._mark != None:
-            return self._mark
-        else:
-            return str(self)
+        if style=="hidden":
+            return ""
+        if style in [None, "shown"]:
+            if self._mark != None:
+                return self._mark
+            else:
+                return str(self)
 
-
-page_symbol=Symbol("page",r"\newpage"+"\n")
-paragraph_symbol=Symbol("paragraph", r"\par"+"\n")
-line_tab=Symbol("line tab", r"-->")
-line_tail=Symbol("line tail", r"<--")
-line_start=Symbol("line start", "")
-line_end=Symbol("line end", "\n")
-symbol_anchor_start=Symbol("anchor", "[")
-symbol_anchor_end=Symbol("anchor", "]")
-font_bold_start = Symbol("start bold", "**")
-font_bold_end = Symbol("end bold", "** ")
-font_italic_start = Symbol("start italic", "*")
-font_italic_end = Symbol("end italic", "* ")
+page_symbol=Symbol("page",r"\newpage"+"\n", nospace=True)
+paragraph_symbol=Symbol("paragraph", r"\par"+"\n", nospace=True)
+line_tab=Symbol("line tab", r"-->", nospace=True)
+line_tail=Symbol("line tail", r"<--", nospace=True)
+line_start=Symbol("line start", "", nospace=True)
+line_end=Symbol("line end", "\n", nospace=True)
+symbol_anchor_start=Symbol("anchor", "<", nospace=True)
+symbol_anchor_end=Symbol("anchor", ">", nospace=False)
+font_bold_start = Symbol("start bold", "**", nospace=True)
+font_bold_end = Symbol("end bold", "**", nospace=False)
+font_italic_start = Symbol("start italic", "*", nospace=True)
+font_italic_end = Symbol("end italic", "*", nospace=False)
 
 class BaseLoader(object):
     """Implements basic loader functions.
@@ -71,7 +78,40 @@ class BaseLoader(object):
     def sentences(self):
         pass
 
-    def paragraphs(self, pages_are_paragraphs = True):
+    def paragraphs(self,
+                   pages_are_paragraphs = True,
+                   join=False,
+                   style=None,
+                   decorations=("",""),
+                   only_words=False):
+        if join:
+            for par in self.paragraphs(pages_are_paragraphs = pages_are_paragraphs,
+                                join=False):
+                npar = []
+                for lexem in par:
+                    space=" "
+                    if type(lexem) == tuple:
+                        token, _style = lexem
+                        tok_type=token.type()
+                        if only_words:
+                            if not tok_type in ["WORD", "PUNCTUATION-MULTI", "PUNCTUATION"]:
+                                continue
+                            if tok_type in ["PUNCTUATION-MULTI"]:
+                                #space=""
+                                token="."
+                            t9=str(token)
+                            if not t9.isalpha():
+                                continue
+                    else:
+                        token = lexem.mark(style=style)
+                        #if not token:
+                            #space=""
+                    #if hasattr(token, "nospace") and token.nospace():
+                        #space=""
+                    npar.append(decorations[0]+str(token)+decorations[1]+space)
+                yield "".join(npar)
+            return
+        # Generate paragraph as list of lexems
         paragraph = []
         for lexem in self.lexems():
             if lexem == paragraph_symbol:
