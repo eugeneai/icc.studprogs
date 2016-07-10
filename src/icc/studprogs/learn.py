@@ -3,7 +3,7 @@ import icc.studprogs.popplerxml as loader
 #import pybison
 from pkg_resources import resource_stream
 
-from itertools import islice
+from itertools import islice, cycle
 import sys
 import pymorphy2
 
@@ -49,18 +49,24 @@ class LinkGrammar(object):
     """
     """
 
-    def __init__(self, paragraphiterator, lang="ru"):
+    def __init__(self, paragraphiterator, lang="ru", only_valid=True):
         """Initialize class with
         paragraph iterator source
         """
         self.paragraphiterator=paragraphiterator
-        self.options=lg.ParseOptions(linkage_limit=1,
-                                     verbosity=1,
-                                     islands_ok=True,
-                                     max_parse_time=5)
+        self.make_options()
         self.lang=lang
         self.dictionary=lg.Dictionary(self.lang)
         self.analyzer=None
+        self._maxlinkages=1000
+        self._linkages=self._maxlinkages
+        self.only_valid=only_valid
+
+    def make_options(self):
+        self.options=lg.ParseOptions(linkage_limit=1,
+                                     verbosity=0,
+                                     islands_ok=True,
+                                     max_parse_time=10)
 
     def linkages(self, text):
         """Analyses one sentence.
@@ -69,67 +75,90 @@ class LinkGrammar(object):
         - `text`: Input sentence.
         """
         #dictionary=lg.Dictionary(self.lang)
-        dictionary=self.dictionary
+        #self.make_options()
+        if self._linkages>0:
+            dictionary=self.dictionary
+            self._linkages-=1
+        else:
+            dictionary=self.dictionary=lg.Dictionary(self.lang)
+            self._linkages=self._maxlinkages
         sent=lg.Sentence(text, dictionary, self.options)
-        return sent.parse()
+        rc = sent.split()
+        if rc < 0:
+            print ("--- Cannot split ---")
+            del sent
+            return iter(())
 
-    def paragraphs(self):
-        yield from self.paragraphiterator
+        rc = sent.parse()
+        if rc.has_valid() or self.only_valid:
+            return rc
+        return rc.linkages()
 
-def link_parsing(stream, limit):
+    def paragraphs(self, verbose=0):
+        for par in self.paragraphiterator:
+            par=par.strip()
+            if not par:
+                continue
+            # if len(par)>280:
+            #     print ("Skip")
+            #     continue
+            if verbose:
+                print ("PAR:", repr(par))
+
+            anylink=False
+            for linkage in self.linkages(par):
+                if verbose:
+                    print ("----SUCCEED------")
+                anylink=True
+                yield par,linkage
+            if not anylink:
+                if verbose:
+                    print ("----FAILED------")
+                yield par, False
+
+def _print(par, linkage):
+    """
+    """
+    print ("PAR:",par)
+    if linkage:
+        print (linkage.valid, linkage.diagram())
+        if not linkage.valid:
+            print ("MSG:",linkage.pp_msgs())
+    else:
+        print ("---NO LINKAGE---")
+
+
+def link_parsing1(stream, loader_class, limits):
+    l=loader_class(stream)
+    linkgram=LinkGrammar(debug_reverse(l.paragraphs(join=True, style="hidden",
+                                                    only_words=False)),
+                         only_valid=False)
+    linkgram=islice(linkgram.paragraphs(verbose=0), limit)
+    for par, linkage in linkgram:
+        _print(par, linkage)
+
+def link_parsing2(_1,_2,limits):
+    sent1='''Производственная практика проводится в структурных
+    подразделениях ИРНИТУ или других организациях.
+    Для выполнения заданий самостоятельной работы по производственной
+    практике вуз обеспечивает свободный доступ к библиотечным фондам,
+    к сети Интернет и базам данных вуза и кафедры.'''
+    sent2='''Богатство заключается в многообразии потребностей и желаний.'''
+    sent3="Итогом преддипломной практики является выпускная квалификационная работа ."
+    linkgram=LinkGrammar([sent3,sent1,sent2], only_valid=False)
+    linkgram=islice(cycle(linkgram.paragraphs(verbose=0)), limit)
+
+    for par, linkage in linkgram:
+        _print(par, linkage)
+
+
+def main(stream, loader_class, limit):
     """
 
     Arguments:
     - `stream`: open stream to learn from
     """
-    l=loader.Loader(stream)
-    linkgram=LinkGrammar(islice(l.paragraphs(join=True, style="hidden", only_words=True), limit))
-    answer=[]
-    prev=""
-    for par in linkgram.paragraphs():
-        sticked=False
-        done=False
-        par=par.strip()
-        if not par:
-            continue
-        # if len(par)>280:
-        #     print ("Skip")
-        #     continue
-        tries=2
-        bad=[]
-
-        while tries>0:
-            print ("PARSING:", repr(par))
-            for linkage in linkgram.linkages(par):
-                print (linkage.diagram())
-                prev=par
-                done=True
-                if sticked:
-                    answer.pop()
-                answer.append((True,par))
-                break
-            else:
-                print ("----FAILED------")
-                bad.append(par)
-                par=prev+" "+par
-                sticked=True
-            if done:
-                break  # from a while True cycle
-            tries-=1
-            if tries==0:
-                par=bad.pop(0)
-                prev=par
-                answer.append((False, par))
-    return answer
-
-
-def main(stream, limit):
-    """
-
-    Arguments:
-    - `stream`: open stream to learn from
-    """
-    l=loader.Loader(stream)
+    l=loader_class(stream)
     mt=MorphologicalTagger(l)
     for paragraph in islice(mt.paragraphs(), limit):
         for word in paragraph:
@@ -145,17 +174,13 @@ def main(stream, limit):
             print (t, end=" ")
         print ("\n"+"-"*20)
 
-
+def debug_reverse(iterator):
+    r=reversed(list(iterator))
+    yield from r
 
 if __name__=="__main__":
-    limit = 1000000
-    main(TEST_FILE, limit)
-    if 0:
-         rc=link_parsing(TEST_FILE, limit)
-         for a,t in rc:
-             if a:
-                 a="+"
-             else:
-                 a="-"
-             print (a, t)
+    limit = 10
+    # main(TEST_FILE, limit)
+    if 1:
+         link_parsing2(TEST_FILE, loader.Loader, limit)
     quit()
