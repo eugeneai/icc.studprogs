@@ -88,8 +88,8 @@ class LinkGrammar(object):
             print ("--- Cannot split ---")
             del sent
             return iter(())
-
         rc = sent.parse()
+        print ("V:", sent.num_valid_linkages(), "L:", sent.num_linkages_found())
         if rc.has_valid() or self.only_valid:
             return rc
         return rc.linkages()
@@ -130,8 +130,11 @@ def _print(par, linkage):
 
 def link_parsing1(stream, loader_class, limits):
     l=loader_class(stream)
-    linkgram=LinkGrammar(debug_reverse(l.paragraphs(join=True, style="hidden",
-                                                    only_words=False)),
+    #linkgram=LinkGrammar(debug_reverse(l.paragraphs(join=True, style="hidden",
+    #                                                only_words=False)),
+    #                     only_valid=False)
+    linkgram=LinkGrammar(l.paragraphs(join=True, style="hidden",
+                                                    only_words=False),
                          only_valid=False)
     linkgram=islice(linkgram.paragraphs(verbose=0), limit)
     for par, linkage in linkgram:
@@ -179,8 +182,8 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 10
+    limit = 10000000
     # main(TEST_FILE, limit)
     if 1:
-         link_parsing2(TEST_FILE, loader.Loader, limit)
+         link_parsing1(TEST_FILE, loader.Loader, limit)
     quit()
