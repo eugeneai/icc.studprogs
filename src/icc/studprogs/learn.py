@@ -12,6 +12,7 @@ import icc.linkgrammar as lg
 package=__name__
 TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
 TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
+TEST_FILE3="./grin.txt"
 
 class MorphologicalTagger(object):
     """Tag a lexems in a stream morphoogically
@@ -58,11 +59,13 @@ class LinkGrammar(object):
         self.make_options()
         self.lang=lang
         self.analyzer=None
-        self._maxlinkages=1000
+        self._maxlinkages=1
         self._linkages=self._maxlinkages
         self.only_valid=only_valid
 
     def make_options(self):
+        self.lg.linkage_limit=1000
+        self.lg.max_parse_time=10
         pass
         # self.options=lg.ParseOptions(linkage_limit=1,
         #                              verbosity=0,
@@ -84,15 +87,17 @@ class LinkGrammar(object):
         #    del sent
         #    return iter(())
 
-        import pdb; pdb.set_trace()
         print ("V:", self.lg.num_valid, "L:", self.lg.num_linkages)
+        print (repr(text))
         if self.only_valid:
-            for i in range(self.lg.num_valid):
+            for i in range(min(self.lg.num_valid, self._maxlinkages)):
                 yield True, self.lg.diagram()
+                #yield True, "11111"
         else:
             v=self.lg.num_valid
-            for i in range(self.lg.num_linkages):
+            for i in range(min(self.lg.num_linkages, self._maxlinkages)):
                 yield i<=v, self.lg.diagram()
+                #yield i<=v, "22222"
 
     def paragraphs(self, verbose=0):
         for par in self.paragraphiterator:
@@ -104,18 +109,20 @@ class LinkGrammar(object):
 
             anylink=False
             for rc, linkage in self.linkages(par):
-                if verbose and rc:
-                    print ("----SUCCEED------")
-                else:
-                    print ("----FAILED------")
+                if verbose:
+                    if rc:
+                        print ("----SUCCEED------")
+                    else:
+                        print ("----FAILED------")
                 yield par, rc, linkage
 
 def _print(par, rc, linkage):
     """
     """
+
     print ("PAR:",par)
     if linkage:
-        print (fc, linkage)
+        print (rc, linkage)
         if not rc:
             print ("MSG:!!")
     else:
@@ -124,15 +131,17 @@ def _print(par, rc, linkage):
 
 def link_parsing1(stream, loader_class, limits):
     l=loader_class(stream)
-    #linkgram=LinkGrammar(debug_reverse(l.paragraphs(join=True, style="hidden",
-    #                                                only_words=False)),
-    #                     only_valid=False)
     linkgram=LinkGrammar(l.paragraphs(join=True, style="hidden",
                                                     only_words=False),
                          only_valid=False)
     linkgram=islice(linkgram.paragraphs(verbose=0), limit)
-    for par, linkage in linkgram:
-        _print(par, linkage)
+    for par, rc, linkage in linkgram:
+        _print(par, rc, linkage)
+
+def link_parsing11(stream, loader_class, limits):
+    l=loader_class(stream)
+    for par in l.paragraphs(join=True, style="hidden", only_words=False):
+        print (par)
 
 def link_parsing2(_1,_2,limits):
     sent1='''Производственная практика проводится в структурных
@@ -143,10 +152,10 @@ def link_parsing2(_1,_2,limits):
     sent2='''Богатство заключается в многообразии потребностей и желаний.'''
     sent3="Итогом преддипломной практики является выпускная квалификационная работа ."
     linkgram=LinkGrammar([sent3,sent1,sent2], only_valid=False)
-    linkgram=islice(cycle(linkgram.paragraphs(verbose=0)), limit)
+    linkgram=islice(linkgram.paragraphs(verbose=0), limit)
 
-    for par, linkage in linkgram:
-        _print(par, linkage)
+    for par, rc, linkage in linkgram:
+        _print(par, rc, linkage)
 
 
 def main(stream, loader_class, limit):
@@ -176,8 +185,8 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 10000000
+    limit = 10
     # main(TEST_FILE1, limit)
     # link_parsing1(TEST_FILE2, loader.Loader, limit)
-    link_parsing2(TEST_FILE1, textloader.Loader, limit)
+    link_parsing11(TEST_FILE3, textloader.Loader, limit)
     quit()

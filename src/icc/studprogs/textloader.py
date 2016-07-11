@@ -38,3 +38,30 @@ class Loader(BaseLoader):
             yield linequeue.pop(0)
 
         yield from linequeue
+
+
+    def lines(self):
+        """
+        
+        •
+        -
+        
+        """
+        endsents = [".","...","?","!"]
+
+        for line in self.file:
+            uniline=line.decode(self.encoding)
+
+            s=[]
+            for c in uniline:
+                s.append(c)
+                for e in endsents:
+                    if e==c:
+                        if len(s)>2:
+                            yield "".join(s)
+                            yield paragraph_symbol
+                        s=[]
+            if len(s)>2:
+                yield "".join(s)
+
+            yield paragraph_symbol
