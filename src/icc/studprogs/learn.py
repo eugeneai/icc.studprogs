@@ -66,6 +66,7 @@ class LinkGrammar(object):
     def make_options(self):
         self.lg.linkage_limit=1000
         self.lg.max_parse_time=10
+        self.lg.verbosity=100
         pass
         # self.options=lg.ParseOptions(linkage_limit=1,
         #                              verbosity=0,
@@ -188,5 +189,5 @@ if __name__=="__main__":
     limit = 10
     # main(TEST_FILE1, limit)
     # link_parsing1(TEST_FILE2, loader.Loader, limit)
-    link_parsing11(TEST_FILE3, textloader.Loader, limit)
+    link_parsing1(TEST_FILE3, textloader.Loader, limit)
     quit()
