@@ -92,7 +92,10 @@ class BaseLoader(object):
                     space=" "
                     if type(lexem) == tuple:
                         token, _style = lexem
-                        tok_type=token.type()
+                        try:
+                            tok_type=token.type()
+                        except AttributeError:
+                            tok_type="WORD"
                         if only_words:
                             if not tok_type in ["WORD", "PUNCTUATION-MULTI", "PUNCTUATION"]:
                                 continue
@@ -135,7 +138,7 @@ class BaseLoader(object):
             if type(line)==type(""):
                 for token in simple_word_tokenize(line):
                     prev = token
-                    yield token
+                    yield token, {}
             else:
                 prev = line
                 yield line

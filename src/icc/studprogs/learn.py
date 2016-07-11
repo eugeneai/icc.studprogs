@@ -1,5 +1,5 @@
 import icc.studprogs.popplerxml as loader
-#import icc.studprogs.textloader as textloader
+import icc.studprogs.textloader as textloader
 #import pybison
 from pkg_resources import resource_stream
 
@@ -7,11 +7,11 @@ from itertools import islice, cycle
 import sys
 import pymorphy2
 
-import linkgrammar as lg
+import icc.linkgrammar as lg
 
 package=__name__
-#TEST_FILE=resource_stream("icc.studprogs","data/059285.txt")
-TEST_FILE=resource_stream("icc.studprogs","data/059285.xml")
+TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
+TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
 
 class MorphologicalTagger(object):
     """Tag a lexems in a stream morphoogically
@@ -54,19 +54,20 @@ class LinkGrammar(object):
         paragraph iterator source
         """
         self.paragraphiterator=paragraphiterator
+        self.lg=lg.LinkGrammar(lang)
         self.make_options()
         self.lang=lang
-        self.dictionary=lg.Dictionary(self.lang)
         self.analyzer=None
         self._maxlinkages=1000
         self._linkages=self._maxlinkages
         self.only_valid=only_valid
 
     def make_options(self):
-        self.options=lg.ParseOptions(linkage_limit=1,
-                                     verbosity=0,
-                                     islands_ok=True,
-                                     max_parse_time=10)
+        pass
+        # self.options=lg.ParseOptions(linkage_limit=1,
+        #                              verbosity=0,
+        #                              islands_ok=True,
+        #                              max_parse_time=10)
 
     def linkages(self, text):
         """Analyses one sentence.
@@ -76,54 +77,47 @@ class LinkGrammar(object):
         """
         #dictionary=lg.Dictionary(self.lang)
         #self.make_options()
-        if self._linkages>0:
-            dictionary=self.dictionary
-            self._linkages-=1
+        self.lg.parse(text)
+        #rc = sent.split()
+        #if rc < 0:
+        #    print ("--- Cannot split ---")
+        #    del sent
+        #    return iter(())
+
+        import pdb; pdb.set_trace()
+        print ("V:", self.lg.num_valid, "L:", self.lg.num_linkages)
+        if self.only_valid:
+            for i in range(self.lg.num_valid):
+                yield True, self.lg.diagram()
         else:
-            dictionary=self.dictionary=lg.Dictionary(self.lang)
-            self._linkages=self._maxlinkages
-        sent=lg.Sentence(text, dictionary, self.options)
-        rc = sent.split()
-        if rc < 0:
-            print ("--- Cannot split ---")
-            del sent
-            return iter(())
-        rc = sent.parse()
-        print ("V:", sent.num_valid_linkages(), "L:", sent.num_linkages_found())
-        if rc.has_valid() or self.only_valid:
-            return rc
-        return rc.linkages()
+            v=self.lg.num_valid
+            for i in range(self.lg.num_linkages):
+                yield i<=v, self.lg.diagram()
 
     def paragraphs(self, verbose=0):
         for par in self.paragraphiterator:
             par=par.strip()
             if not par:
                 continue
-            # if len(par)>280:
-            #     print ("Skip")
-            #     continue
             if verbose:
                 print ("PAR:", repr(par))
 
             anylink=False
-            for linkage in self.linkages(par):
-                if verbose:
+            for rc, linkage in self.linkages(par):
+                if verbose and rc:
                     print ("----SUCCEED------")
-                anylink=True
-                yield par,linkage
-            if not anylink:
-                if verbose:
+                else:
                     print ("----FAILED------")
-                yield par, False
+                yield par, rc, linkage
 
-def _print(par, linkage):
+def _print(par, rc, linkage):
     """
     """
     print ("PAR:",par)
     if linkage:
-        print (linkage.valid, linkage.diagram())
-        if not linkage.valid:
-            print ("MSG:",linkage.pp_msgs())
+        print (fc, linkage)
+        if not rc:
+            print ("MSG:!!")
     else:
         print ("---NO LINKAGE---")
 
@@ -183,7 +177,7 @@ def debug_reverse(iterator):
 
 if __name__=="__main__":
     limit = 10000000
-    # main(TEST_FILE, limit)
-    if 1:
-         link_parsing1(TEST_FILE, loader.Loader, limit)
+    # main(TEST_FILE1, limit)
+    # link_parsing1(TEST_FILE2, loader.Loader, limit)
+    link_parsing2(TEST_FILE1, textloader.Loader, limit)
     quit()
