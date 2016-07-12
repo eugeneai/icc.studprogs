@@ -64,9 +64,10 @@ class LinkGrammar(object):
         self.only_valid=only_valid
 
     def make_options(self):
-        self.lg.linkage_limit=1000
+        self.lg.linkage_limit=1
         self.lg.max_parse_time=10
-        self.lg.verbosity=100
+        self.lg.verbosity=1
+        self.lg.setup_abiword_soft() # self.lg.setup_abiword_main()
         pass
         # self.options=lg.ParseOptions(linkage_limit=1,
         #                              verbosity=0,
@@ -81,6 +82,7 @@ class LinkGrammar(object):
         """
         #dictionary=lg.Dictionary(self.lang)
         #self.make_options()
+        self.lg.reset_resources()
         self.lg.parse(text)
         #rc = sent.split()
         #if rc < 0:
@@ -186,8 +188,8 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 10
+    limit = 100000000
     # main(TEST_FILE1, limit)
-    # link_parsing1(TEST_FILE2, loader.Loader, limit)
-    link_parsing1(TEST_FILE3, textloader.Loader, limit)
+    link_parsing1(TEST_FILE2, loader.Loader, limit)
+    #link_parsing1(TEST_FILE3, textloader.Loader, limit)
     quit()
