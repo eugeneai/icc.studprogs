@@ -91,7 +91,16 @@ class BaseLoader(object):
                     yield sent
                     sent = []
                 else:
+                    #if sent:
+                    #    raise RuntimeError("symbol inside a sentence")
+                    if sent:
+                        yield sent
+                        sent = []
                     yield lexem
+            else:
+                sent.append(lexem)
+        if sent:
+            yield sent
 
     def paragraphs(self,
                    pages_are_paragraphs = True,
@@ -150,7 +159,7 @@ class BaseLoader(object):
             yield paragraph
 
     def lexems(self):
-        tokenizer=ucto.Tokenizer()
+        tokenizer=ucto.Tokenizer(sentencedetection=True)
         prev=None
         for line in self.lines():
             if type(line)==type(""):

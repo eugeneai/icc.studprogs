@@ -4,6 +4,33 @@ from pkg_resources import resource_filename
 
 settingsfile=resource_filename("icc.studprogs","etc/tokconfig-generic")
 
+def join(lexems, only=[], filter=[], decor=("","")):
+    """Joins sentences into a string.
+
+    Arguments:
+    - `lexemes`: List or generator of tokens or tuples
+                 with wirst item being a token. The result will
+                 unclude str() of the token.
+    - `only`: Include only tokens of type mentioned in this list.
+    - `filter`: Filter out tokens of type mentioned in this list.
+    - `decor`: Decorate tokens with symbols. E.g. decor=("[","]")
+               produces "[<token>]".
+    """
+    s=[]
+    only_rules=len(only)>=1
+    for lexem in lexems:
+        space=" "
+        if type(lexem)==tuple:
+            token = lexem[0]
+            if token.type in filter:
+                continue
+            if only_rules and not token.type in only:
+                continue
+            if token.nospace():
+                space=""
+        s.append(decor[0]+str(token)+decor[1]+space)
+    return "".join(s)
+
 class Tokenizer(object):
     """Utilization of ucto tokenizer as
     tokenizer class.
