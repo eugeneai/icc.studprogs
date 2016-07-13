@@ -13,6 +13,9 @@ class Loader(BaseLoader):
         """
         linequeue=[]
         for line in self.file:
+            if self._skip>0:
+                self._skip-=1
+                continue
             if line.startswith(b"\x0c"):
                 line=line.lstrip(b"\x0c")
 
@@ -38,30 +41,3 @@ class Loader(BaseLoader):
             yield linequeue.pop(0)
 
         yield from linequeue
-
-
-    # def lines(self):
-    #     """
-    #     
-    #     •
-    #     -
-    #     
-    #     """
-    #     endsents = [".","...","?","!"]
-
-    #     for line in self.file:
-    #         uniline=line.decode(self.encoding)
-
-    #         s=[]
-    #         for c in uniline:
-    #             s.append(c)
-    #             for e in endsents:
-    #                 if e==c:
-    #                     if len(s)>2:
-    #                         yield "".join(s)
-    #                         yield paragraph_symbol
-    #                     s=[]
-    #         if len(s)>2:
-    #             yield "".join(s)
-
-    #         yield paragraph_symbol

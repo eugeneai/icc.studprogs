@@ -1,7 +1,7 @@
-from common import *
+from icc.studprogs.common import *
 from lxml import html
 from collections import ChainMap
-import uctotokenizer as ucto
+import icc.studprogs.uctotokenizer as ucto
 
 LINE_THRESHOULD=0 # px
 TAB_THRESHOULD=3 # px
@@ -23,6 +23,10 @@ class Helper(object):
 class Loader(BaseLoader):
     """Loads poppler xml, translates it via iterators.
     """
+
+    def __init__(self, file=None, **kwargs):
+        BaseLoader.__init__(self, file=file, **kwargs)
+        self.par_tokenizer=ucto.Tokenizer(sentencedetection=True)
 
     def initialize(self):
         """Initializes internal structures.
@@ -183,6 +187,9 @@ class Loader(BaseLoader):
         lines=list(tl.keys())
         lines.sort()
         for line in lines:
+            if self._skip>0:
+                self._skip-=1
+                continue
             yield line_start
             lb=tl[line]
             li=lb.li[:1]
@@ -232,6 +239,47 @@ class Loader(BaseLoader):
             paragraph_started = True
             paragraph_ended = False
             yield lexem
+
+    def sentences(self):
+        """Generates sentences from paragraphs.
+        """
+        tokenizer=self.par_tokenizer
+        sent=[]
+        for par in self.paragraphs():
+            text=ucto.join(par, no_symbols=True)
+            tokenizer.process(text)
+            tokens=list(tokenizer.tokens())
+            sent=[]
+            par_yeldet=False
+            nnum=0
+            tokenslen=len(tokens)
+            for pt in par:
+                if type(pt)==Symbol:
+                    if not pt==sentence_end:
+                        sent.append(pt)
+                    continue
+                token, style = pt
+                if nnum<tokenslen:
+                    ntoken=tokens[nnum]
+                    nnum+=1
+                    sent.append((ntoken, style))
+                # if str(token)!=str(ntoken):
+                #     print ("---->", ucto.join(par, decor="[]",with_type=True))
+                #     ttk=[(_t,{}) for _t in tokens]
+                #     print ("---->", ucto.join(ttk, decor="[]", with_type=True))
+                #     print ("---->", token, ntoken)
+                if ntoken.isendofsentence():
+                    if sent:
+                        yield sent
+                        par_yeldet=True
+                    sent=[]
+            if par_yeldet:
+                yield paragraph_symbol
+
+        if sent:
+            yield sent
+            yield paragraph_symbol
+
 
 
     def attrib(self, e):

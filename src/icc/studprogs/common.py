@@ -71,11 +71,20 @@ class BaseLoader(object):
         self.options.setdefault("line_paragraph", True)
         self.options.setdefault("empty_line_paragraph", False)
         self.tokenizer = ucto.Tokenizer(sentencedetection=True)
+        self._skip=0
+
+
     def initialize(self):
         """Initializes internal structures of
         a descendant loader.
         """
         pass
+
+    def skip(self, amount):
+        """Skips amount of lines.
+        Useful for debugging
+        """
+        self._skip=amount
 
     def lines(self):
         """Generates lines and page/paragraph events

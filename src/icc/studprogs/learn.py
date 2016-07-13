@@ -9,6 +9,7 @@ import pymorphy2
 
 import icc.linkgrammar as lg
 import icc.studprogs.uctotokenizer as ucto
+from icc.studprogs.common import paragraph_symbol, Symbol
 
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
@@ -17,7 +18,7 @@ locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
 package=__name__
 TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
 TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
-TEST_FILE3="./grin.txt"
+TEST_FILE3=resource_stream("icc.studprogs","data/grin.txt")
 
 class MorphologicalTagger(object):
     """Tag a lexems in a stream morphoogically
@@ -188,6 +189,21 @@ def link_parsing2(_1,_2,limits):
         _print(par, rc, linkage)
 
 
+def test_sentence(stream, loader_class, limits):
+    l=loader_class(stream,
+        line_paragraph=False,
+        empty_line_paragraph=False,
+    )
+    #l.skip(200)
+    for sent in islice(l.sentences(),limits):
+        if type(sent) == Symbol:
+            if sent==paragraph_symbol:
+                print ()
+            else:
+                print ("->",sent)
+        else:
+            print (ucto.join(sent, no_symbols=True))
+
 def main(stream, loader_class, limit):
     """
 
@@ -215,9 +231,10 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 1000000
+    limit = 20000000
     # main(TEST_FILE1, limit)
     #link_parsing1(TEST_FILE2, loader.Loader, limit)
-    tokenize_test(TEST_FILE2, loader.Loader, limit)
+    #tokenize_test(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
+    test_sentence(TEST_FILE2, loader.Loader, limit)
     quit()

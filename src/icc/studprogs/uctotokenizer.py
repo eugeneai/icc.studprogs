@@ -9,6 +9,7 @@ def join(lexems,
          filter=[],
          decor=("",""),
          with_type=False,
+         no_symbols=False,
          subst={}
          ):
     """Joins sentence token into a string.
@@ -22,6 +23,7 @@ def join(lexems,
     - `decor`: Decorate tokens with symbols. E.g. decor=("[","]")
                produces "[<token>]".
     - `with_type`: Print each token as <token>/<token_type> is possible.
+    - `no_symbols`: Remove all symbols if True.
     - `subst`: A dictionary to substitute token of a type
                to a string. Useful to substitute unwanted
                ellpsis to, e.g., dot (".", "PUNCTUATION"),.
@@ -54,7 +56,9 @@ def join(lexems,
             else:
                 if only_rules:
                    continue
-                token=lexem
+                if no_symbols:
+                    continue
+                token=str(lexem)
             s.append(decor[0]+token+decor[1]+space)
         answer="".join(s).strip()
         return answer
@@ -87,7 +91,8 @@ def clean_join(sent, with_type=False, decor=("","")):
                  decor=decor,
                  subst={
                      "PUNCTUATION-MULTI":(".", "PUNCTUATION"),
-                 }
+                 },
+                 no_symbols=True
                 )
 
 class Tokenizer(object):
