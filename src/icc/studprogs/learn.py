@@ -150,8 +150,11 @@ def _print(par, rc, linkage):
 
 def link_parsing1(stream, loader_class, limits):
     l=loader_class(stream)
-    linkgram=LinkGrammar(l.paragraphs(join=True, style="hidden",
-                                                    only_words=False),
+    linkgram=LinkGrammar(l.paragraphs(join=True,
+                                      style="hidden",
+                                      only_words=False,
+                                      by_sentences=True
+                                  ),
                          only_valid=False)
     linkgram=islice(linkgram.paragraphs(verbose=0), limit)
     for par, rc, linkage in linkgram:

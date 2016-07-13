@@ -1,4 +1,4 @@
-from pymorphy2.tokenizers import simple_word_tokenize
+import ucto
 
 class Symbol(object):
     """Class of marker instances
@@ -20,7 +20,7 @@ class Symbol(object):
 
     __repr__=__str__
 
-    def mospace(self):
+    def nospace(self):
         return self._nospace()
 
     def mark(self, style=None):
@@ -40,6 +40,7 @@ line_tab=Symbol("line tab", r"-->", nospace=True)
 line_tail=Symbol("line tail", r"<--", nospace=True)
 line_start=Symbol("line start", "", nospace=True)
 line_end=Symbol("line end", "\n", nospace=True)
+sentence_end=Symbol("sentence end", "\n", nospace=True)
 symbol_anchor_start=Symbol("anchor", "<", nospace=True)
 symbol_anchor_end=Symbol("anchor", ">", nospace=False)
 font_bold_start = Symbol("start bold", "**", nospace=True)
@@ -76,14 +77,23 @@ class BaseLoader(object):
         raise RuntimeError("Implemented by a subclass")
 
     def sentences(self):
-        pass
+        sent = []
+        for lexem in self.lexems():
+            if type(lexem) == Symbol:
+                if lexem == sentence_end and sent:
+                    yield sent
+                    sent = []
+                else:
+                    yield lexem
 
     def paragraphs(self,
                    pages_are_paragraphs = True,
                    join=False,
                    style=None,
                    decorations=("",""),
-                   only_words=False):
+                   only_words=False,
+                   by_sentences=False
+    ):
         if join:
             for par in self.paragraphs(pages_are_paragraphs = pages_are_paragraphs,
                                 join=False):
@@ -133,12 +143,18 @@ class BaseLoader(object):
             yield paragraph
 
     def lexems(self):
+        tokenizer=ucto.Tokenizer()
         prev=None
         for line in self.lines():
             if type(line)==type(""):
-                for token in simple_word_tokenize(line):
+                tokenizer.process(line)
+                for token in tokenizer.tokens():
                     prev = token
                     yield token, {}
+                    if token.isendofsentence():
+                        yield sentence_end
+                    if token.isnewparagraph():
+                        pass
             else:
                 prev = line
                 yield line

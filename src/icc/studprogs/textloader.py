@@ -1,4 +1,4 @@
-from common import *
+from icc.studprogs.common import *
 
 class Loader(BaseLoader):
     """Loads text and divides it on [paragraph] lokens.
@@ -40,28 +40,28 @@ class Loader(BaseLoader):
         yield from linequeue
 
 
-    def lines(self):
-        """
-        
-        •
-        -
-        
-        """
-        endsents = [".","...","?","!"]
+    # def lines(self):
+    #     """
+    #     
+    #     •
+    #     -
+    #     
+    #     """
+    #     endsents = [".","...","?","!"]
 
-        for line in self.file:
-            uniline=line.decode(self.encoding)
+    #     for line in self.file:
+    #         uniline=line.decode(self.encoding)
 
-            s=[]
-            for c in uniline:
-                s.append(c)
-                for e in endsents:
-                    if e==c:
-                        if len(s)>2:
-                            yield "".join(s)
-                            yield paragraph_symbol
-                        s=[]
-            if len(s)>2:
-                yield "".join(s)
+    #         s=[]
+    #         for c in uniline:
+    #             s.append(c)
+    #             for e in endsents:
+    #                 if e==c:
+    #                     if len(s)>2:
+    #                         yield "".join(s)
+    #                         yield paragraph_symbol
+    #                     s=[]
+    #         if len(s)>2:
+    #             yield "".join(s)
 
-            yield paragraph_symbol
+    #         yield paragraph_symbol
