@@ -73,15 +73,12 @@ class Loader(BaseLoader):
             yield from self.raw_lines(e,style)
 
     def raw_lexems(self):
-        tokenizer=ucto.Tokenizer()
         for lors in self.raw_lines():
             if type(lors)!=tuple:
                 yield lors
                 continue
             phrase, style = lors
-            tokenizer.process(phrase)
-            for token in tokenizer.tokens():
-                yield token, style
+            yield from BaseLoader.lexems(self, from_line=phrase, style=style)
 
     def _proc_fontspec(self, e):
         a = self.attrib(e)

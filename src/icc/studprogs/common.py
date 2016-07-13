@@ -70,7 +70,7 @@ class BaseLoader(object):
         #                  as empty lines, i.e. "\n\n".
         self.options.setdefault("line_paragraph", True)
         self.options.setdefault("empty_line_paragraph", False)
-
+        self.tokenizer = ucto.Tokenizer(sentencedetection=True)
     def initialize(self):
         """Initializes internal structures of
         a descendant loader.
@@ -88,6 +88,7 @@ class BaseLoader(object):
         for lexem in self.lexems():
             if type(lexem) == Symbol:
                 if lexem == sentence_end and sent:
+                    assert sent[-1][0].isendofsentence()
                     yield sent
                     sent = []
                 else:
@@ -158,17 +159,24 @@ class BaseLoader(object):
         if paragraph:
             yield paragraph
 
-    def lexems(self):
-        tokenizer=ucto.Tokenizer(sentencedetection=True)
-        prev=None
-        for line in self.lines():
+    def lexems(self, from_line=None, style=None):
+        tokenizer=self.tokenizer
+        if style==None:
+            style={}
+        if from_line!=None:
+            src=[from_line]
+        else:
+            src=self.lines()
+
+        for line in src:
             if type(line)==type(""):
                 any_tok=False
                 tokenizer.process(line)
                 for token in tokenizer.tokens():
-                    prev = token
                     any_tok = True
-                    yield token, {}
+                    yield token, style
+                    if str(token)=="Программное":
+                        pass
                     if token.isendofsentence():
                         yield sentence_end
                     #if token.isnewparagraph():
@@ -179,12 +187,4 @@ class BaseLoader(object):
                 if self.options["empty_line_paragraph"] and not any_tok:
                     yield paragraph_symbol
             else:
-                prev = line
                 yield line
-        if prev == paragraph_symbol:
-            yield page_symbol
-            return
-        if prev == paragraph_symbol:
-            return
-        yield paragraph_symbol
-        yield page_symbol

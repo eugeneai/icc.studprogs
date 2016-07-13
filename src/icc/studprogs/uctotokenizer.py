@@ -28,7 +28,6 @@ def join(lexems,
     """
     s=[]
     only_rules=len(only)>=1
-
     try:
         for lexem in lexems:
             space=" "
@@ -41,12 +40,17 @@ def join(lexems,
                     continue
                 if token.nospace():
                     space=""
+                t=token
                 if tt in subst:
                     token,tt = subst[tt]
                 else:
                     token=str(token)
                 if with_type:
                     token+="/"+tt
+                    if t.isendofsentence():
+                        token+="<"
+                    if t.isbeginofsentence():
+                        token=">"+token
             else:
                 if only_rules:
                    continue
@@ -77,7 +81,7 @@ def clean_join(sent, with_type=False, decor=("","")):
                      "WORD",
                      "PUNCTUATION-MULTI",
                      "PUNCTUATION",
-                     "ABBREVIATION",
+                     #"ABBREVIATION",
                  ],
                  with_type=with_type,
                  decor=decor,

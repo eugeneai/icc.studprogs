@@ -153,9 +153,10 @@ def _print(par, rc, linkage):
 
 def tokenize_test(stream, loader_class, limits):
     l=loader_class(stream)
-    g=(ucto.clean_join(sent) for sent in l.sentences())
+    g=(ucto.join(sent, with_type=True) for sent in l.sentences())
     for sent in islice(g, limit):
         if type(sent)==str:
+            #print (".",end="")
             print (sent)
 
 def link_parsing1(stream, loader_class, limits):
@@ -214,9 +215,9 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 100
+    limit = 1000000
     # main(TEST_FILE1, limit)
-    link_parsing1(TEST_FILE2, loader.Loader, limit)
-    #tokenize_test(TEST_FILE2, loader.Loader, limit)
+    #link_parsing1(TEST_FILE2, loader.Loader, limit)
+    tokenize_test(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
     quit()
