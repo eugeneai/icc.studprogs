@@ -124,7 +124,7 @@ class LinkGrammar(object):
             anylink=False
             for rc, num, _lg in self.linkages(par):
                 if rc:
-                    linkage = _lg.diagram(num)
+                    linkage = _lg.diagram(num)+"\n"+_lg.pp_msgs(num)
                 else:
                     linkage = None
 
@@ -204,7 +204,7 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 100
+    limit = 1000000
     # main(TEST_FILE1, limit)
     link_parsing1(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
