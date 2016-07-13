@@ -1,4 +1,4 @@
-import ucto
+import icc.studprogs.uctotokenizer as ucto
 
 class Symbol(object):
     """Class of marker instances
@@ -52,7 +52,7 @@ class BaseLoader(object):
     """Implements basic loader functions.
     """
 
-    def __init__(self, file=None, encoding="utf-8"):
+    def __init__(self, file=None, encoding="utf-8", **kwargs):
         """
 
         Arguments:
@@ -63,6 +63,13 @@ class BaseLoader(object):
             file=open(file,"rb")
         self.file = file
         self.encoding = encoding
+        self.options = kwargs
+        # Options are not checked and defined as follows:
+        # line_paragraph - Each line is a paragraph.
+        # enpty_line_paragraph - Paragraphs recognized
+        #                  as empty lines, i.e. "\n\n".
+        self.options.setdefault("line_paragraph", True)
+        self.options.setdefault("empty_line_paragraph", False)
 
     def initialize(self):
         """Initializes internal structures of
@@ -147,14 +154,21 @@ class BaseLoader(object):
         prev=None
         for line in self.lines():
             if type(line)==type(""):
+                any_tok=False
                 tokenizer.process(line)
                 for token in tokenizer.tokens():
                     prev = token
+                    any_tok = True
                     yield token, {}
                     if token.isendofsentence():
                         yield sentence_end
-                    if token.isnewparagraph():
-                        pass
+                    #if token.isnewparagraph():
+                    #    pass
+                if self.options["line_paragraph"]:
+                    yield paragraph_symbol
+
+                if self.options["empty_line_paragraph"] and not any_tok:
+                    yield paragraph_symbol
             else:
                 prev = line
                 yield line
