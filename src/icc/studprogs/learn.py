@@ -8,6 +8,7 @@ import sys
 import pymorphy2
 
 import icc.linkgrammar as lg
+import icc.studprogs.uctotokenizer as ucto
 
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
@@ -54,11 +55,11 @@ class LinkGrammar(object):
     """
     """
 
-    def __init__(self, paragraphiterator, lang="ru", only_valid=True):
+    def __init__(self, iterator, lang="ru", only_valid=True):
         """Initialize class with
         paragraph iterator source
         """
-        self.paragraphiterator=paragraphiterator
+        self.iterator=iterator
         self.lg=lg.LinkGrammar(lang)
         self.make_options()
         self.lang=lang
@@ -113,8 +114,8 @@ class LinkGrammar(object):
                 print (i,v)
                 yield i<v, i, self.lg
 
-    def paragraphs(self, verbose=0):
-        for par in self.paragraphiterator:
+    def __call__(self, verbose=0):
+        for par in self.iterator:
             par=par.strip()
             if not par:
                 continue
@@ -148,15 +149,31 @@ def _print(par, rc, linkage):
         print ("---NO LINKAGE---")
 
 
+def tokenize_test(stream, loader_class, limits):
+    l=loader_class(stream)
+
+    g=(ucto.join(sent,
+                 only=[
+                     "WORD",
+                     "PUNCTUATION-MULTI",
+                     "PUNCTUATION",
+                     "ABBREVIATION",
+                 ],
+                 #with_type=True,
+                 #decor="[]",
+                 subst={
+                     "PUNCTUATION-MULTI":(".", "PUNCTUATION"),
+                 }
+             )
+       for sent in l.sentences())
+    for sent in islice(g, limit):
+        if type(sent)==str:
+            print (sent)
+
 def link_parsing1(stream, loader_class, limits):
     l=loader_class(stream)
-    linkgram=LinkGrammar(l.paragraphs(join=True,
-                                      style="hidden",
-                                      only_words=False,
-                                      by_sentences=True
-                                  ),
-                         only_valid=False)
-    linkgram=islice(linkgram.paragraphs(verbose=0), limit)
+    linkgram=LinkGrammar(ucto.join(l.sentences()), only_valid=False)
+    linkgram=islice(linkgram(verbose=0), limit)
     for par, rc, linkage in linkgram:
         _print(par, rc, linkage)
 
@@ -207,8 +224,9 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 1000000
+    limit = 1000
     # main(TEST_FILE1, limit)
-    link_parsing1(TEST_FILE2, loader.Loader, limit)
+    ## link_parsing1(TEST_FILE2, loader.Loader, limit)
+    tokenize_test(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
     quit()

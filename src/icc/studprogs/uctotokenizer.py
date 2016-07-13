@@ -4,7 +4,13 @@ from pkg_resources import resource_filename
 
 settingsfile=resource_filename("icc.studprogs","etc/tokconfig-generic")
 
-def join(lexems, only=[], filter=[], decor=("","")):
+def join(lexems,
+         only=[],
+         filter=[],
+         decor=("",""),
+         with_type=False,
+         subst={}
+         ):
     """Joins sentences into a string.
 
     Arguments:
@@ -15,21 +21,42 @@ def join(lexems, only=[], filter=[], decor=("","")):
     - `filter`: Filter out tokens of type mentioned in this list.
     - `decor`: Decorate tokens with symbols. E.g. decor=("[","]")
                produces "[<token>]".
+    - `with_type`: Print each token as <token>/<token_type> is possible.
+    - `subst`: A dictionary to substitute token of a type
+               to a string. Useful to substitute unwanted
+               ellpsis to, e.g., dot (".", "PUNCTUATION"),.
     """
     s=[]
     only_rules=len(only)>=1
-    for lexem in lexems:
-        space=" "
-        if type(lexem)==tuple:
-            token = lexem[0]
-            if token.type in filter:
-                continue
-            if only_rules and not token.type in only:
-                continue
-            if token.nospace():
-                space=""
-        s.append(decor[0]+str(token)+decor[1]+space)
-    return "".join(s)
+
+    try:
+        for lexem in lexems:
+            space=" "
+            if type(lexem)==tuple:
+                token = lexem[0]
+                tt=token.type()
+                if tt in filter:
+                    continue
+                if only_rules and not tt in only:
+                    continue
+                if token.nospace():
+                    space=""
+                if tt in subst:
+                    token,tt = subst[tt]
+                else:
+                    token=str(token)
+                if with_type:
+                    token+="/"+tt
+            else:
+                if only_rules:
+                   continue
+                token=lexem
+            s.append(decor[0]+token+decor[1]+space)
+        answer="".join(s).strip()
+        return answer
+
+    except TypeError:
+        return lexems
 
 class Tokenizer(object):
     """Utilization of ucto tokenizer as
