@@ -9,6 +9,10 @@ import pymorphy2
 
 import icc.linkgrammar as lg
 
+import locale
+locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
+
+
 package=__name__
 TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
 TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
@@ -65,9 +69,17 @@ class LinkGrammar(object):
 
     def make_options(self):
         self.lg.linkage_limit=1
-        self.lg.max_parse_time=10
+        #self.lg.max_parse_time=10
         self.lg.verbosity=1
-        self.lg.setup_abiword_soft() # self.lg.setup_abiword_main()
+        #self.lg.setup_abiword_main() # self.lg.setup_abiword_main()
+
+        #self.lg.disjunct_cost=2.0
+        self.lg.min_null_count=0
+        self.lg.max_null_count=100
+        self.lg.islands_ok=1
+        self.lg.max_parse_time=2
+
+        self.lg.reset_resources()
         pass
         # self.options=lg.ParseOptions(linkage_limit=1,
         #                              verbosity=0,
@@ -94,13 +106,12 @@ class LinkGrammar(object):
         print (repr(text))
         if self.only_valid:
             for i in range(min(self.lg.num_valid, self._maxlinkages)):
-                yield True, self.lg.diagram()
-                #yield True, "11111"
+                yield True, i, self.lg
         else:
             v=self.lg.num_valid
             for i in range(min(self.lg.num_linkages, self._maxlinkages)):
-                yield i<=v, self.lg.diagram()
-                #yield i<=v, "22222"
+                print (i,v)
+                yield i<v, i, self.lg
 
     def paragraphs(self, verbose=0):
         for par in self.paragraphiterator:
@@ -111,7 +122,12 @@ class LinkGrammar(object):
                 print ("PAR:", repr(par))
 
             anylink=False
-            for rc, linkage in self.linkages(par):
+            for rc, num, _lg in self.linkages(par):
+                if rc:
+                    linkage = _lg.diagram(num)
+                else:
+                    linkage = None
+
                 if verbose:
                     if rc:
                         print ("----SUCCEED------")
@@ -188,7 +204,7 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 100000000
+    limit = 100
     # main(TEST_FILE1, limit)
     link_parsing1(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
