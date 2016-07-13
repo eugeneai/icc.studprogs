@@ -11,10 +11,10 @@ def join(lexems,
          with_type=False,
          subst={}
          ):
-    """Joins sentences into a string.
+    """Joins sentence token into a string.
 
     Arguments:
-    - `lexemes`: List or generator of tokens or tuples
+    - `sent`: List or generator of tokens or tuples
                  with wirst item being a token. The result will
                  unclude str() of the token.
     - `only`: Include only tokens of type mentioned in this list.
@@ -57,6 +57,34 @@ def join(lexems,
 
     except TypeError:
         return lexems
+
+def clean_join(sent, with_type=False, decor=("","")):
+    """Joins sentence token into a string.
+    It is the same as join, but some arguments
+    are fixed to a reasonable values to get *clean*
+    sentence.
+
+    Arguments:
+    - `sent`: List or generator of tokens or tuples
+                 with wirst item being a token. The result will
+                 unclude str() of the token.
+    - `decor`: Decorate tokens with symbols. E.g. decor=("[","]")
+               produces "[<token>]".
+    - `with_type`: Print each token as <token>/<token_type> is possible.
+    """
+    return join(sent,
+                 only=[
+                     "WORD",
+                     "PUNCTUATION-MULTI",
+                     "PUNCTUATION",
+                     "ABBREVIATION",
+                 ],
+                 with_type=with_type,
+                 decor=decor,
+                 subst={
+                     "PUNCTUATION-MULTI":(".", "PUNCTUATION"),
+                 }
+                )
 
 class Tokenizer(object):
     """Utilization of ucto tokenizer as

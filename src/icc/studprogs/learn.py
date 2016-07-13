@@ -116,6 +116,8 @@ class LinkGrammar(object):
 
     def __call__(self, verbose=0):
         for par in self.iterator:
+            if type(par) != str:
+                continue
             par=par.strip()
             if not par:
                 continue
@@ -151,28 +153,16 @@ def _print(par, rc, linkage):
 
 def tokenize_test(stream, loader_class, limits):
     l=loader_class(stream)
-
-    g=(ucto.join(sent,
-                 only=[
-                     "WORD",
-                     "PUNCTUATION-MULTI",
-                     "PUNCTUATION",
-                     "ABBREVIATION",
-                 ],
-                 #with_type=True,
-                 #decor="[]",
-                 subst={
-                     "PUNCTUATION-MULTI":(".", "PUNCTUATION"),
-                 }
-             )
-       for sent in l.sentences())
+    g=(ucto.clean_join(sent) for sent in l.sentences())
     for sent in islice(g, limit):
         if type(sent)==str:
             print (sent)
 
 def link_parsing1(stream, loader_class, limits):
     l=loader_class(stream)
-    linkgram=LinkGrammar(ucto.join(l.sentences()), only_valid=False)
+    linkgram=LinkGrammar(
+        (ucto.clean_join(sent) for sent in l.sentences()),
+        only_valid=False)
     linkgram=islice(linkgram(verbose=0), limit)
     for par, rc, linkage in linkgram:
         _print(par, rc, linkage)
@@ -224,9 +214,9 @@ def debug_reverse(iterator):
     yield from r
 
 if __name__=="__main__":
-    limit = 1000
+    limit = 100
     # main(TEST_FILE1, limit)
-    ## link_parsing1(TEST_FILE2, loader.Loader, limit)
-    tokenize_test(TEST_FILE2, loader.Loader, limit)
+    link_parsing1(TEST_FILE2, loader.Loader, limit)
+    #tokenize_test(TEST_FILE2, loader.Loader, limit)
     #link_parsing1(TEST_FILE3, textloader.Loader, limit)
     quit()
