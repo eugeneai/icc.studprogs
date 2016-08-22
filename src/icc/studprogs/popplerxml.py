@@ -1,3 +1,4 @@
+from icc.studprogs.common import BaseLoader
 from icc.studprogs.common import *
 from lxml import html
 from collections import ChainMap
@@ -60,8 +61,8 @@ class Loader(BaseLoader):
             if e.tag in ["b", "i"]:
                 sstart, send = self.__class__.HTML_MARKUP[e.tag]
                 yield sstart
-                yield from self._texts(e, style.new_child(
-                    {"fontstyle": e.tag}))
+                yield from self._texts(e,
+                                       style.new_child({"fontstyle": e.tag}))
                 yield send
                 continue
             if e.tag in ["a"]:
@@ -82,7 +83,7 @@ class Loader(BaseLoader):
 
     def raw_lexems(self):
         for lors in self.raw_lines():
-            if type(lors) != tuple:
+            if not isinstance(lors, tuple):
                 yield lors
                 continue
             phrase, style = lors
@@ -94,9 +95,9 @@ class Loader(BaseLoader):
 
     def _texts(self, e, style):
         def _text(t, style):
-            if not type(t) == type(""):
+            if not isinstance(t, str):
                 return
-            if type(t) == type(b""):
+            if isinstance(t, bytes):
                 t = t.decode(self.encoding)
             yield t, style
 
@@ -175,9 +176,9 @@ class Loader(BaseLoader):
                 if abs(b - btl) <= LINE_THRESHOULD:
                     found = True
                     break
-                #if t>=ttl and t<=btl:
-                #    found=True
-                #    break
+                # if t>=ttl and t<=btl:
+                #     found=True
+                #     break
             if found:
                 if ld.b < b: ld.b = b
                 if ld.t > t: ld.t = t
@@ -264,7 +265,7 @@ class Loader(BaseLoader):
             nnum = 0
             tokenslen = len(tokens)
             for pt in par:
-                if type(pt) == Symbol:
+                if isinstance(pt, Symbol):
                     if not pt == sentence_end:
                         sent.append(pt)
                     continue
@@ -339,7 +340,7 @@ def test(limit=100):
         return islice(initer, limit)
 
     def just_lex(l):
-        if type(l) == tuple:
+        if isinstance(l, tuple):
             token = l[0]
             #token is an instance of ucto.Token, serialise to string using str()
             tok_type = token.type()
