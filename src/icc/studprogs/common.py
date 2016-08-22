@@ -63,7 +63,7 @@ class BaseLoader(object):
         - `file`: string filename or open [binary] file to be loaded.
         - `encoding`: encoding of input text defaults to utf-8.
         """
-        if type(file) == type(""):
+        if isinstance(file, str):
             file = open(file, "rb")
         self.file = file
         self.encoding = encoding
@@ -98,7 +98,7 @@ class BaseLoader(object):
     def sentences(self):
         sent = []
         for lexem in self.lexems():
-            if type(lexem) == Symbol:
+            if isinstance(lexem, Symbol):
                 if lexem == sentence_end and sent:
                     assert sent[-1][0].isendofsentence()
                     yield sent
@@ -128,7 +128,7 @@ class BaseLoader(object):
                 npar = []
                 for lexem in par:
                     space = " "
-                    if type(lexem) == tuple:
+                    if isinstance(lexem, tuple):
                         token, _style = lexem
                         try:
                             tok_type = token.type()
@@ -182,7 +182,7 @@ class BaseLoader(object):
             src = self.lines()
 
         for line in src:
-            if type(line) == type(""):
+            if isinstance(line, str):
                 any_tok = False
                 tokenizer.process(line)
                 for token in tokenizer.tokens():
