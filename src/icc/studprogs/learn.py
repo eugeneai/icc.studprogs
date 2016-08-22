@@ -1,6 +1,6 @@
 import icc.studprogs.popplerxml as loader
 import icc.studprogs.textloader as textloader
-#import pybison
+# import pybison
 from pkg_resources import resource_stream
 
 from itertools import islice, cycle
@@ -14,11 +14,11 @@ from icc.studprogs.common import paragraph_symbol, Symbol
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
 
+package = __name__
+TEST_FILE1 = resource_stream("icc.studprogs", "data/059285.txt")
+TEST_FILE2 = resource_stream("icc.studprogs", "data/059285.xml")
+TEST_FILE3 = resource_stream("icc.studprogs", "data/grin.txt")
 
-package=__name__
-TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
-TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
-TEST_FILE3=resource_stream("icc.studprogs","data/grin.txt")
 
 class MorphologicalTagger(object):
     """Tag a lexems in a stream morphoogically
@@ -29,8 +29,8 @@ class MorphologicalTagger(object):
         """Initialize class with
         lexem iterator source
         """
-        self.lexemiterator=lexemiterator
-        self.analyzer=None
+        self.lexemiterator = lexemiterator
+        self.analyzer = None
 
     def paragraphs(self):
         """Tag each token morphologically
@@ -41,16 +41,17 @@ class MorphologicalTagger(object):
             yield self._tag(paragraph)
 
     def _tag(self, par):
-        new_par=[]
+        new_par = []
         for lexeme in par:
-            if type(lexeme)==tuple:
+            if isinstance(lexeme, tuple):
                 token, attrs = lexeme
-                tok=str(token)
-                rc=self.analyzer.parse(tok)
-                new_par.append((token,attrs.new_child({"morph":rc})))
+                tok = str(token)
+                rc = self.analyzer.parse(tok)
+                new_par.append((token, attrs.new_child({"morph": rc})))
             else:
                 new_par.append(lexeme)
         return new_par
+
 
 class LinkGrammar(object):
     """
@@ -60,26 +61,26 @@ class LinkGrammar(object):
         """Initialize class with
         paragraph iterator source
         """
-        self.iterator=iterator
-        self.lg=lg.LinkGrammar(lang)
+        self.iterator = iterator
+        self.lg = lg.LinkGrammar(lang)
         self.make_options()
-        self.lang=lang
-        self.analyzer=None
-        self._maxlinkages=1
-        self._linkages=self._maxlinkages
-        self.only_valid=only_valid
+        self.lang = lang
+        self.analyzer = None
+        self._maxlinkages = 1
+        self._linkages = self._maxlinkages
+        self.only_valid = only_valid
 
     def make_options(self):
-        self.lg.linkage_limit=1
-        #self.lg.max_parse_time=10
-        self.lg.verbosity=1
-        #self.lg.setup_abiword_main() # self.lg.setup_abiword_main()
+        self.lg.linkage_limit = 1
+        # self.lg.max_parse_time=10
+        self.lg.verbosity = 1
+        # self.lg.setup_abiword_main() # self.lg.setup_abiword_main()
 
-        #self.lg.disjunct_cost=2.0
-        self.lg.min_null_count=0
-        self.lg.max_null_count=100
-        self.lg.islands_ok=1
-        self.lg.max_parse_time=2
+        # self.lg.disjunct_cost=2.0
+        self.lg.min_null_count = 0
+        self.lg.max_null_count = 100
+        self.lg.islands_ok = 1
+        self.lg.max_parse_time = 2
 
         self.lg.reset_resources()
         pass
@@ -94,115 +95,118 @@ class LinkGrammar(object):
         Arguments:
         - `text`: Input sentence.
         """
-        #dictionary=lg.Dictionary(self.lang)
-        #self.make_options()
+        # dictionary=lg.Dictionary(self.lang)
+        # self.make_options()
         self.lg.reset_resources()
         self.lg.parse(text)
-        #rc = sent.split()
-        #if rc < 0:
-        #    print ("--- Cannot split ---")
-        #    del sent
-        #    return iter(())
+        # rc = sent.split()
+        # if rc < 0:
+        #     print ("--- Cannot split ---")
+        #     del sent
+        #     return iter(())
 
-        print ("V:", self.lg.num_valid, "L:", self.lg.num_linkages)
-        print (repr(text))
+        print("V:", self.lg.num_valid, "L:", self.lg.num_linkages)
+        print(repr(text))
         if self.only_valid:
             for i in range(min(self.lg.num_valid, self._maxlinkages)):
                 yield True, i, self.lg
         else:
-            v=self.lg.num_valid
+            v = self.lg.num_valid
             for i in range(min(self.lg.num_linkages, self._maxlinkages)):
-                print (i,v)
-                yield i<v, i, self.lg
+                print(i, v)
+                yield i < v, i, self.lg
 
     def __call__(self, verbose=0):
         for par in self.iterator:
-            if type(par) != str:
+            if isinstance(par, str):
                 continue
-            par=par.strip()
+            par = par.strip()
             if not par:
                 continue
             if verbose:
-                print ("PAR:", repr(par))
+                print("PAR:", repr(par))
 
-            anylink=False
             for rc, num, _lg in self.linkages(par):
                 if rc:
-                    linkage = _lg.diagram(num)+"\n"+_lg.pp_msgs(num)
+                    linkage = _lg.diagram(num) + "\n" + _lg.pp_msgs(num)
                 else:
                     linkage = None
 
                 if verbose:
                     if rc:
-                        print ("----SUCCEED------")
+                        print("----SUCCEED------")
                     else:
-                        print ("----FAILED------")
+                        print("----FAILED------")
                 yield par, rc, linkage
+
 
 def _print(par, rc, linkage):
     """
     """
 
-    print ("PAR:",par)
+    print("PAR:", par)
     if linkage:
-        print (rc, linkage)
+        print(rc, linkage)
         if not rc:
-            print ("MSG:!!")
+            print("MSG:!!")
     else:
-        print ("---NO LINKAGE---")
+        print("---NO LINKAGE---")
 
 
 def tokenize_test(stream, loader_class, limits):
-    l=loader_class(stream)
-    g=(ucto.join(sent, with_type=True) for sent in l.sentences())
+    l = loader_class(stream)
+    g = (ucto.join(sent, with_type=True) for sent in l.sentences())
     for sent in islice(g, limit):
-        if type(sent)==str:
-            #print (".",end="")
-            print (sent)
+        if isinstance(sent, str):
+            print(sent)
+
 
 def link_parsing1(stream, loader_class, limits):
-    l=loader_class(stream)
-    linkgram=LinkGrammar(
-        (ucto.clean_join(sent) for sent in l.sentences()),
-        only_valid=False)
-    linkgram=islice(linkgram(verbose=0), limit)
+    l = loader_class(stream)
+    linkgram = LinkGrammar(
+        (ucto.clean_join(sent) for sent in l.sentences()), only_valid=False)
+    linkgram = islice(linkgram(verbose=0), limit)
     for par, rc, linkage in linkgram:
         _print(par, rc, linkage)
 
-def link_parsing11(stream, loader_class, limits):
-    l=loader_class(stream)
-    for par in l.paragraphs(join=True, style="hidden", only_words=False):
-        print (par)
 
-def link_parsing2(_1,_2,limits):
-    sent1='''Производственная практика проводится в структурных
+def link_parsing11(stream, loader_class, limits):
+    l = loader_class(stream)
+    for par in l.paragraphs(join=True, style="hidden", only_words=False):
+        print(par)
+
+
+def link_parsing2(_1, _2, limits):
+    sent1 = '''Производственная практика проводится в структурных
     подразделениях ИРНИТУ или других организациях.
     Для выполнения заданий самостоятельной работы по производственной
     практике вуз обеспечивает свободный доступ к библиотечным фондам,
     к сети Интернет и базам данных вуза и кафедры.'''
-    sent2='''Богатство заключается в многообразии потребностей и желаний.'''
-    sent3="Итогом преддипломной практики является выпускная квалификационная работа ."
-    linkgram=LinkGrammar([sent3,sent1,sent2], only_valid=False)
-    linkgram=islice(linkgram.paragraphs(verbose=0), limit)
+    sent2 = '''Богатство заключается в многообразии потребностей и желаний.'''
+    sent3 = "Итогом преддипломной практики является выпускная "\
+            "квалификационная работа ."
+    linkgram = LinkGrammar([sent3, sent1, sent2], only_valid=False)
+    linkgram = islice(linkgram.paragraphs(verbose=0), limit)
 
     for par, rc, linkage in linkgram:
         _print(par, rc, linkage)
 
 
 def test_sentence(stream, loader_class, limits):
-    l=loader_class(stream,
+    l = loader_class(
+        stream,
         line_paragraph=False,
-        empty_line_paragraph=False,
-    )
-    #l.skip(200)
-    for sent in islice(l.sentences(),limits):
-        if type(sent) == Symbol:
-            if sent==paragraph_symbol:
-                print ()
+        empty_line_paragraph=False, )
+    # l.skip(200)
+    for sent in islice(l.sentences(), limits):
+        if isinstance(sent, Symbol):
+            if sent == paragraph_symbol:
+                print()
             else:
-                print ("->",sent)
+                print("->", sent)
         else:
-            print (ucto.join(sent, no_symbols=True))
+            print(ucto.join(sent, no_symbols=True))
+
 
 def main(stream, loader_class, limit):
     """
@@ -210,31 +214,33 @@ def main(stream, loader_class, limit):
     Arguments:
     - `stream`: open stream to learn from
     """
-    l=loader_class(stream)
-    mt=MorphologicalTagger(l)
+    l = loader_class(stream)
+    mt = MorphologicalTagger(l)
     for paragraph in islice(mt.paragraphs(), limit):
         for word in paragraph:
             try:
                 token, attrs = word
-                t=str(token)
-                m=attrs["morph"]
-                t=t
-                ## t=t+"/"+str(m[0].normal_form)
-                ## t=str(m[0].normal_form)
+                t = str(token)
+                m = attrs["morph"]
+                t = t
+                # t=t+"/"+str(m[0].normal_form)
+                # t=str(m[0].normal_form)
             except TypeError:
-                t=str(word.mark())
-            print (t, end=" ")
-        print ("\n"+"-"*20)
+                t = str(word.mark())
+            print(t, end=" ")
+        print("\n" + "-" * 20)
+
 
 def debug_reverse(iterator):
-    r=reversed(list(iterator))
+    r = reversed(list(iterator))
     yield from r
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     limit = 20000000
     # main(TEST_FILE1, limit)
     link_parsing1(TEST_FILE2, loader.Loader, limit)
-    #tokenize_test(TEST_FILE2, loader.Loader, limit)
-    #link_parsing1(TEST_FILE3, textloader.Loader, limit)
-    #test_sentence(TEST_FILE2, loader.Loader, limit)
+    # tokenize_test(TEST_FILE2, loader.Loader, limit)
+    # link_parsing1(TEST_FILE3, textloader.Loader, limit)
+    # test_sentence(TEST_FILE2, loader.Loader, limit)
     quit()
