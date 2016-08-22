@@ -239,7 +239,7 @@ def debug_reverse(iterator):
 if __name__ == "__main__":
     limit = 20000000
     # main(TEST_FILE1, limit)
-    link_parsing1(TEST_FILE2, loader.Loader, limit)
+    link_parsing11(TEST_FILE2, loader.Loader, limit)
     # tokenize_test(TEST_FILE2, loader.Loader, limit)
     # link_parsing1(TEST_FILE3, textloader.Loader, limit)
     # test_sentence(TEST_FILE2, loader.Loader, limit)
