@@ -95,10 +95,10 @@ class Loader(BaseLoader):
 
     def _texts(self, e, style):
         def _text(t, style):
-            if not isinstance(t, str):
-                return
             if isinstance(t, bytes):
                 t = t.decode(self.encoding)
+            if not isinstance(t, str):
+                return
             yield t, style
 
         style = style.new_child({"element": e})

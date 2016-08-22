@@ -118,7 +118,7 @@ class LinkGrammar(object):
 
     def __call__(self, verbose=0):
         for par in self.iterator:
-            if isinstance(par, str):
+            if not isinstance(par, str):
                 continue
             par = par.strip()
             if not par:
