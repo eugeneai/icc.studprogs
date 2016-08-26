@@ -5,6 +5,7 @@ from lxml import etree
 
 package = __name__
 TEST_FILE1 = resource_filename("icc.studprogs", "data/xml-1-240-059285.xml")
+OFILE = TEST_FILE1.replace(".xml", "-{}.xml").replace("data/", "data/out/")
 
 
 class TestBasicXMLProc:
@@ -27,4 +28,27 @@ class TestBasicXMLProc:
           '''
         xml = etree.XML(xml)
         rc = self.xml.get_bbox(xml)
-        assert rc == [27,18,535,700]
+        assert rc == [27, 18, 535, 700]
+
+    def test_find_indents(self):
+        cont = self.xml.find_indents()
+        assert cont[0] and cont[1]
+
+    def test_find_indents_with_thr(self):
+        cont = self.xml.find_indents(indent_thr=5, tail_thr=5)
+        self.xml.write(OFILE.format("thr5"))
+        assert cont[0] and cont[1]
+
+    def test_recognition_paragraphs_simple(self, write=True):
+        self.xml.find_indents(indent_thr=5, tail_thr=5)
+        count = self.xml.simple_par()
+        if write:
+            self.xml.write(OFILE.format("thr5-simple_par"))
+        assert count > 0
+
+    def test_reduce(self):
+        self.test_recognition_paragraphs_simple(write=False)
+        self.xml.reduce_lines()
+        self.xml.form_par()
+        self.xml.reduce_style()
+        self.xml.write(OFILE.format("thr5-reduce-lines"))
