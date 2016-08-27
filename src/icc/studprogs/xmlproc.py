@@ -8,6 +8,7 @@ import icc.linkgrammar as lg
 import icc.studprogs.uctotokenizer as ucto
 from icc.studprogs.common import paragraph_symbol, Symbol
 
+import unicodedata
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
 
@@ -25,6 +26,7 @@ class XMLProcessor(object):
         """
         self.filename = filename
         self.tree = None
+        self.styles = None
 
     def load(self):
         if self.tree is None:
@@ -162,6 +164,79 @@ class XMLProcessor(object):
                         continue
                 prev_style = style
 
+    def style_names(self):
+        r = self.tree.getroot()
+        self.styles = styles = {}
+        style_counter = 0
+        style_storage = etree.Element("styles")
+        r.insert(0, style_storage)
+        for style in self.tree.iterfind("//style"):
+            attrib = style.attrib
+            for name, v in styles.items():
+                if attrib == v:
+                    break
+            else:  # for
+                style_counter += 1
+                name = "s{}".format(style_counter)
+                if attrib.get("bold", "0") != "0":
+                    name += "b"
+                if attrib.get("italic", "0") != "0":
+                    name += "i"
+                if attrib.get("underline", "0") != "0":
+                    name += "u"
+                s = etree.SubElement(style_storage, "styledef")
+
+                a = {}
+                a.update(attrib)
+                styles[name] = a
+
+                s.attrib.update(attrib)
+                s.set("id", name)
+            attrib.clear()
+            style.set("id", name)
+
+    def reduce_pars(self):
+        if self.styles is None:
+            raise RunTimeError("style_names must be run before")
+        prev_par = None
+        prev_style = None
+
+        for par in self.tree.iterfind("//par"):
+            par_removed = False
+            for style in par.iterfind("style"):
+                if prev_style is None or prev_par is None:
+                    prev_style = style
+                    continue
+                prev_text = prev_style.text.strip()
+                text = style.text.strip()
+                sp = prev_style.get("name")
+                sc = style.get("name")
+                pp = prev_style.getparent()
+                cp = style.getparent()
+                first_cat = unicodedata.category(text[0]) if len(
+                    text) > 0 else None
+                l = prev_text[-1] if len(prev_text) > 0 else ""
+                last_cat = unicodedata.category(prev_text[-1]) if len(
+                    prev_text) > 0 else None
+                if l in [",", '-'] and prev_par.get("tail") == "-1":
+                    pass
+                else:
+                    if pp is cp or not first_cat == last_cat or l in [
+                            ".", "?", "!"
+                    ] or first_cat == "Nd":
+                        prev_style = style
+                        continue
+                if sp == sc:
+                    prev_style.text += style.text
+                    par.remove(style)
+                for e in par.iterchildren():
+                    par.remove(e)
+                    prev_par.append(e)
+                par.getparent().remove(par)
+                par_removed = True
+            if not par_removed:
+                prev_par = par
+
     def remove_pages(self, text=True):
         # Loosing the bounding boxes
         for page in self.tree.iterfind("//page"):
@@ -178,6 +253,41 @@ class XMLProcessor(object):
                     t.remove(c)
                     t.addprevious(c)
                 t.getparent().remove(t)
+
+    def as_xhtml(self, inplace=True):
+        if not inplace:
+            tree = copy.deepcopy(self.tree)
+        else:
+            tree = self.tree
+        for e in tree.getiterator():
+            attrib = {}
+            attrib.update(e.attrib)
+            e.attrib.clear()
+            e.set("class", "pdf-" + e.tag)
+            if e.tag == "document":
+                e.tag = "div"
+            elif e.tag == "par":
+                e.tag = "p"
+            elif e.tag == "table":
+                e.getparent().remove(e)
+                e.clear()
+            elif e.tag == "style":
+                e.tag = "span"
+                e.set("class", "span " + attrib.get("id"))
+                p = e
+                if attrib.get("bold", "0") != "0":
+                    t = p.text
+                    p.text = None
+                    p = etree.SubElement(p, "b")
+                    p.text = t
+                if attrib.get("italic", "0") != "0":
+                    t = p.text
+                    p.text = None
+                    p = etree.SubElement(p, "i")
+                    p.text = t
+            else:
+                e.attrib.update(attrib)
+        return tree
 
     def get_bbox(self, tag, extents=False):
         keys = ["bbox-left", "bbox-top"]
