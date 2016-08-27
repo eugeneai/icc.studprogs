@@ -48,7 +48,12 @@ class TestBasicXMLProc:
 
     def test_reduce(self):
         self.test_recognition_paragraphs_simple(write=False)
+        self.xml.write(OFILE.format("before-reduce-lines"))
         self.xml.reduce_lines()
+        self.xml.write(OFILE.format("before-par"))
         self.xml.form_par()
         self.xml.reduce_style()
-        self.xml.write(OFILE.format("thr5-reduce-lines"))
+        self.xml.remove_pages()
+        of=OFILE.format("final")
+        print(of)
+        self.xml.write(of)

@@ -316,7 +316,7 @@ class Loader(BaseLoader):
 
     def get(self, d, *keys):
         """
-        Return tuple of values from the dictionary.
+        Return tuple of values from a dictionary.
         Arguments:
         - `d`: The dictionary to take values from;
         - `*keys`: values.

@@ -95,9 +95,15 @@ class XMLProcessor(object):
 
         prev_line = None
         for line in self.tree.iterfind("//line"):
+            if line.get("par-last", "0") == "0":
+                for tail in line.iterfind("tail"):
+                    line.set("par-last", "4")
+            if line.get("par-first", "0") == "0":
+                for ind in line.iterfind("indent"):
+                    line.set("par-first", "4")
             if line.get("par-first", "0") == "0":
                 if prev_line is not None and prev_line.get("par-last",
-                                                           "0") == "1":
+                                                           "0") != "0":
                     line.set("par-first", "3")
                     ind = etree.Element("indent")
                     ind.set("value", "0")
@@ -134,7 +140,8 @@ class XMLProcessor(object):
                 par.set("indent", i.get("value"))
                 while True:
                     n = i.getnext()
-                    if n is None:
+                    if n is None or n.tag == "indent":
+                        par.set("tail", "-1")
                         break
                     i.getparent().remove(n)
                     if n.tag == "tail":
@@ -150,10 +157,27 @@ class XMLProcessor(object):
             for style in par.iterfind("style"):
                 if prev_style is not None:
                     if prev_style.attrib == style.attrib:
-                        prev_style.text+=style.text
+                        prev_style.text += style.text
                         style.getparent().remove(style)
                         continue
                 prev_style = style
+
+    def remove_pages(self, text=True):
+        # Loosing the bounding boxes
+        for page in self.tree.iterfind("//page"):
+            number = page.get("number", None)
+            for par in page.iterfind(".//par"):
+                par.set("page-number", number)
+            for c in page.iterchildren():
+                page.remove(c)
+                page.addprevious(c)
+            page.getparent().remove(page)
+        if text:
+            for t in self.tree.iterfind("//text"):
+                for c in t.iterchildren():
+                    t.remove(c)
+                    t.addprevious(c)
+                t.getparent().remove(t)
 
     def get_bbox(self, tag, extents=False):
         keys = ["bbox-left", "bbox-top"]
