@@ -1,13 +1,14 @@
-from nose.tools import raises
+from nose.tools import raises, nottest
 from pkg_resources import resource_filename
 from icc.studprogs.xmlproc import XMLProcessor
 from lxml import etree
+from nose.plugins.skip import SkipTest
 
 package = __name__
 TEST_FILE1 = resource_filename("icc.studprogs", "data/xml-1-240-059285.xml")
 OFILE = TEST_FILE1.replace(".xml", "-{}.xml").replace("data/", "data/out/")
 
-
+@SkipTest
 class TestBasicXMLProc:
     def setUp(self):
         self.xml = XMLProcessor(TEST_FILE1)

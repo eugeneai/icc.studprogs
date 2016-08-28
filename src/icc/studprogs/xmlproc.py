@@ -19,13 +19,15 @@ class XMLProcessor(object):
     All manipulations made in-place.
     """
 
-    def __init__(self, filename):
+    def __init__(self, filename=None, tree=None):
         """
         parameters:
         `filename` is a filename of XML to load.
         """
+        if filename is None and tree is None:
+            raise ValueError("either filename or tree must be set")
         self.filename = filename
-        self.tree = None
+        self.tree = tree
         self.styles = None
 
     def load(self):

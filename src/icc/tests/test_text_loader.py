@@ -1,17 +1,18 @@
-from nose.tools import *
-import nose
+from nose.tools import raises
 import icc.studprogs.textloader as loader
 import icc.studprogs.uctotokenizer as ucto
 from icc.studprogs.common import Symbol
 from pkg_resources import resource_stream
 
-from itertools import islice, cycle
+from itertools import islice
+from nose.plugins.skip import SkipTest
 
 # TEST_FILE1=resource_stream("icc.studprogs","data/059285.txt")
 # TEST_FILE2=resource_stream("icc.studprogs","data/059285.xml")
 # TEST_FILE3=resource_stream("icc.studprogs","data/grin.txt")
 
 
+@SkipTest
 class Tests:
     def setUp(self):
         self.stream = resource_stream("icc.studprogs", "data/grin.txt")
