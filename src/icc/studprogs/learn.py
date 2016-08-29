@@ -4,6 +4,8 @@ import icc.studprogs.textloader as textloader
 from pkg_resources import resource_stream
 from lxml import etree
 
+from icc.studprogs.xmlproc import XMLProcessor
+
 from itertools import islice, cycle
 import sys
 import pymorphy2
@@ -142,6 +144,7 @@ class LinkGrammar(object):
 
 
 SECTION_RE = re.compile("(^(\d+\.?)+)")
+WORD_OPK = re.compile("\((о?п?к.+\d+)\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
 
@@ -154,21 +157,29 @@ class XMLTextPropertyExtractor(object):
         self.importer = importer(filename)
         self.morph = pymorphy2.MorphAnalyzer()
         self.tokenizer = ucto.Tokenizer()
+        self.xmlprocessor = None
 
     def load(self):
         if self.tree is None:
             self.importer.load()
             self.tree = self.importer.as_xml()
             del self.importer
+        if self.xmlprocessor is None:
+            self.xmlprocessor = XMLProcessor(tree=self.tree)
         return self.tree
 
     def par_process(self, proc_list):
         self.load()
         for par in self.tree.iterfind("//par"):
             text = etree.tostring(par, method="text", encoding=str)
-            text = self.preporocess_text(text)
+            ntext, words, tokens = self.preporocess_text(text)
             for p in proc_list:
-                p(par, text.strip())
+                if isinstance(p, tuple):
+                    args = p[1:]
+                    p = p[0]
+                else:
+                    args = []
+                p(par, ntext, words, tokens, *args)
 
     def words(self, text, with_tokens=False):
         t = SPACE_LIKE_RE.sub(" ", text)
@@ -185,20 +196,98 @@ class XMLTextPropertyExtractor(object):
 
     def preporocess_text(self, text):
         t = ""
-        for word, token in self.words(text, with_tokens=True):
-            t+=word
+        tokens = list(self.words(text, with_tokens=True))
+        for word, token in tokens:
+            t += word
             if not token.nospace():
-                t+=" "
-        return t
+                t += " "
+        return t, [t[0] for t in tokens], [t[1] for t in tokens]
 
-    def par_has_section_mark(self, par, text):
-        m = SECTION_RE.match(text)
+    def par_has_section_mark(self, par, text, words, tokens):
+        m = SECTION_RE.search(text)
         if m:
-            par.set("secion-mark", m.group(1))
+            mark = m.group(1)
+            par.set("seciton-mark", mark)
+            mark = mark.rstrip(".")
+            cnt = mark.count(".")
+            cnt += 1
+            par.set("secion-level", str(cnt))
+
+    def par_has_words(self, par, text, words, tokens, find_words=[]):
+        for w in find_words:
+            if w in words:
+                par.set("word-" + w, "1")
+
+    def par_opk_marks(self, par, text, words, tokens):
+        m = WORD_OPK.search(text)
+        if m is not None:
+            par.set("opk-sign", "1")
+            par.set("opk", m.group(1))
+
+    def par_has_compounds(self,
+                          par,
+                          text,
+                          words,
+                          tokens,
+                          compounds,
+                          dist=0,
+                          op=None):
+        lwords = len(words)
+        if lwords == 0:
+            return
+        for comp in compounds:
+            lcomp = len(comp)
+            if lcomp > lwords:
+                continue
+            first_comp = comp[0]
+            for i in range(lwords):
+                # print(words[i], first_comp)
+                if words[i] != first_comp:
+                    continue
+                # print("b", words[i:4], comp)
+                lastpos = i + lcomp - 1
+                try:
+                    if words[lastpos] != comp[-1]:
+                        continue
+                except IndexError:
+                    break
+                # print("e:", words[i+1:lastpos], comp[1:-1])
+                if words[i + 1:lastpos] != comp[1:-1]:
+                    continue
+                # print("w:")
+                par.set("compound-" + "-".join(comp), "1")
+                break
 
     def extract(self):
-        par_processors = [self.par_has_section_mark]
+        self.load()
+        par_processors = [
+            self.par_has_section_mark, self.par_opk_marks,
+            (self.par_has_words,
+             ["знать", "уметь", "владеть", "технология", "оценочный",
+              "средства", "ресурс", "интернет", "квалификация", "овладеть",
+              "освоить", "изучить", "формировать", "способный",
+              "совершенствовать", "понимать", "метод", "применение", "тема",
+              "раздел", "перечень", "лабораторный", "практический", "лекция",
+              "лекционный", "семинарский", "предусмотренный", "занятие",
+              "самостоятельный", "подготовка", "доклад", "экзамен", "зачет",
+              "оформление", "занятие", "оценочный", "средство",
+              "информационный", "обеспечение", "основной", "информационный",
+              "дополнительный", "электронный", "ресурс", "цель", "задача"]), (
+                  self.par_has_compounds, list(
+                      map(lambda x: x.split(" "), [
+                          "рабочий программа дисциплина",
+                          "специальность высший образование",
+                          "программа магистратура", "программа бакалавриат",
+                          "программа дисциплина", "задачи освоение дисциплина",
+                          "компетенция обучающийся", "обучающийся должный",
+                          "структура дисциплина", "содержание дисциплина",
+                          "оценочный средство", "код и наименование",
+                          "наименование дисциплина", "указать профиль"
+                      ])))
+        ]
+        self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
+        self.xmlprocessor.style_names()
 
     def write(self, filename):
         self.tree.write(
