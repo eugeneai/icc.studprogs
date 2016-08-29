@@ -1,0 +1,769 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+  <styles>
+    <styledef id="s1" bold="0" italic="0" underline="0" font-size="14.0"/>
+    <styledef id="s2b" bold="1" italic="0" underline="0" font-size="14.0"/>
+    <styledef id="s3" bold="0" italic="0" underline="0"/>
+    <styledef id="s4b" bold="1" italic="0" underline="0"/>
+    <styledef id="s5u" bold="0" italic="0" underline="1" font-size="14.0"/>
+    <styledef id="s6u" bold="0" italic="0" underline="1"/>
+    <styledef id="s7" bold="0" italic="0" underline="0" font-size="12.0"/>
+    <styledef id="s8i" bold="0" italic="1" underline="0" font-size="12.0"/>
+    <styledef id="s9" bold="0" italic="0" underline="0" font-name="Times New Roman" font-size="12.0"/>
+    <styledef id="s10" bold="0" italic="0" underline="0" font-name="Times New Roman" font-size="14.0"/>
+    <styledef id="s11bi" bold="1" italic="1" underline="0"/>
+    <styledef id="s12" bold="0" italic="0" underline="0" font-size="12.0"/>
+    <styledef id="s13" bold="0" italic="0" underline="0"/>
+    <styledef id="s14" bold="0" italic="0" underline="0"/>
+    <styledef id="s15" bold="0" italic="0" underline="0"/>
+    <styledef id="s16" bold="0" italic="0" underline="0"/>
+    <styledef id="s17i" bold="0" italic="1" underline="0"/>
+  </styles>
+  <section type="NEW-PAGE (2)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="CENTER (1)">
+    <style id="s1">АННОТАЦИЯ</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="CENTER (1)"
+       compound-рабочий-программа-дисциплина="1"
+       compound-программа-дисциплина="1" t-title="discipline-work-program">
+    <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="CENTER (1)" word-технология="1"
+       compound-наименование-дисциплина="1" t-field-name="discipline-name">
+    <style id="s2b">КомпьюТерные Технологии в науке и образовании</style>
+    <style id="s3"> (наименование дисциплины)</style>
+  </par>
+  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" word-подготовка="1" t-field-name="discipline-direction">
+    <style id="s3">Направление подготовки/специальность высшего образования:</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)">
+    <style id="s4b">---</style>
+    <style id="s5u">230100 «Информатика и вычислительная   техника</style>
+    <style id="s3"> </style>
+  </par>
+  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0"
+       space-after="0" alignment="CENTER (1)" word-подготовка="1"
+       compound-код-и-наименование="1" t-ignore="1">
+    <style id="s3">(код и наименование направления подготовки/специальности)</style>
+  </par>
+  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)"
+       compound-программа-магистратура="1" t-field-name="discipline-program">
+    <style id="s3">Программа магистратуры:</style>
+  </par>
+  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0">
+    <style id="s5u">Сети ЭВМ и телекоммуникации</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="CENTER (1)" word-подготовка="1"
+       compound-указать-профиль="1" t-ignore="1">
+    <style id="s3">(указать профиль подготовки/наименование магистерской программы/специализацию)</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" word-квалификация="1" t-field-name="qualification">
+    <style id="s3">Квалификация:        </style>
+    <style id="s6u">МАГИСТР</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="1." section-level="1"
+       word-цель="1" word-задача="1" t-section="aim-and-tasks">
+    <style id="s4b">1. Цели и задачи освоения дисциплины </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-технология="1" word-метод="1" word-применение="1"
+       word-средство="1" word-информационный="1" word-цель="1" t-topic="discipline-aim">
+    <style id="s7">Целью освоения дисциплины</style>
+    <style id="s4b"> </style>
+    <style id="s7">является изучение слушателями основных методов и средств применения современных информационных технологий в научно-исследовательской и образовательной деятельности. </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-задача="1" t-topic="discipline-tasks">
+    <style id="s7">Основными </style>
+    <style id="s8i">задачами курса</style>
+    <style id="s7"> являются:</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-метод="1" word-средство="1" t-topic="task-definition">
+    <style id="s7">− овладение современными методами и средствами автоматизированного анализа и систематизации научных данных;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-технология="1" word-информационный="1" t-topic="task-definition">
+    <style id="s7">−  освоение технологий модернизации образовательных программ на основе внедрения современных информационных технологий;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-средство="1" word-электронный="1" t-topic="task-definition">
+    <style id="s7">− изучение современных электронных средств поддержки образовательного процесса и приемов их интеграции с традиционными учебно-методическими материалами;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" word-ресурс="1" word-практический="1" t-topic="task-definition">
+    <style id="s7">− формирование практических навыков использования научно-образовательных ресурсов Internet в повседневной профессиональной деятельности исследователя и педагога. </style>
+  </par>
+  <par indent="13.65" left-indent="21.75" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="2." section-level="1"
+       word-формировать="1" compound-компетенция-обучающийся="1" t-section="list-of-competentions">
+    <style id="s4b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+    <style id="s3">Освоение программы настоящей дисциплины позволит сформировать у обучающегося следующие компетенции: </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" opk-sign="1" opk="ок-1" word-способный="1"
+       word-совершенствовать="1" t-topic="competention">
+    <style id="s9">Способен совершенствовать и развивать свой интеллектуальный и общекультурный уровень (ОК-1);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" opk-sign="1" opk="ок-2" word-понимать="1" t-topic="competention">
+    <style id="s9">способность понимать роль науки в развитии цивилизации, соотношение науки и техники, иметь представление о связанных с ними современных социальных и этических проблемах, понимать ценность научной рациональности и ее исторических типов (ОК-2);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="ок-3"
+       word-метод="1" word-самостоятельный="1" t-topic="competention">
+    <style id="s3">Способность к самостоятельному обучению новым методам исследования, к изменению научного и научно-производственного профиля своей профессиональной деятельности (ОК-3);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="ок-4" t-topic="competention">
+    <style id="s3">способность заниматься научными исследованиями (ОК-4);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="опк-5"
+       word-технология="1" word-метод="1" word-средство="1" t-topic="competention">
+    <style id="s3">владение методами и средствами получения, хранения, переработки и трансляции информации посредством современных компьютерных технологий, в том числе, в глобальных компьютерных сетях (ОПК-5);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="пк-1" t-topic="competention">
+    <style id="s3">знание основ философии и методологии науки (ПК-1);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="пк-2"
+       word-метод="1" t-topic="competention">
+    <style id="s3">знание методов научных исследований и владение навыками их проведения (ПК-2);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="пк-4"
+       word-метод="1" word-задача="1" t-topic="competention">
+    <style id="s3">владение существующими методами и алгоритмами решения задач распознавания и обработки данных (ПК-4);</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" opk-sign="1" opk="пк-7"
+       word-технология="1" word-метод="1" word-применение="1"
+       word-информационный="1" word-задача="1" t-topic="competention">
+    <style id="s3">применение перспективных методов исследования и решения профессиональных задач на основе знания мировых тенденций развития вычислительной техники и информационных технологий (ПК-7)</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" compound-обучающийся-должный="1" t-section="discipline-requirements">
+    <style id="s3">В результате освоения программы обучающийся должен:</style>
+  </par>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0"
+       space-after="0.0" alignment="JUSTIFY (3)" widow-control="True"
+       word-знать="1" t-field-name="discipline-requirements-know">
+    <style id="s3">знать:</style>
+    <style id="s1"> </style>
+  </par>
+  <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0"
+       space-after="0.0" alignment="JUSTIFY (3)" widow-control="True" >
+    <style id="s3">современное состояние исследований и разработок в области информатики и вычислительной техники;</style>
+  </par>
+  <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" word-задача="1">
+    <style id="s9">задачи развития информатизации в сфере науки и образования;</style>
+  </par>
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" word-технология="1">
+    <style id="s9">современный инструментарий компьютерных  технологий в науке и образовании;</style>
+  </par>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="21.3" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" widow-control="True"
+       word-уметь="1" t-topic="discipline-requirements-ability">
+    <style id="s3">уметь:</style>
+    <style id="s1"> </style>
+  </par>
+  <par indent="28.35" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-технология="1" word-задача="1">
+    <style id="s3">применять современный инструментарий компьютерных  технологий для  решения исследовательских задач в своей предметной области; </style>
+  </par>
+  <par indent="28.35" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-технология="1">
+    <style id="s3">Применять принципы обучения и современные инструменты компьютерных технологий для разработки курсов дистанционного образования; </style>
+  </par>
+  <par indent="21.25" left-indent="0.0" right-indent="0" space-before="0" space-after="6.0" alignment="JUSTIFY (3)" word-технология="1">
+    <style id="s9">готовить аналитические обзоры по перспективным направлениям компьютерных  технологий в науке и образовании.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" word-владеть="1" t-topic="discipline-requirements-can">
+    <style id="s3">владеть:</style>
+  </par>
+  <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0" space-after="0" word-метод="1">
+    <style id="s7">навыками саморазвития, самообучения, методами извлечения новых знаний;</style>
+  </par>
+  <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="False" word-метод="1" word-оформление="1" word-средство="1">
+    <style id="s9">методами и средствами разработки и оформления технической документации, а также  научно-технических отчётов, обзоров, публикаций по результатам выполненных исследований</style>
+    <style id="s10">.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" section-mark="3." section-level="1"
+       compound-структура-дисциплина="1" t-section="discipline-structure">
+    <style id="s4b">3. Основная структура дисциплины</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="4."
+       section-level="1" compound-содержание-дисциплина="1" t-section="discipline-content-description">
+    <style id="s4b">4. Содержание дисциплины</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="4.1."
+       section-level="2" word-раздел="1" word-перечень="1" t-section="discipline-contents">
+    <style id="s3">4.1. Перечень разделов и тем дисциплины</style>
+  </par>
+  <par indent="0" left-indent="28.35" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-технология="1" word-раздел="1" word-информационный="1">
+    <style id="s4b">РАЗДЕЛ 1. . ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ В НАУКЕ И ОБРАЗОВАНИИ</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="13.3" space-after="0" alignment="CENTER (1)" word-тема="1" word-задача="1">
+    <style id="s4b">ТЕМА 1.1 Информатизация общества и задачи его развития в сфере науки и образования </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="13.3" space-after="0" alignment="CENTER (1)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-цель="1">
+    <style id="s3">Причины информационного кризиса. Информатизация общества как выход из информационного кризиса. Цели формирования и развития информационного общества в Российской Федерации. Роль науки и образования в развитии российского рынка информационных технологий. Пути развития  информационных технологий для использования в научно-исследовательской и образовательной деятельности</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-технология="1" word-тема="1" word-информационный="1">
+    <style id="s4b">Тема 1.2.</style>
+    <style id="s11bi"> </style>
+    <style id="s4b">Информационные технологии </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1">
+    <style id="s3">Понятие информационной технологии. Виды</style>
+    <style id="s11bi"> </style>
+    <style id="s3">информационных технологий. Информационная технология обработки данных. Информационная технология управления. Информационная технология поддержки принятия решений. Информационная технология экспертных систем.</style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-тема="1">
+    <style id="s4b">Тема 1.3. Инструментарий компьютерных  технологий в науке и образовании </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-электронный="1">
+    <style id="s3">Гипертекст. Тезаурус гипертекста. Мультимедиа. Использование мультимедиа в сфере образования. Интеллектуальные технологии. Информационные хранилища</style>
+    <style id="s4b">. </style>
+    <style id="s3">Системы электронного документооборота.</style>
+    <style id="s4b"> </style>
+    <style id="s3">Геоинформационные системы. Видеоконференция</style>
+    <style id="s4b">.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-тема="1">
+    <style id="s4b">Тема 1.4. Технологии искусственного интеллекта </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-средство="1">
+    <style id="s3">Направления развития искусственного интеллекта.  Данные и знания. Модели представления знаний. Стратегии получения знаний. Экспертные системы: структура и классификация. Инструментальные средства построения экспертных систем</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
+    <style id="s4b">Тема 1.5. Автоматизированные системы научных исследований (АСНИ) </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-основной="1" word-цель="1">
+    <style id="s3">Определение АСНИ. Сфера использования АСНИ. Цели создания АСНИ. Функции АСНИ. Структура АСНИ. Основные принципы создания АСНИ </style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-раздел="1">
+    <style id="s7"> РАЗДЕЛ 2.</style>
+    <style id="s12"> </style>
+    <style id="s7">КОМПЬЮТЕРНЫЕ ТЕХНОЛОГИИ В ОБРАЗОВАНИИ</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1">
+    <style id="s4b">Тема 2.1. Стандарт SCORM </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-обеспечение="1">
+    <style id="s3">История создания. Структура  учебных блоков и пакетов учебного  материала. </style>
+    <style id="s13">Среда выполнения.</style>
+    <style id="s3"> </style>
+    <style id="s13">Системы управления  обучением,  совместимые со SCORM.</style>
+    <style id="s3"> </style>
+    <style id="s13">Программное  обеспечение,  позволяющее  создавать  SCORM  совместимый  контент. </style>
+    <style id="s3">Книги </style>
+    <style id="s14"> </style>
+    <style id="s3">SCORM.  </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1">
+    <style id="s4b"> Тема 2.2. Дистанционное обучение </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-технология="1">
+    <style id="s3">Этапы развития обучения с использованием компьютерных технологий. </style>
+    <style id="s15">Преимущества </style>
+    <style id="s3"> дистанционного обучения. Формы дистанционного обучения. Проблемы внедрения дистанционного обучения.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1" word-электронный="1">
+    <style id="s4b">Тема 2.3. Электронное обучение – е-learning </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-электронный="1">
+    <style id="s3">Отличительные особенности и преимущества е-learning. Виды электронного обучения. Проблемы внедрения электронного обучения. </style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
+    <style id="s4b">Тема 2.4. Управление образовательным процессом</style>
+    <style id="s16"> </style>
+  </par>
+  <par indent="0" left-indent="7.1" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-информационный="1" word-основной="1">
+    <style id="s16">Понятия, используемые в процессе управления в образовании. Основные области управленческой деятельности в образовании. Типы систем управления.</style>
+    <style id="s3"> Информационные системы управления образованием.</style>
+  </par>
+  <par indent="0" left-indent="7.1" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="35.45" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" word-раздел="1">
+    <style id="s9">РАЗДЕЛ 3.</style>
+    <style id="s7"> ОБУЧАЮЩАЯ СРЕДА</style>
+    <style id="s9"> MOODLE</style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
+    <style id="s4b">Тема 3.1. Принципы обучения , заложенные в обучающую среду Moodle </style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+    <style id="s3">Конструкционизм, социальный конструктивизм. Пять принципов социального конструктивизма.</style>
+    <style id="s4b"> </style>
+    <style id="s3">Основы успешного обучения. Правила организации учебного материала.</style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
+    <style id="s4b">Тема 3.2. Администрирование системы обучения Moodle </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0">
+    <style id="s3">Общие принципы работы в Moodle.</style>
+    <style id="s17i"> </style>
+    <style id="s3">Создание учетных записей. Работа со списком пользователей. Настройка элементов курса.</style>
+  </par>
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" word-электронный="1">
+    <style id="s4b">Тема 3.3. Создание электронного учебного курса в Moodle </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-ресурс="1">
+    <style id="s3">Создание категории курса. Создание курса. Наполнение курса. Ресурсы курса, элементы курса. Добавление элементов курса и ресурсов. Создание тестов.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="4.2."
+       section-level="2" word-перечень="1" word-лабораторный="1" t-section="list-laboratory-tasks">
+    <style id="s3">4.2. Перечень лабораторных работ</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+    <style id="s3">Не предусмотрены</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="4.3."
+       section-level="2" word-перечень="1" word-практический="1"
+       word-семинарский="1" word-занятие="1" t-section="list-seminars">
+    <style id="s3">4.3. Перечень практических (семинарских)  занятий</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-практический="1" word-занятие="1" word-информационный="1">
+    <style id="s3">Практическое занятие №1.</style>
+    <style id="s1"> </style>
+    <style id="s3">Роль науки и образования в развитии российского рынка информационных технологий (семинар)</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-практический="1" word-занятие="1" word-информационный="1">
+    <style id="s3">Практическое занятие №2 Современные информационные технологии (семинар)</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-практический="1" word-занятие="1">
+    <style id="s3">Практическое занятие №3 Инструментарий компьютерных  технологий в науке и образовании (семинар)</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1" word-электронный="1">
+    <style id="s3">Практическое занятие № Проблемы внедрения электронного обучения (семинар).</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1">
+    <style id="s3">Практическое занятие №5. Обзор современных систем дистанционного образования (семинар) </style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-лекция="1" word-занятие="1">
+    <style id="s3">Практическое занятие №6. Создание лекции  в Moodle</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1">
+    <style id="s3">Практическое занятие №7. Создание тестов  в Moodle.</style>
+  </par>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="4.4."
+       section-level="2" word-перечень="1" word-самостоятельный="1" t-section="list-self-work">
+    <style id="s3">4.4. Перечень заданий по  самостоятельной работе студентов (включая курсовой проект, курсовую работу)</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1" word-подготовка="1">
+    <style id="s3">подготовка к практическим занятиям;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-подготовка="1" word-экзамен="1">
+    <style id="s3">подготовка к экзамену;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-раздел="1">
+    <style id="s3">проработка отдельных разделов теоретического курса;</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-доклад="1" word-оформление="1">
+    <style id="s3">Оформление докладов и презентаций </style>
+  </par>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="28.35" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" word-технология="1" t-section="educational-technologies">
+    <style id="s4b">Образовательные технологии, применяемые для реализации программы. </style>
+  </par>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-занятие="1">
+    <style id="s3">При реализации данной программы применяются инновационные технологии обучения, активные и интерактивные формы проведения занятий, указанные в таблице 2. </style>
+  </par>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)"/>
+  <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="RIGHT (2)" word-технология="1">
+    <style id="s3">Таблица 2 -  Применяемые образовательные технологии  </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0.0" left-indent="0.0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" word-технология="1"
+       word-оценочный="1" word-средство="1" compound-оценочный-средство="1" t-section="evaluation">
+    <style id="s4b">Оценочные средства и технологии </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="1." section-level="1">
+    <style id="s1">1. </style>
+    <style id="s3">Промежуточное тестирование </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="2." section-level="1" word-доклад="1">
+    <style id="s3">2. Выступление с докладом и презентацией.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="3." section-level="1" word-лекция="1">
+    <style id="s3">3. Экспресс-тестирование на лекции.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4." section-level="1" word-экзамен="1">
+    <style id="s3">4. Экзамен.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" section-mark="7."
+       section-level="1" word-информационный="1" word-обеспечение="1" t-section="informational-resources">
+    <style id="s4b">7. Рекомендуемое информационное обеспечение дисциплины</style>
+  </par>
+  <par indent="0.0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" section-mark="7.1." section-level="2" t-section="literature-basis">
+    <style id="s3">7.1. Основная литература</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1">
+    <style id="s3">Компьютерные технологии в науке, технике и образовании : учеб. пособие / Б. Б. Пономарев [и др.]; под общ. ред. А. И. Промптова. - Иркутск : ИрГТУ, 2000. - 395 с. : a-ил </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1">
+    <style id="s3">Трайнев Владимир Алексеевич Новые информационные коммуникационные технологии в образовании / В. А. Трайнев, В. Ю. Теплышев, И. В. Трайнев. - 2-е изд. - Москва : Дашков и К°, 2013. - 317 с. </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0.0" alignment="JUSTIFY (3)" widow-control="False"
+       section-mark="7.2." section-level="2" word-дополнительный="1" t-section="literature-auxiliary">
+    <style id="s3">7.2. Дополнительная литература</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-информационный="1">
+    <style id="s3">О государственной программе Российской Федерации "Информационное общество  (2011 - 2020 годы)". Распоряжение от 20 октября 2010 г. n 1815-р</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1">
+    <style id="s3">Логинов Владимир Николаевич Информационные технологии управления : учебное пособие по специальности "Государственное и муниципальное управление" / В. Н. Логинов. - 2-е изд., стер. - М. : КНОРУС, 2012. - 238 с. : a-ил </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0" alignment="JUSTIFY (3)" widow-control="True"
+       word-ресурс="1" word-электронный="1" t-section="informational-resources-electronic">
+    <style id="s3">7.3. Электронные образовательные ресурсы</style>
+  </par>
+  <par indent="0" left-indent="35.4" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+    <style id="s3">Сетевой диск кафедры ВТ </style>
+  </par>
+  <par indent="0" left-indent="17.45" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="7.4." section-level="2" word-ресурс="1" word-интернет="1">
+    <style id="s3">7.4. Ресурсы сети Интернет</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+    <style id="s1">http://www.intuit.ru </style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0">
+    <style id="s10">http://moodle-center.ru/</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0">
+    <style id="s10">http://docs.moodle.org/en/Philosophy.</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0">
+    <style id="s10">http://docs.moodle.org/en/Pedagogy</style>
+  </par>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+  <table num-rows="10" num-columns="3">
+    <cell x="0" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Вид учебной работы</style>
+      </par>
+    </cell>
+    <cell x="1" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Количество часов</style>
+      </par>
+    </cell>
+    <cell x="2" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Количество часов</style>
+      </par>
+    </cell>
+    <cell x="0" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Вид учебной работы</style>
+      </par>
+    </cell>
+    <cell x="1" y="1" w="0" h="0" p="-1">
+      <par indent="2.3" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Всего</style>
+      </par>
+    </cell>
+    <cell x="2" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Семестр</style>
+      </par>
+    </cell>
+    <cell x="0" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Вид учебной работы</style>
+      </par>
+    </cell>
+    <cell x="1" y="2" w="0" h="0" p="-1">
+      <par indent="2.3" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">Всего</style>
+      </par>
+    </cell>
+    <cell x="2" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+        <style id="s4b">№ 2</style>
+      </par>
+    </cell>
+    <cell x="0" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+        <style id="s3">Общая трудоемкость дисциплины</style>
+      </par>
+    </cell>
+    <cell x="1" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="144" section-level="1">
+        <style id="s3">144</style>
+      </par>
+    </cell>
+    <cell x="2" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="144" section-level="1">
+        <style id="s3">144</style>
+      </par>
+    </cell>
+    <cell x="0" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-занятие="1">
+        <style id="s3">Аудиторные занятия, в том числе:</style>
+      </par>
+    </cell>
+    <cell x="1" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="39" section-level="1">
+        <style id="s3">39</style>
+      </par>
+    </cell>
+    <cell x="2" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="39" section-level="1">
+        <style id="s3">39</style>
+      </par>
+    </cell>
+    <cell x="0" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-лекция="1">
+        <style id="s3">лекции</style>
+      </par>
+    </cell>
+    <cell x="1" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="13" section-level="1">
+        <style id="s3">13</style>
+      </par>
+    </cell>
+    <cell x="2" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="13" section-level="1">
+        <style id="s3">13</style>
+      </par>
+    </cell>
+    <cell x="0" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-лабораторный="1">
+        <style id="s3">лабораторные работы</style>
+      </par>
+    </cell>
+    <cell x="1" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="26" section-level="1">
+        <style id="s3">26</style>
+      </par>
+    </cell>
+    <cell x="2" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="26" section-level="1">
+        <style id="s3">26</style>
+      </par>
+    </cell>
+    <cell x="0" y="7" w="0" h="0" p="-1">
+      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1">
+        <style id="s3">практические занятия</style>
+      </par>
+    </cell>
+    <cell x="1" y="7" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+    </cell>
+    <cell x="2" y="7" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)"/>
+    </cell>
+    <cell x="0" y="8" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-самостоятельный="1">
+        <style id="s3">Самостоятельная работа (в том числе курсовое проектирование, курсовая работа)</style>
+      </par>
+    </cell>
+    <cell x="1" y="8" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="69" section-level="1">
+        <style id="s3">69</style>
+      </par>
+    </cell>
+    <cell x="2" y="8" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="69" section-level="1">
+        <style id="s3">69</style>
+      </par>
+    </cell>
+    <cell x="0" y="9" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+        <style id="s3">Вид промежуточной аттестации (итогового контроля по дисциплине)</style>
+      </par>
+    </cell>
+    <cell x="1" y="9" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="36" section-level="1">
+        <style id="s3">36</style>
+      </par>
+    </cell>
+    <cell x="2" y="9" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="36" section-level="1">
+        <style id="s3">36</style>
+      </par>
+    </cell>
+  </table>
+  <table num-rows="7" num-columns="4">
+    <cell x="0" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1">
+        <style id="s4b">Технологии</style>
+      </par>
+    </cell>
+    <cell x="1" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-лекция="1">
+        <style id="s4b">Лекции</style>
+      </par>
+    </cell>
+    <cell x="2" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0">
+        <style id="s4b">Прак. раб.</style>
+      </par>
+    </cell>
+    <cell x="3" y="0" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0">
+        <style id="s4b">СРС</style>
+      </par>
+    </cell>
+    <cell x="0" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0">
+        <style id="s3">Проблемное обучение  </style>
+      </par>
+    </cell>
+    <cell x="1" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="2" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="3" y="1" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1">
+        <style id="s3">4</style>
+      </par>
+    </cell>
+    <cell x="0" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0">
+        <style id="s3">Разбор конкретных ситуаций </style>
+      </par>
+    </cell>
+    <cell x="1" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="2" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="3" y="2" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1">
+        <style id="s3">4</style>
+      </par>
+    </cell>
+    <cell x="0" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" word-применение="1">
+        <style id="s3">Применение слайд-материалов</style>
+      </par>
+    </cell>
+    <cell x="1" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="2" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="3" y="3" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1">
+        <style id="s3">4</style>
+      </par>
+    </cell>
+    <cell x="0" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0">
+        <style id="s3">Общая дискуссия </style>
+      </par>
+    </cell>
+    <cell x="1" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="2" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="3" y="4" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+    </cell>
+    <cell x="0" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" alignment="LEFT (0)" word-метод="1">
+        <style id="s3">Проектный метод</style>
+      </par>
+    </cell>
+    <cell x="1" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+    </cell>
+    <cell x="2" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1">
+        <style id="s3">2</style>
+      </par>
+    </cell>
+    <cell x="3" y="5" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1">
+        <style id="s3">4</style>
+      </par>
+    </cell>
+    <cell x="0" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" alignment="LEFT (0)">
+        <style id="s3">Командная работа</style>
+      </par>
+    </cell>
+    <cell x="1" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+    </cell>
+    <cell x="2" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0"/>
+    </cell>
+    <cell x="3" y="6" w="0" h="0" p="-1">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1">
+        <style id="s3">4</style>
+      </par>
+    </cell>
+  </table>
+</document>
