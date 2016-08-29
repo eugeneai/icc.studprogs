@@ -51,6 +51,6 @@ class TestBasicLoad:
         xml = XMLProcessor(tree=tree)
         xml.reduce_style()
         # xml.remove_pages()
-        # xml.style_names()
+        xml.style_names()
         # xml.reduce_pars()
         xml.write(fn)
