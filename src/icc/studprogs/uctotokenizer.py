@@ -2,16 +2,16 @@
 import ucto
 from pkg_resources import resource_filename
 
-settingsfile=resource_filename("icc.studprogs","etc/tokconfig-generic")
+settingsfile = resource_filename("icc.studprogs", "etc/tokconfig-generic")
+
 
 def join(lexems,
          only=[],
          filter=[],
-         decor=("",""),
+         decor=("", ""),
          with_type=False,
          no_symbols=False,
-         subst={}
-         ):
+         subst={}):
     """Joins sentence token into a string.
 
     Arguments:
@@ -28,45 +28,46 @@ def join(lexems,
                to a string. Useful to substitute unwanted
                ellpsis to, e.g., dot (".", "PUNCTUATION"),.
     """
-    s=[]
-    only_rules=len(only)>=1
+    s = []
+    only_rules = len(only) >= 1
     try:
         for lexem in lexems:
-            space=" "
-            if type(lexem)==tuple:
+            space = " "
+            if type(lexem) == tuple:
                 token = lexem[0]
-                tt=token.type()
+                tt = token.type()
                 if tt in filter:
                     continue
                 if only_rules and not tt in only:
                     continue
                 if token.nospace():
-                    space=""
-                t=token
+                    space = ""
+                t = token
                 if tt in subst:
-                    token,tt = subst[tt]
+                    token, tt = subst[tt]
                 else:
-                    token=str(token)
+                    token = str(token)
                 if with_type:
-                    token+="/"+tt
+                    token += "/" + tt
                     if t.isendofsentence():
-                        token+="<"
+                        token += "<"
                     if t.isbeginofsentence():
-                        token=">"+token
+                        token = ">" + token
             else:
                 if only_rules:
-                   continue
+                    continue
                 if no_symbols:
                     continue
-                token=str(lexem)
-            s.append(decor[0]+token+decor[1]+space)
-        answer="".join(s).strip()
+                token = str(lexem)
+            s.append(decor[0] + token + decor[1] + space)
+        answer = "".join(s).strip()
         return answer
 
     except TypeError:
         return lexems
 
-def clean_join(sent, with_type=False, decor=("","")):
+
+def clean_join(sent, with_type=False, decor=("", "")):
     """Joins sentence token into a string.
     It is the same as join, but some arguments
     are fixed to a reasonable values to get *clean*
@@ -80,20 +81,21 @@ def clean_join(sent, with_type=False, decor=("","")):
                produces "[<token>]".
     - `with_type`: Print each token as <token>/<token_type> is possible.
     """
-    return join(sent,
-                 only=[
-                     "WORD",
-                     "PUNCTUATION-MULTI",
-                     "PUNCTUATION",
-                     #"ABBREVIATION",
-                 ],
-                 with_type=with_type,
-                 decor=decor,
-                 subst={
-                     "PUNCTUATION-MULTI":(".", "PUNCTUATION"),
-                 },
-                 no_symbols=True
-                )
+    return join(
+        sent,
+        only=[
+            "WORD",
+            "PUNCTUATION-MULTI",
+            "PUNCTUATION",
+            #"ABBREVIATION",
+        ],
+        with_type=with_type,
+        decor=decor,
+        subst={
+            "PUNCTUATION-MULTI": (".", "PUNCTUATION"),
+        },
+        no_symbols=True)
+
 
 class Tokenizer(object):
     """Utilization of ucto tokenizer as
@@ -113,16 +115,16 @@ class Tokenizer(object):
         #   sentenceperlineoutput=False,
         #   sentencedetection=True, paragraphdetection=True, quotedetectin=False,
         #   debug=False
-        defaults={
-            'lowercase':False,
-            'uppercase':False,
-            'sentencedetection':False,
-            'paragraphdetection':False,
-            'quotedetection':False,
-            'sentenceperlineinput':False,
-            'sentenceperlineoutput':False,
-            'debug':False
-            }
+        defaults = {
+            'lowercase': False,
+            'uppercase': False,
+            'sentencedetection': False,
+            'paragraphdetection': False,
+            'quotedetection': False,
+            'sentenceperlineinput': False,
+            'sentenceperlineoutput': False,
+            'debug': False
+        }
 
         defaults.update(kwargs)
 
@@ -155,6 +157,7 @@ class Tokenizer(object):
         """
         self.tokenizer.process(text)
 
+
 '''
 #pass the text (may be called multiple times),
 tokenizer.process(text)
@@ -166,6 +169,7 @@ tokenizer.process("This was not enough. We want more text. More sentences are be
 for sentence in tokenizer.sentences():
     print(sentence)
 '''
+
 
 def test():
     text = """To be or not to be, that's the question. This is a test to tokenise. We can span
@@ -187,7 +191,7 @@ def test():
         for line in text.split("\n\n"):
             yield line
 
-    print ("\n\nThe first demo, TOKEN recognition. -------")
+    print("\n\nThe first demo, TOKEN recognition. -------")
     t = Tokenizer(textgen())
 
     #read the tokenised data
@@ -195,22 +199,23 @@ def test():
         if token.isnewparagraph():
             print("\t", end="")
         #token is an instance of ucto.Token, serialise to string using str()
-        print(  "[" + str(token) + "]", end="" )
+        print("[" + str(token) + "]", end="")
 
         #tokens remember whether they are followed by a space
         if token.isendofsentence():
             print(r"\\")
         elif not token.nospace():
-            print(" ",end="")
+            print(" ", end="")
 
         #the type of the token (i.e. the rule that build it) is available as token.type
 
-    print ("\n\nThe Second demo, sentence recognition. -------")
+    print("\n\nThe Second demo, sentence recognition. -------")
 
     t = Tokenizer(textgen())
     for sentence in t.sentences():
-        print (sentence)
+        print(sentence)
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     test()
     quit()
