@@ -48,7 +48,7 @@ class TestBasicLoad:
         fn = self.output_filename.replace(".xml", "-reduced.xml")
         tree = self.doc.as_xml()
         assert tree is not None
-        xml = XMLProcessor(tree = tree)
+        xml = XMLProcessor(tree=tree)
         xml.reduce_style()
         # xml.remove_pages()
         # xml.style_names()
