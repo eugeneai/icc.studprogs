@@ -20,6 +20,7 @@ class Importer(object):
             return
 
         self.doc = Document(self.filename)
+        return self.doc
 
     def as_xml(self):
         if self.doc is None:
@@ -61,6 +62,13 @@ class Importer(object):
             self.set(p, "right-indent", par_format.right_indent, "0", pt=True)
             self.set(p, "space-before", par_format.space_before, "0", pt=True)
             self.set(p, "space-after", par_format.space_after, "0", pt=True)
+
+            self.set(p, "keep-together", par_format.keep_together) # Paragraph have to be on the same page
+            self.set(p, "keep-with-next", par_format.keep_with_next)
+            self.set(p, "page-break-before", par_format.page_break_before)
+
+            self.set(p, "alignment", par_format.alignment)
+            self.set(p, "widow-control", par_format.widow_control)
             for run in par.runs:
                 r = etree.SubElement(p, "style")
                 r.set("id", run.style.name)

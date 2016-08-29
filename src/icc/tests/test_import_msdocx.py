@@ -13,7 +13,7 @@ EXT_PATTERN = "*.docx"
 
 FILES = glob(os.path.join(DATA_DIR, EXT_PATTERN))
 
-
+@SkipTest
 class TestFileToBeLoaded:
     def test_files(self):
         docs = [Importer(f) for f in FILES]
@@ -21,7 +21,7 @@ class TestFileToBeLoaded:
         for d, f in zip(docs, FILES):
             assert d.doc is not None, "loading file {} failed".format(f)
 
-
+@SkipTest
 class TestBasicLoad:
     def setUp(self):
         docname = self.docname = FILES[0]

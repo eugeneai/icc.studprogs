@@ -199,7 +199,7 @@ class XMLProcessor(object):
 
     def reduce_pars(self):
         if self.styles is None:
-            raise RunTimeError("style_names must be run before")
+            raise RuntimeError("style_names must be run before")
         prev_par = None
         prev_style = None
 

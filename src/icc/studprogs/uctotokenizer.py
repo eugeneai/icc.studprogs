@@ -132,14 +132,13 @@ class Tokenizer(object):
 
         self.tokenizer = tokenizer
 
-    def tokens(self):
+    def tokens(self, textiter):
         """Generate tokens from source text.
         """
-        if self.textiter != None:
-            for text in self.textiter:
-                self.tokenizer.process(text)
-                yield from self.tokenizer
-        else:
+        if textiter is None:
+            textiter = self.textiter
+        for text in textiter:
+            self.tokenizer.process(text)
             yield from self.tokenizer
 
     def sentences(self):

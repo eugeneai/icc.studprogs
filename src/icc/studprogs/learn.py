@@ -2,6 +2,7 @@ import icc.studprogs.popplerxml as loader
 import icc.studprogs.textloader as textloader
 # import pybison
 from pkg_resources import resource_stream
+from lxml import etree
 
 from itertools import islice, cycle
 import sys
@@ -10,7 +11,7 @@ import pymorphy2
 import icc.linkgrammar as lg
 import icc.studprogs.uctotokenizer as ucto
 from icc.studprogs.common import paragraph_symbol, Symbol
-
+import re
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
 
@@ -138,6 +139,73 @@ class LinkGrammar(object):
                     else:
                         print("----FAILED------")
                 yield par, rc, linkage
+
+
+SECTION_RE = re.compile("(^(\d+\.?)+)")
+SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
+
+
+class XMLTextPropertyExtractor(object):
+    def __init__(self, tree=None, filename=None, importer=None, lang="ru"):
+        if tree is None and filename is None:
+            raise ValueError("either tree or filename must be set")
+        self.tree = tree
+        self.filename = filename
+        self.importer = importer(filename)
+        self.morph = pymorphy2.MorphAnalyzer()
+        self.tokenizer = ucto.Tokenizer()
+
+    def load(self):
+        if self.tree is None:
+            self.importer.load()
+            self.tree = self.importer.as_xml()
+            del self.importer
+        return self.tree
+
+    def par_process(self, proc_list):
+        self.load()
+        for par in self.tree.iterfind("//par"):
+            text = etree.tostring(par, method="text", encoding=str)
+            text = self.preporocess_text(text)
+            for p in proc_list:
+                p(par, text.strip())
+
+    def words(self, text, with_tokens=False):
+        t = SPACE_LIKE_RE.sub(" ", text)
+        # TODO
+        for token in self.tokenizer.tokens([t]):
+            w = str(token)
+            if token.type().startswith("WORD"):
+                p = self.morph.parse(w)[0]
+                w = p.normal_form
+            if with_tokens:
+                yield w, token
+            else:
+                yield w
+
+    def preporocess_text(self, text):
+        t = ""
+        for word, token in self.words(text, with_tokens=True):
+            t+=word
+            if not token.nospace():
+                t+=" "
+        return t
+
+    def par_has_section_mark(self, par, text):
+        m = SECTION_RE.match(text)
+        if m:
+            par.set("secion-mark", m.group(1))
+
+    def extract(self):
+        par_processors = [self.par_has_section_mark]
+        self.par_process(par_processors)
+
+    def write(self, filename):
+        self.tree.write(
+            filename,
+            pretty_print=True,
+            encoding="UTF-8",
+            xml_declaration=True)
 
 
 def _print(par, rc, linkage):
