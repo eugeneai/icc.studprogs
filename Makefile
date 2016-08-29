@@ -1,4 +1,4 @@
-.PHONY: develop setup run-tests tests test gdb-test
+.PHONY: develop setup run-tests tests test gdb-test upgrade
 
 LPYTHON=python3
 V=$(PWD)/../$(LPYTHON)
@@ -9,7 +9,10 @@ ROOT=$(PWD)
 #LCAT=src/icc/linkgrammar/locale/
 
 develop: setup
-	pip install -r requrements.txt
+	pip install -r requirements.txt
+	
+upgrade:
+	pip install --upgrade -r requirements.txt
 
 setup:
 	python setup.py develop
