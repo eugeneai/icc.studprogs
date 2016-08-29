@@ -27,7 +27,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)"
        compound-рабочий-программа-дисциплина="1"
-       compound-программа-дисциплина="1" t-title="discipline-work-program">
+       compound-программа-дисциплина="1" t-title="discipline-work-program" t-section="header">
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)"/>
