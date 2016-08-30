@@ -9,6 +9,7 @@ from icc.studprogs.xmlproc import XMLProcessor
 from itertools import islice, cycle
 import sys
 import pymorphy2
+from sklearn import tree
 
 import icc.linkgrammar as lg
 import icc.studprogs.uctotokenizer as ucto
@@ -146,6 +147,25 @@ class LinkGrammar(object):
 SECTION_RE = re.compile("(^(\d+\.?)+)")
 WORD_OPK = re.compile("\((о?п?к.+\d+)\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
+
+
+class LearningData(object):
+    def __init__(self):
+        self.encoding={} # {feature-name -> (feature-index, {feature-value -> feature-code})}
+        self.decoding={} # {feature-index -> (name, {code->value})}
+
+    def encode(self, name, value):
+        idx, codes = self.encoding.setdefault(name, (len(self.encoding),{}))
+        code = codes.setdefault(value, length(codes))
+        d = self.decoding.setdefault(idx, (name, {}))
+        d[code] = value
+
+    def index(self, name):
+        return self.encoding
+
+    def decode(self, index, code):
+        _, d = self.decoding[index]
+        return d[code]
 
 
 class XMLTextPropertyExtractor(object):
@@ -288,6 +308,22 @@ class XMLTextPropertyExtractor(object):
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
         self.xmlprocessor.style_names()
+
+        coding_scheme = LearningData()
+
+        for par in self.tree.iterfind("//par"):
+            for k,v in par.attrib.items():
+                coding_scheme.encode(k, v)
+
+        x = []
+        y = []
+        for par in self.tree.iterfind("//par"):
+            a = par.attrib
+            for k, v in a:
+                if k.startswith("t-"):
+
+
+
 
     def write(self, filename):
         self.tree.write(
