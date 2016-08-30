@@ -44,7 +44,7 @@ class TestLearning:
         pass
 
     def test_learning_params_self(self):
-        x, y = self.e.learning_params()
+        x, y = self.e.learning_params(teaching=True)
         assert len(x[0]) > 0 or len(y[0]) > 0
         assert len(x) == len(y)
         m = self.e.fit()

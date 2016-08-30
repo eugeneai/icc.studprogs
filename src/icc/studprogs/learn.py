@@ -157,7 +157,7 @@ class LearningData(object):
         }  # {feature-name -> (feature-index, {feature-value -> feature-code})}
         self.decoding = {}  # {feature-index -> (name, {code->value})}
 
-    def encode(self, name, value):
+    def encode(self, name, value, teaching=False):
         if name in CONVERT_VALUE:
             f = CONVERT_VALUE[name]
             if f is None:  # Filtered out field
@@ -168,7 +168,16 @@ class LearningData(object):
                 value = CONVERT_VALUE["_"](value)
             except ValueError:
                 pass
-        idx, codes = self.encoding.setdefault(name, (len(self.encoding), {}))
+        if teaching:
+            idx, codes = self.encoding.setdefault(name,
+                                                  (len(self.encoding), {}))
+        elif name in self.encoding:
+            idx, codes = self.encoding[name]
+            if value in codes:
+                return idx, codes[value]
+            return None, None
+        else:
+            return None, None
         # zero value reserved for unknowns
         code = codes.setdefault(value, len(codes) + 1)
         d = self.decoding.setdefault(idx, (name, {}))
@@ -375,18 +384,18 @@ class XMLTextPropertyExtractor(object):
         self.par_process(par_processors)
         self.xmlprocessor.style_names()
 
-    def learning_params(self):
+    def learning_params(self, teaching=False):
         self.load()
         param_coding = LearningData()
         target_coding = LearningData()
-        self.learn_coding = (param_coding, target_coding)
+        self.learn_coding = (param_coding, target_coding, teaching)
 
         for par in self.tree.iterfind("//par"):
             for k, v in par.attrib.items():
                 if k.startswith("t-"):
-                    target_coding.encode(k, v)
+                    target_coding.encode(k, v, teaching=teaching)
                 else:
-                    param_coding.encode(k, v)
+                    param_coding.encode(k, v, teaching=teaching)
 
         lparam_coding = len(param_coding.encoding)
         ltarget_coding = len(target_coding.encoding)
@@ -419,7 +428,7 @@ class XMLTextPropertyExtractor(object):
     def fit(self, method="tree"):
         """Prepare parameters for fitting and make a fit.
         """
-        x, y = self.learning_params()
+        x, y = self.learning_params(teaching=True)
         clf = tree.DecisionTreeClassifier()
         clf = clf.fit(x, y)
         self.fit_model = clf
