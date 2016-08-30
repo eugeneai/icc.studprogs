@@ -59,8 +59,12 @@ class TestLearning:
             xml = XMLTextPropertyExtractor(
                 filename=docx_file, importer=msdocx.Importer)
             output_filename = docx_file.replace("annotations","out").replace(".docx","-extracted.xml")
+            xml.load()
+            xml.extract()
+            xml.write(output_filename)
             xml.set_learn_coding(self.e.learn_coding)
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
+            output_filename = docx_file.replace("annotations","out").replace(".docx","-predicted.xml")
             xml.write(output_filename)
             assert ny is not None

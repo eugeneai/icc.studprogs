@@ -10,7 +10,8 @@ import numpy as np
 from itertools import islice, cycle
 import sys
 import pymorphy2
-from sklearn import tree
+from sklearn import tree, svm
+#from sklearn.naive_bayes import GaussianNB
 import pprint
 
 import icc.linkgrammar as lg
@@ -230,6 +231,7 @@ CONVERT_VALUE = {
     # 'alignment': lambda x: x.split(" ")[0].lower(),
     'alignment': None,
     'section-mark': lambda x: x,
+    'contextual-section-mark': lambda x: x,
     'indent': round_indent,
     'left-indent': round_indent,
     'right-indent': round_indent,
@@ -238,6 +240,11 @@ CONVERT_VALUE = {
     'widow-control': None,
     "_": as_number,
 }
+CONTEXTUAL_FEATURES = set([
+    "section-mark",
+#    "section-level",
+#    "compound-программа-дисциплина",
+])
 
 
 class XMLTextPropertyExtractor(object):
@@ -251,6 +258,7 @@ class XMLTextPropertyExtractor(object):
         self.tokenizer = ucto.Tokenizer()
         self.xmlprocessor = None
         self.learn_coding = None
+        self.extracted = False
 
     def load(self):
         if self.tree is not None:
@@ -365,6 +373,8 @@ class XMLTextPropertyExtractor(object):
 
     def extract(self, style_names=True):
         self.load()
+        if self.extracted and style_names:
+            return
         par_processors = [
             self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
             (self.par_has_words,
@@ -377,23 +387,34 @@ class XMLTextPropertyExtractor(object):
               "самостоятельный", "подготовка", "доклад", "экзамен", "зачет",
               "оформление", "занятие", "оценочный", "средство",
               "информационный", "обеспечение", "основной", "информационный",
-              "дополнительный", "электронный", "ресурс", "цель", "задача"]), (
-                  self.par_has_compounds, list(
-                      map(lambda x: x.split(" "), [
-                          "рабочий программа дисциплина",
-                          "специальность высший образование",
-                          "программа магистратура", "программа бакалавриат",
-                          "программа дисциплина", "задачи освоение дисциплина",
-                          "компетенция обучающийся", "обучающийся должный",
-                          "структура дисциплина", "содержание дисциплина",
-                          "оценочный средство", "код и наименование",
-                          "наименование дисциплина", "указать профиль"
-                      ])))
+              "дополнительный", "электронный", "ресурс", "цель", "задача",
+              "рисунок", "таблица"]), (self.par_has_compounds, list(
+                  map(lambda x: x.split(" "), [
+                      "рабочий программа дисциплина",
+                      "специальность высший образование",
+                      "программа магистратура", "программа бакалавриат",
+                      "программа дисциплина", "задачи освоение дисциплина",
+                      "компетенция обучающийся", "обучающийся должный",
+                      "структура дисциплина", "содержание дисциплина",
+                      "оценочный средство", "код и наименование",
+                      "наименование дисциплина", "указать профиль"
+                  ])))
         ]
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
         if style_names:
             self.xmlprocessor.style_names()
+            self.extracted = True
+        self.expand_context()
+
+    def expand_context(self):
+        context = {}
+        for par in self.tree.iterfind("//par"):
+            for cf in CONTEXTUAL_FEATURES:
+                if cf in par.attrib:
+                    context[cf] = par.get(cf)
+                elif cf in context:
+                    par.set("contextual-" + cf, context[cf])
 
     def update(self):
         self.extract(style_names=False)
@@ -462,8 +483,13 @@ class XMLTextPropertyExtractor(object):
             self.learn_coding(teaching=True)
         x, y = self.prepare_params(teaching=True)
         clf = tree.DecisionTreeClassifier()
-        clf = clf.fit(x, y)
-        self.fit_model = clf
+        m = clf.fit(x, y)
+        # clf = svm.SVC()
+        # m = clf.fit(x, y)
+        # clf = GaussianNB()
+        # m = clf.fit(x,y)
+        # FIXME implement multilabel learning
+        self.fit_model = m
         return clf
 
     def predict(self, rows=None, par=None, extractor=None):
