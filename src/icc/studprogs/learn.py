@@ -5,6 +5,7 @@ from pkg_resources import resource_stream
 from lxml import etree
 
 from icc.studprogs.xmlproc import XMLProcessor
+import numpy as np
 
 from itertools import islice, cycle
 import sys
@@ -159,8 +160,8 @@ class LearningData(object):
     def encode(self, name, value):
         if name in CONVERT_VALUE:
             f = CONVERT_VALUE[name]
-            if f is None: # Filtered out field
-                return
+            if f is None:  # Filtered out field
+                return None, None
             value = f(value)
         elif "_" in CONVERT_VALUE:
             try:
@@ -172,6 +173,7 @@ class LearningData(object):
         code = codes.setdefault(value, len(codes) + 1)
         d = self.decoding.setdefault(idx, (name, {}))
         d[1][code] = value
+        return idx, code
 
     def index(self, name):
         return self.encoding[name][0]
@@ -182,8 +184,8 @@ class LearningData(object):
     def decode(self, index, code):
         if isinstance(index, str):
             index = self.index(index)
-        _, d = self.decoding[index]
-        return d[code]
+        name, d = self.decoding[index]
+        return name, d[code]
 
     def __str__(self):
         s = "A " + self.__class__.__name__ + " object \n"
@@ -221,9 +223,9 @@ CONVERT_VALUE = {
     'indent': round_indent,
     'left-indent': round_indent,
     'right-indent': round_indent,
-    'space-after':None,
-    'space-before':None,
-    'widow-control':None,
+    'space-after': None,
+    'space-before': None,
+    'widow-control': None,
     "_": as_number,
 }
 
@@ -234,16 +236,20 @@ class XMLTextPropertyExtractor(object):
             raise ValueError("either tree or filename must be set")
         self.tree = tree
         self.filename = filename
-        self.importer = importer(filename)
+        self.importer = importer
         self.morph = pymorphy2.MorphAnalyzer()
         self.tokenizer = ucto.Tokenizer()
         self.xmlprocessor = None
 
     def load(self):
-        if self.tree is None:
-            self.importer.load()
-            self.tree = self.importer.as_xml()
-            del self.importer
+        if self.tree is not None:
+            return self.tree
+        if self.importer is None:
+            self.tree = etree.parse(self.filename)
+        else:
+            importer = self.importer(self.filename)
+            importer.load()
+            self.tree = importer.as_xml()
         if self.xmlprocessor is None:
             self.xmlprocessor = XMLProcessor(tree=self.tree)
         return self.tree
@@ -369,21 +375,62 @@ class XMLTextPropertyExtractor(object):
         self.par_process(par_processors)
         self.xmlprocessor.style_names()
 
-        coding_scheme = LearningData()
+    def learning_params(self):
+        self.load()
+        param_coding = LearningData()
+        target_coding = LearningData()
+        self.learn_coding = (param_coding, target_coding)
 
         for par in self.tree.iterfind("//par"):
             for k, v in par.attrib.items():
-                coding_scheme.encode(k, v)
+                if k.startswith("t-"):
+                    target_coding.encode(k, v)
+                else:
+                    param_coding.encode(k, v)
 
-        print(coding_scheme)
-
-        x = []
-        y = []
+        lparam_coding = len(param_coding.encoding)
+        ltarget_coding = len(target_coding.encoding)
+        param_rows = []
+        target_rows = []
         for par in self.tree.iterfind("//par"):
+            param_row = [0] * lparam_coding
+            target_row = [0] * ltarget_coding
             a = par.attrib
             for k, v in a.items():
                 if k.startswith("t-"):
-                    pass
+                    i, code = target_coding.encode(k, v)
+                    if i is not None:
+                        target_row[i] = code
+                else:
+                    i, code = param_coding.encode(k, v)
+                    if i is not None:
+                        param_row[i] = code
+            if len([x for x in param_row if x != 0]) == 0:
+                continue
+            if len([x for x in target_row if x != 0]) == 0:
+                continue
+            param_rows.append(param_row)
+            target_rows.append(target_row)
+
+        return np.array(
+            param_rows, dtype=np.uint8), np.array(
+                target_rows, dtype=np.uint8)
+
+    def fit(self, method="tree"):
+        """Prepare parameters for fitting and make a fit.
+        """
+        x, y = self.learning_params()
+        clf = tree.DecisionTreeClassifier()
+        clf = clf.fit(x, y)
+        self.fit_model = clf
+        return clf
+
+    def predict(self, rows=None, par=None, tree=None):
+        """Apply learning models to a rows of encoded values or
+        to a paragraph or to a xml tree adding the atttributes
+        from fitting.
+        """
+        return self.fit_model.predict(rows)
 
     def write(self, filename):
         self.tree.write(

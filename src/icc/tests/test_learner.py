@@ -10,8 +10,10 @@ import os.path
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
 EXT_PATTERN = "*.docx"
+LEARN_PATTERN = "*-learn.xml"
 
 FILES = glob(os.path.join(DATA_DIR, EXT_PATTERN))
+LEARN_FILES = glob(os.path.join(DATA_DIR, LEARN_PATTERN))
 
 
 class TestBasicLoad:
@@ -25,6 +27,27 @@ class TestBasicLoad:
     def tearDown(self):
         pass
 
-    def test_load_basic(self):
+    def test_extract_basic(self):
         self.e.extract()
         self.e.write(self.output_filename)
+
+
+class TestLearning:
+    """TEsts the process of learning.
+    """
+
+    def setUp(self):
+        docname = self.docname = LEARN_FILES[0]
+        self.e = XMLTextPropertyExtractor(filename=docname)
+
+    def tearDown(self):
+        pass
+
+    def test_learning_params_self(self):
+        x, y = self.e.learning_params()
+        assert len(x[0]) > 0 or len(y[0]) > 0
+        assert len(x) == len(y)
+        m = self.e.fit()
+        assert m is not None
+        recon = self.e.predict(rows=x[:,:])
+        print ("Declinations:", recon-y)
