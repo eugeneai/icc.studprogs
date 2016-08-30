@@ -10,6 +10,7 @@ from itertools import islice, cycle
 import sys
 import pymorphy2
 from sklearn import tree
+import pprint
 
 import icc.linkgrammar as lg
 import icc.studprogs.uctotokenizer as ucto
@@ -151,21 +152,80 @@ SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
 class LearningData(object):
     def __init__(self):
-        self.encoding={} # {feature-name -> (feature-index, {feature-value -> feature-code})}
-        self.decoding={} # {feature-index -> (name, {code->value})}
+        self.encoding = {
+        }  # {feature-name -> (feature-index, {feature-value -> feature-code})}
+        self.decoding = {}  # {feature-index -> (name, {code->value})}
 
     def encode(self, name, value):
-        idx, codes = self.encoding.setdefault(name, (len(self.encoding),{}))
-        code = codes.setdefault(value, length(codes))
+        if name in CONVERT_VALUE:
+            f = CONVERT_VALUE[name]
+            if f is None: # Filtered out field
+                return
+            value = f(value)
+        elif "_" in CONVERT_VALUE:
+            try:
+                value = CONVERT_VALUE["_"](value)
+            except ValueError:
+                pass
+        idx, codes = self.encoding.setdefault(name, (len(self.encoding), {}))
+        # zero value reserved for unknowns
+        code = codes.setdefault(value, len(codes) + 1)
         d = self.decoding.setdefault(idx, (name, {}))
-        d[code] = value
+        d[1][code] = value
 
     def index(self, name):
-        return self.encoding
+        return self.encoding[name][0]
+
+    def name(self, index):
+        return self.decoding[index][0]
 
     def decode(self, index, code):
+        if isinstance(index, str):
+            index = self.index(index)
         _, d = self.decoding[index]
         return d[code]
+
+    def __str__(self):
+        s = "A " + self.__class__.__name__ + " object \n"
+        l = "=" * len(s) + "\n\n"
+        s += l
+        s += "encoding:" + pprint.pformat(self.encoding, indent=2)
+        s += "\n"
+        s += "decoding:" + pprint.pformat(self.decoding, indent=2)
+        s += "\n"
+        s += l
+        return s
+
+
+def as_number(x):
+    try:
+        return int(x)
+    except ValueError:
+        pass
+    try:
+        return float(x)
+    except ValueError:
+        return x
+
+
+def round_indent(x, round_val=0.5 * 72):  # I.e. 72 pt * 0.5 in
+    x = float(x)
+    xx = round(x / round_val)
+    x = int(xx) * round_val
+    return x
+
+
+CONVERT_VALUE = {
+    'alignment': lambda x: x.split(" ")[0].lower(),
+    'section-mark': lambda x: x,
+    'indent': round_indent,
+    'left-indent': round_indent,
+    'right-indent': round_indent,
+    'space-after':None,
+    'space-before':None,
+    'widow-control':None,
+    "_": as_number,
+}
 
 
 class XMLTextPropertyExtractor(object):
@@ -227,11 +287,11 @@ class XMLTextPropertyExtractor(object):
         m = SECTION_RE.search(text)
         if m:
             mark = m.group(1)
-            par.set("seciton-mark", mark)
+            par.set("section-mark", mark)
             mark = mark.rstrip(".")
             cnt = mark.count(".")
             cnt += 1
-            par.set("secion-level", str(cnt))
+            par.set("section-level", str(cnt))
 
     def par_has_words(self, par, text, words, tokens, find_words=[]):
         for w in find_words:
@@ -312,18 +372,18 @@ class XMLTextPropertyExtractor(object):
         coding_scheme = LearningData()
 
         for par in self.tree.iterfind("//par"):
-            for k,v in par.attrib.items():
+            for k, v in par.attrib.items():
                 coding_scheme.encode(k, v)
+
+        print(coding_scheme)
 
         x = []
         y = []
         for par in self.tree.iterfind("//par"):
             a = par.attrib
-            for k, v in a:
+            for k, v in a.items():
                 if k.startswith("t-"):
-
-
-
+                    pass
 
     def write(self, filename):
         self.tree.write(
