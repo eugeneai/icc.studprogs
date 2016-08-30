@@ -227,7 +227,8 @@ def round_indent(x, round_val=0.5 * 72):  # I.e. 72 pt * 0.5 in
 
 
 CONVERT_VALUE = {
-    'alignment': lambda x: x.split(" ")[0].lower(),
+    # 'alignment': lambda x: x.split(" ")[0].lower(),
+    'alignment': None,
     'section-mark': lambda x: x,
     'indent': round_indent,
     'left-indent': round_indent,
@@ -249,6 +250,7 @@ class XMLTextPropertyExtractor(object):
         self.morph = pymorphy2.MorphAnalyzer()
         self.tokenizer = ucto.Tokenizer()
         self.xmlprocessor = None
+        self.learn_coding = None
 
     def load(self):
         if self.tree is not None:
@@ -313,6 +315,14 @@ class XMLTextPropertyExtractor(object):
             if w in words:
                 par.set("word-" + w, "1")
 
+    def par_is_empty(self, par, text, words, tokens):
+        if len(words) == 0:
+            par.set("par-is-empty", "1")
+        for t in tokens:
+            if t.type().startswith("WORD"):
+                return
+        par.set("no-words", "1")
+
     def par_opk_marks(self, par, text, words, tokens):
         m = WORD_OPK.search(text)
         if m is not None:
@@ -353,10 +363,10 @@ class XMLTextPropertyExtractor(object):
                 par.set("compound-" + "-".join(comp), "1")
                 break
 
-    def extract(self):
+    def extract(self, style_names=True):
         self.load()
         par_processors = [
-            self.par_has_section_mark, self.par_opk_marks,
+            self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
             (self.par_has_words,
              ["знать", "уметь", "владеть", "технология", "оценочный",
               "средства", "ресурс", "интернет", "квалификация", "овладеть",
@@ -382,7 +392,11 @@ class XMLTextPropertyExtractor(object):
         ]
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
-        self.xmlprocessor.style_names()
+        if style_names:
+            self.xmlprocessor.style_names()
+
+    def update(self):
+        self.extract(style_names=False)
 
     def learning_params(self, teaching=False):
         self.load()
@@ -397,16 +411,27 @@ class XMLTextPropertyExtractor(object):
                 else:
                     param_coding.encode(k, v, teaching=teaching)
 
+    def set_learn_coding(self, learn_coding):
+        self.learn_coding = learn_coding
+
+    def prepare_params(self, teaching=False):
+        self.load()
+        param_coding, target_coding, _ = self.learn_coding
         lparam_coding = len(param_coding.encoding)
         ltarget_coding = len(target_coding.encoding)
         param_rows = []
-        target_rows = []
+        if teaching:
+            target_rows = []
+        par_index = {}
         for par in self.tree.iterfind("//par"):
             param_row = [0] * lparam_coding
-            target_row = [0] * ltarget_coding
+            if teaching:
+                target_row = [0] * ltarget_coding
             a = par.attrib
             for k, v in a.items():
                 if k.startswith("t-"):
+                    if not teaching:
+                        continue
                     i, code = target_coding.encode(k, v)
                     if i is not None:
                         target_row[i] = code
@@ -416,30 +441,59 @@ class XMLTextPropertyExtractor(object):
                         param_row[i] = code
             if len([x for x in param_row if x != 0]) == 0:
                 continue
-            if len([x for x in target_row if x != 0]) == 0:
+            if teaching and len([x for x in target_row if x != 0]) == 0:
                 continue
+            l = len(param_rows)
+            par_index[l] = par
             param_rows.append(param_row)
-            target_rows.append(target_row)
+            if teaching:
+                target_rows.append(target_row)
 
-        return np.array(
-            param_rows, dtype=np.uint8), np.array(
-                target_rows, dtype=np.uint8)
+        param_rows = np.array(param_rows, dtype=np.uint8)
+        if teaching:
+            target_rows = np.array(target_rows, dtype=np.uint8)
+            return param_rows, target_rows
+        return param_rows, par_index
 
     def fit(self, method="tree"):
         """Prepare parameters for fitting and make a fit.
         """
-        x, y = self.learning_params(teaching=True)
+        if self.learn_coding is None:
+            self.learn_coding(teaching=True)
+        x, y = self.prepare_params(teaching=True)
         clf = tree.DecisionTreeClassifier()
         clf = clf.fit(x, y)
         self.fit_model = clf
         return clf
 
-    def predict(self, rows=None, par=None, tree=None):
+    def predict(self, rows=None, par=None, extractor=None):
         """Apply learning models to a rows of encoded values or
         to a paragraph or to a xml tree adding the atttributes
         from fitting.
         """
-        return self.fit_model.predict(rows)
+        if rows is not None:
+            return self.fit_model.predict(rows)
+        if extractor is not None:
+            extractor.extract()
+            extractor.set_learn_coding(self.learn_coding)
+            x, par_index = extractor.prepare_params()
+            y = self.predict(rows=x)
+            extractor.interprete(y, par_index)
+            return extractor.tree
+
+    def interprete(self, rows, par_index):
+        target_coding = self.learn_coding[1]
+        for idx, par in par_index.items():
+            row = rows[idx]
+            for i, val in enumerate(row):
+                i = int(i)
+                val = int(val)
+                if val == 0:
+                    continue
+                name, value = target_coding.decode(i, val)
+                value = str(value)
+                par.set(name, value)
+        return self.tree
 
     def write(self, filename):
         self.tree.write(

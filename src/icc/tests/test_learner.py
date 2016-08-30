@@ -31,7 +31,6 @@ class TestBasicLoad:
         self.e.extract()
         self.e.write(self.output_filename)
 
-
 class TestLearning:
     """TEsts the process of learning.
     """
@@ -43,11 +42,25 @@ class TestLearning:
     def tearDown(self):
         pass
 
+    def test_update(self):
+        self.e.update()
+        self.e.write(self.docname)
+
     def test_learning_params_self(self):
-        x, y = self.e.learning_params(teaching=True)
+        self.e.learning_params(teaching=True)
+        x, y = self.e.prepare_params(teaching=True)
         assert len(x[0]) > 0 or len(y[0]) > 0
         assert len(x) == len(y)
         m = self.e.fit()
         assert m is not None
-        recon = self.e.predict(rows=x[:,:])
-        print ("Declinations:", recon-y)
+        recon = self.e.predict(rows=x[:, :])
+        print("Declinations:", recon - y)
+        for docx_file in FILES:
+            xml = XMLTextPropertyExtractor(
+                filename=docx_file, importer=msdocx.Importer)
+            output_filename = docx_file.replace("annotations","out").replace(".docx","-extracted.xml")
+            xml.set_learn_coding(self.e.learn_coding)
+            nx = xml.prepare_params()
+            ny = self.e.predict(extractor=xml)
+            xml.write(output_filename)
+            assert ny is not None
