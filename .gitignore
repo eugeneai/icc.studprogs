@@ -133,5 +133,5 @@ ENV/
 bin
 develop-eggs
 tmp
-/src/icc/studprogs/data/out/
+/src/icc/studprogs/data/out/*
 .~*\#
