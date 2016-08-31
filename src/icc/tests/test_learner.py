@@ -29,6 +29,7 @@ class TestBasicLoad:
 
     def test_extract_basic(self):
         self.e.extract()
+        print(self.output_filename)
         self.e.write(self.output_filename)
 
 class TestLearning:

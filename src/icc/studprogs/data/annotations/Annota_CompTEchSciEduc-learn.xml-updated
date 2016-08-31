@@ -23,7 +23,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-аннотация="1" t-ignore="1">
     <style id="s1">АННОТАЦИЯ</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" compound-рабочий-программа-дисциплина="1" compound-программа-дисциплина="1" t-title="discipline-work-program" t-section="header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" compound-рабочий-программа-дисциплина="1" compound-программа-дисциплина="1" t-title="discipline-work-program" t-section="header" word-рабочий="1">
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1" t-ignore="1"/>
@@ -225,7 +225,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1" section-mark="2.1" section-level="2">
     <style id="s4b">Тема 2.1. Стандарт SCORM </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-обеспечение="1" t-content="content-topic">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-обеспечение="1" t-content="content-topic" word-учебный="1">
     <style id="s3">История создания. Структура  учебных блоков и пакетов учебного  материала. </style>
     <style id="s13">Среда выполнения.</style>
     <style id="s3"> </style>
@@ -267,7 +267,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" section-mark="3.1" section-level="2">
     <style id="s4b">Тема 3.1. Принципы обучения , заложенные в обучающую среду Moodle </style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-content="content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-content="content-topic" word-учебный="1">
     <style id="s3">Конструкционизм, социальный конструктивизм. Пять принципов социального конструктивизма.</style>
     <style id="s4b"> </style>
     <style id="s3">Основы успешного обучения. Правила организации учебного материала.</style>
@@ -280,7 +280,7 @@
     <style id="s17i"> </style>
     <style id="s3">Создание учетных записей. Работа со списком пользователей. Настройка элементов курса.</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" word-электронный="1" section-mark="3.3" section-level="2">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" word-электронный="1" section-mark="3.3" section-level="2" word-учебный="1">
     <style id="s4b">Тема 3.3. Создание электронного учебного курса в Moodle </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-ресурс="1" t-content="content-topic">
@@ -384,7 +384,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-информационный="1" t-bibliography-item="1">
     <style id="s3">О государственной программе Российской Федерации "Информационное общество  (2011 - 2020 годы)". Распоряжение от 20 октября 2010 г. n 1815-р</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-bibliography-book="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-bibliography-book="1" word-учебный="1">
     <style id="s3">Логинов Владимир Николаевич Информационные технологии управления : учебное пособие по специальности "Государственное и муниципальное управление" / В. Н. Логинов. - 2-е изд., стер. - М. : КНОРУС, 2012. - 238 с. : a-ил </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
@@ -414,7 +414,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
   <table num-rows="10" num-columns="3">
     <cell x="0" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-учебный="1">
         <style id="s4b">Вид учебной работы</style>
       </par>
     </cell>
@@ -429,7 +429,7 @@
       </par>
     </cell>
     <cell x="0" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-учебный="1">
         <style id="s4b">Вид учебной работы</style>
       </par>
     </cell>
@@ -444,7 +444,7 @@
       </par>
     </cell>
     <cell x="0" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-учебный="1">
         <style id="s4b">Вид учебной работы</style>
       </par>
     </cell>

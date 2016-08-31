@@ -147,7 +147,7 @@ class LinkGrammar(object):
                 yield par, rc, linkage
 
 
-SECTION_RE = re.compile("^.{0,5}(\d{1,2}(\.\d{1,2})+\.?)")
+SECTION_RE = re.compile("^.{0,8}?(\d{1,2}(\.\d{1,2})*\.?)")
 WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
@@ -312,11 +312,12 @@ class XMLTextPropertyExtractor(object):
         m = SECTION_RE.search(text)
         if m:
             mark = m.group(1)
-            par.set("section-mark", mark)
             mark = mark.rstrip(".")
+            par.set("section-mark", mark)
             cnt = mark.count(".")
             cnt += 1
             par.set("section-level", str(cnt))
+            # print(etree.tostring(par, encoding=str))
 
     def par_has_URL_or_email(self, par, text, words, tokens):
         for token in tokens:
@@ -392,9 +393,9 @@ class XMLTextPropertyExtractor(object):
                 par.set("compound-" + "-".join(comp), "1")
                 break
 
-    def extract(self, style_names=True):
+    def extract(self, update=False):
         self.load()
-        if self.extracted and style_names:
+        if self.extracted and not update:
             return
         par_processors = [
             self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
@@ -410,7 +411,7 @@ class XMLTextPropertyExtractor(object):
               "оформление", "занятие", "оценочный", "средство",
               "информационный", "обеспечение", "основной", "информационный",
               "дополнительный", "электронный", "ресурс", "цель", "задача",
-              "рисунок", "таблица"]), (self.par_has_compounds, list(
+              "рисунок", "таблица", "аннотация","рабочий", "учебный"]), (self.par_has_compounds, list(
                   map(lambda x: x.split(" "), [
                       "рабочий программа дисциплина",
                       "специальность высший образование",
@@ -424,10 +425,12 @@ class XMLTextPropertyExtractor(object):
         ]
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
-        if style_names:
+        if not update:
             self.xmlprocessor.style_names()
+            self.expand_context()
+
             self.extracted = True
-        self.expand_context()
+
 
     def expand_context(self):
         context = {}
@@ -441,7 +444,7 @@ class XMLTextPropertyExtractor(object):
                 par.set("contextual-no-context", "1")
 
     def update(self):
-        self.extract(style_names=False)
+        self.extract(update=True)
 
     def learning_params(self, teaching=False):
         self.load()
