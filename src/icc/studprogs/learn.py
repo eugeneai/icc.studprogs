@@ -11,7 +11,7 @@ from itertools import islice, cycle
 import sys
 import pymorphy2
 from sklearn import tree, svm
-#from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import GaussianNB
 import pprint
 
 import icc.linkgrammar as lg
@@ -514,7 +514,8 @@ class XMLTextPropertyExtractor(object):
 
         models = []
         for i in range(y.shape[1]):
-            clf = tree.DecisionTreeClassifier()
+            # clf = tree.DecisionTreeClassifier()
+            clf = GaussianNB()
             _y = y[:, i]
             m = clf.fit(x, _y)
             models.append(m)
