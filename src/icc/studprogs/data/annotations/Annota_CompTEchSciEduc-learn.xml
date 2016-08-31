@@ -178,7 +178,7 @@
     <style id="s4b">ТЕМА 1.1 Информатизация общества и задачи его развития в сфере науки и образования </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="13.3" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-цель="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-цель="1" t-content="topic">
     <style id="s3">Причины информационного кризиса. Информатизация общества как выход из информационного кризиса. Цели формирования и развития информационного общества в Российской Федерации. Роль науки и образования в развитии российского рынка информационных технологий. Пути развития  информационных технологий для использования в научно-исследовательской и образовательной деятельности</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-технология="1" word-тема="1" word-информационный="1" t-section="content-topic">
@@ -187,7 +187,7 @@
     <style id="s4b">Информационные технологии </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" t-content="topic">
     <style id="s3">Понятие информационной технологии. Виды</style>
     <style id="s11bi"> </style>
     <style id="s3">информационных технологий. Информационная технология обработки данных. Информационная технология управления. Информационная технология поддержки принятия решений. Информационная технология экспертных систем.</style>
@@ -195,7 +195,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-тема="1" t-section="content-topic">
     <style id="s4b">Тема 1.3. Инструментарий компьютерных  технологий в науке и образовании </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-электронный="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-информационный="1" word-электронный="1"  t-content="topic">
     <style id="s3">Гипертекст. Тезаурус гипертекста. Мультимедиа. Использование мультимедиа в сфере образования. Интеллектуальные технологии. Информационные хранилища</style>
     <style id="s4b">. </style>
     <style id="s3">Системы электронного документооборота.</style>
@@ -207,14 +207,14 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-тема="1" t-section="content-topic">
     <style id="s4b">Тема 1.4. Технологии искусственного интеллекта </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-средство="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-средство="1" t-content="topic">
     <style id="s3">Направления развития искусственного интеллекта.  Данные и знания. Модели представления знаний. Стратегии получения знаний. Экспертные системы: структура и классификация. Инструментальные средства построения экспертных систем</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" t-section="content-topic">
     <style id="s4b">Тема 1.5. Автоматизированные системы научных исследований (АСНИ) </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-основной="1" word-цель="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-основной="1" word-цель="1"  t-content="topic">
     <style id="s3">Определение АСНИ. Сфера использования АСНИ. Цели создания АСНИ. Функции АСНИ. Структура АСНИ. Основные принципы создания АСНИ </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-раздел="1" t-section="content-section">
@@ -225,7 +225,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1">
     <style id="s4b">Тема 2.1. Стандарт SCORM </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-обеспечение="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-обеспечение="1" t-content="topic">
     <style id="s3">История создания. Структура  учебных блоков и пакетов учебного  материала. </style>
     <style id="s13">Среда выполнения.</style>
     <style id="s3"> </style>
@@ -239,7 +239,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1">
     <style id="s4b"> Тема 2.2. Дистанционное обучение </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-технология="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-технология="1" t-content="topic">
     <style id="s3">Этапы развития обучения с использованием компьютерных технологий. </style>
     <style id="s15">Преимущества </style>
     <style id="s3"> дистанционного обучения. Формы дистанционного обучения. Проблемы внедрения дистанционного обучения.</style>
@@ -247,14 +247,14 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-тема="1" word-электронный="1">
     <style id="s4b">Тема 2.3. Электронное обучение – е-learning </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-электронный="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-электронный="1" t-content="topic">
     <style id="s3">Отличительные особенности и преимущества е-learning. Виды электронного обучения. Проблемы внедрения электронного обучения. </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
     <style id="s4b">Тема 2.4. Управление образовательным процессом</style>
     <style id="s16"> </style>
   </par>
-  <par indent="0" left-indent="7.1" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-информационный="1" word-основной="1">
+  <par indent="0" left-indent="7.1" right-indent="0" space-before="0.0" space-after="0.0" alignment="JUSTIFY (3)" word-информационный="1" word-основной="1" t-content="topic">
     <style id="s16">Понятия, используемые в процессе управления в образовании. Основные области управленческой деятельности в образовании. Типы систем управления.</style>
     <style id="s3"> Информационные системы управления образованием.</style>
   </par>
@@ -267,7 +267,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
     <style id="s4b">Тема 3.1. Принципы обучения , заложенные в обучающую среду Moodle </style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-content="topic">
     <style id="s3">Конструкционизм, социальный конструктивизм. Пять принципов социального конструктивизма.</style>
     <style id="s4b"> </style>
     <style id="s3">Основы успешного обучения. Правила организации учебного материала.</style>
@@ -275,7 +275,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1">
     <style id="s4b">Тема 3.2. Администрирование системы обучения Moodle </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" t-content="topic">
     <style id="s3">Общие принципы работы в Moodle.</style>
     <style id="s17i"> </style>
     <style id="s3">Создание учетных записей. Работа со списком пользователей. Настройка элементов курса.</style>
@@ -283,7 +283,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-тема="1" word-электронный="1">
     <style id="s4b">Тема 3.3. Создание электронного учебного курса в Moodle </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-ресурс="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-ресурс="1" t-content="topic">
     <style id="s3">Создание категории курса. Создание курса. Наполнение курса. Ресурсы курса, элементы курса. Добавление элементов курса и ресурсов. Создание тестов.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>

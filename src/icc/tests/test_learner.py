@@ -44,7 +44,7 @@ class TestLearning:
 
     def test_update(self):
         self.e.update()
-        self.e.write(self.docname)
+        self.e.write(self.docname+"-updated")
 
     def test_learning_params_self(self):
         self.e.learning_params(teaching=True)
@@ -54,7 +54,9 @@ class TestLearning:
         m = self.e.fit()
         assert m is not None
         recon = self.e.predict(rows=x[:, :])
-        print("Declinations:", recon - y)
+#        print("Original:", y)
+#        print("Predicted:", recon)
+#        print("Declinations:", recon - y)
         for docx_file in FILES:
             xml = XMLTextPropertyExtractor(
                 filename=docx_file, importer=msdocx.Importer)

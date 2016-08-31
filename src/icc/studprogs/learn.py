@@ -147,8 +147,8 @@ class LinkGrammar(object):
                 yield par, rc, linkage
 
 
-SECTION_RE = re.compile("(^(\d+\.?)+)")
-WORD_OPK = re.compile("\((о?п?к.+\d+)\)")
+SECTION_RE = re.compile("^.{0,5}(\d{1,2}(\.\d{1,2})+\.?)")
+WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
 
@@ -242,8 +242,8 @@ CONVERT_VALUE = {
 }
 CONTEXTUAL_FEATURES = set([
     "section-mark",
-#    "section-level",
-#    "compound-программа-дисциплина",
+    #    "section-level",
+    #    "compound-программа-дисциплина",
 ])
 
 
@@ -318,6 +318,14 @@ class XMLTextPropertyExtractor(object):
             cnt += 1
             par.set("section-level", str(cnt))
 
+    def par_has_URL_or_email(self, par, text, words, tokens):
+        for token in tokens:
+            t = token.type()
+            if t.startswith("URL"):
+                par.set("has-url", "1")
+            elif t.startswith("E-MAIL"):
+                par.set("has-email", "1")
+
     def par_has_words(self, par, text, words, tokens, find_words=[]):
         for w in find_words:
             if w in words:
@@ -326,10 +334,23 @@ class XMLTextPropertyExtractor(object):
     def par_is_empty(self, par, text, words, tokens):
         if len(words) == 0:
             par.set("par-is-empty", "1")
-        for t in tokens:
-            if t.type().startswith("WORD"):
+        no_words = True
+        for token in tokens:
+            t = token.type()
+            if t.startswith("WORD"):
+                no_words = False
                 return
-        par.set("no-words", "1")
+        if no_words:
+            par.set("no-words", "1")
+
+    def par_only_numbers(self, par, text, words, tokens):
+        if len(words)==0:
+            return
+        for token in tokens:
+            t = token.type()
+            if not t.startswith("NUMBER"):
+                return
+        par.set("only-numbers", "1")
 
     def par_opk_marks(self, par, text, words, tokens):
         m = WORD_OPK.search(text)
@@ -377,6 +398,7 @@ class XMLTextPropertyExtractor(object):
             return
         par_processors = [
             self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
+            self.par_has_URL_or_email, self.par_only_numbers,
             (self.par_has_words,
              ["знать", "уметь", "владеть", "технология", "оценочный",
               "средства", "ресурс", "интернет", "квалификация", "овладеть",
@@ -415,6 +437,8 @@ class XMLTextPropertyExtractor(object):
                     context[cf] = par.get(cf)
                 elif cf in context:
                     par.set("contextual-" + cf, context[cf])
+            if len(context) == 0:
+                par.set("contextual-no-context", "1")
 
     def update(self):
         self.extract(style_names=False)
@@ -482,15 +506,20 @@ class XMLTextPropertyExtractor(object):
         if self.learn_coding is None:
             self.learn_coding(teaching=True)
         x, y = self.prepare_params(teaching=True)
-        clf = tree.DecisionTreeClassifier()
-        m = clf.fit(x, y)
+
         # clf = svm.SVC()
         # m = clf.fit(x, y)
         # clf = GaussianNB()
         # m = clf.fit(x,y)
-        # FIXME implement multilabel learning
-        self.fit_model = m
-        return clf
+
+        models = []
+        for i in range(y.shape[1]):
+            clf = tree.DecisionTreeClassifier()
+            _y = y[:, i]
+            m = clf.fit(x, _y)
+            models.append(m)
+        self.fit_model = models
+        return self.fit_model
 
     def predict(self, rows=None, par=None, extractor=None):
         """Apply learning models to a rows of encoded values or
@@ -498,7 +527,12 @@ class XMLTextPropertyExtractor(object):
         from fitting.
         """
         if rows is not None:
-            return self.fit_model.predict(rows)
+            models = self.fit_model
+            y = np.zeros(shape=(rows.shape[0], len(models)), dtype=float)
+            for i, m in enumerate(models):
+                _y = m.predict(rows)
+                y[:, i] = _y
+            return y
         if extractor is not None:
             extractor.extract()
             extractor.set_learn_coding(self.learn_coding)
