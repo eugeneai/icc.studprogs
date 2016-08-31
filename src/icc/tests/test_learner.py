@@ -9,10 +9,12 @@ import os.path
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
+DOC_DIR = os.path.join(DATA_DIR,"documents")
 EXT_PATTERN = "*.docx"
 LEARN_PATTERN = "*-learn.xml"
 
 FILES = glob(os.path.join(DATA_DIR, EXT_PATTERN))
+DOCS = glob(os.path.join(DOC_DIR, EXT_PATTERN))
 LEARN_FILES = glob(os.path.join(DATA_DIR, LEARN_PATTERN))
 
 
@@ -55,9 +57,10 @@ class TestLearning:
         m = self.e.fit()
         assert m is not None
         recon = self.e.predict(rows=x[:, :])
-#        print("Original:", y)
-#        print("Predicted:", recon)
-#        print("Declinations:", recon - y)
+        # print("Declinations:", recon - y)
+
+    def test_predict_on_annotations(self):
+        self.e.fit()
         for docx_file in FILES:
             xml = XMLTextPropertyExtractor(
                 filename=docx_file, importer=msdocx.Importer)
@@ -69,5 +72,21 @@ class TestLearning:
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
             output_filename = docx_file.replace("annotations","out").replace(".docx","-predicted.xml")
+            xml.write(output_filename)
+            assert ny is not None
+
+    def test_predict_on_documens(self):
+        self.e.fit()
+        for docx_file in DOCS:
+            xml = XMLTextPropertyExtractor(
+                filename=docx_file, importer=msdocx.Importer)
+            output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-extracted.xml")
+            xml.load()
+            xml.extract()
+            xml.write(output_filename)
+            xml.set_learn_coding(self.e.learn_coding)
+            nx = xml.prepare_params()
+            ny = self.e.predict(extractor=xml)
+            output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-predicted.xml")
             xml.write(output_filename)
             assert ny is not None

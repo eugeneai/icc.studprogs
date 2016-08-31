@@ -40,9 +40,12 @@ class Importer(object):
             t.set("num-columns", str(ncols))
             # cell_map = {}
             for nrow in range(nrows):
-                ncol = 0
                 for ncol in range(ncols):
-                    cell = table.cell(nrow, ncol)
+                    try:
+                        cell = table.cell(nrow, ncol)
+                    except IndexError:
+                        # FIXME A Bug in python-focx???
+                        continue
                     # c = cell_map.setdefault(ctext, etree.SubElement(t, "cell"))
                     c = etree.SubElement(t, "cell")
                     self.set(c, "x", ncol)
@@ -72,7 +75,8 @@ class Importer(object):
             self.set(p, "widow-control", par_format.widow_control)
             for run in par.runs:
                 r = etree.SubElement(p, "style")
-                r.set("id", run.style.name)
+                if run.style is not None:
+                    r.set("id", run.style.name)
                 r.set("bold", "1" if run.bold else "0")
                 r.set("italic", "1" if run.italic else "0")
                 r.set("underline", "1" if run.underline else "0")

@@ -507,7 +507,7 @@ class XMLTextPropertyExtractor(object):
         """Prepare parameters for fitting and make a fit.
         """
         if self.learn_coding is None:
-            self.learn_coding(teaching=True)
+            self.learning_params(teaching=True)
         x, y = self.prepare_params(teaching=True)
 
         # clf = svm.SVC()
