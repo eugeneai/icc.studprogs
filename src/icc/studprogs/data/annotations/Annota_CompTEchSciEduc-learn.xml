@@ -1,4 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!--
+<document xmlns="http://irnok.net/data/document-structure"
+          xmlns:dcterms="http://purl.org/dc/terms/"
+          >
+          -->
 <document>
   <styles>
     <styledef id="s1" bold="0" italic="0" underline="0" font-size="14.0"/>
@@ -23,7 +28,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-аннотация="1" t-ignore="1" has-no-verbs="1">
     <style id="s1">АННОТАЦИЯ</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" compound-рабочий-программа-дисциплина="1" compound-программа-дисциплина="1" t-title="discipline-work-program" t-section="header" has-no-verbs="1" word-рабочий="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" compound-рабочий-программа-дисциплина="1" compound-программа-дисциплина="1" t-dc-title="dctypes:Text" t-a="dc:Title" has-no-verbs="1" word-рабочий="1">
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1" t-ignore="1"/>
@@ -372,19 +377,19 @@
   <par indent="0.0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="7.1" section-level="2" t-section="literature-basis" has-no-verbs="1">
     <style id="s3">7.1. Основная литература</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" t-bibliography-book="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" t-dcterms-bibliographicCitation="1" has-no-verbs="1">
     <style id="s3">Компьютерные технологии в науке, технике и образовании : учеб. пособие / Б. Б. Пономарев [и др.]; под общ. ред. А. И. Промптова. - Иркутск : ИрГТУ, 2000. - 395 с. : a-ил </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-bibliography-book="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-dcterms-bibliographicCitation="1" has-no-verbs="1">
     <style id="s3">Трайнев Владимир Алексеевич Новые информационные коммуникационные технологии в образовании / В. А. Трайнев, В. Ю. Теплышев, И. В. Трайнев. - 2-е изд. - Москва : Дашков и К°, 2013. - 317 с. </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="False" section-mark="7.2" section-level="2" word-дополнительный="1" t-section="literature-auxiliary" has-no-verbs="1">
     <style id="s3">7.2. Дополнительная литература</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-информационный="1" t-bibliography-item="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-информационный="1" t-dcterms-bibliographicCitation="1" has-no-verbs="1">
     <style id="s3">О государственной программе Российской Федерации "Информационное общество  (2011 - 2020 годы)". Распоряжение от 20 октября 2010 г. n 1815-р</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-bibliography-book="1" word-учебный="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-информационный="1" t-dcterms-bibliographicCitation="1" word-учебный="1">
     <style id="s3">Логинов Владимир Николаевич Информационные технологии управления : учебное пособие по специальности "Государственное и муниципальное управление" / В. Н. Логинов. - 2-е изд., стер. - М. : КНОРУС, 2012. - 238 с. : a-ил </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>

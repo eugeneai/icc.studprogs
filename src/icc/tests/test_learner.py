@@ -51,7 +51,9 @@ class TestLearning:
 
     def test_learning_params_self(self):
         self.e.learning_params(teaching=True)
+        #[print(x) for x in self.e.learn_coding]
         x, y = self.e.prepare_params(teaching=True)
+        #print(x,y)
         assert len(x[0]) > 0 or len(y[0]) > 0
         assert len(x) == len(y)
         m = self.e.fit()

@@ -153,6 +153,23 @@ WORD_PREAMBLE_RE = re.compile("^.*?(\w+).*?$")
 WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
+NS={
+    None:"http://irnok.net/data/document-structure",
+    "dcterms":"http://purl.org/dc/terms/",
+    "dctypes":"http://purl.org/dc/dcmitype/",
+    "dc":"http://dublincore.org/2012/06/14/dcelements.rdf",
+}
+
+# Interpretations
+# dcterms:contributor,creator,title
+# dc:Title
+# dcterms:bibliographicCitation,rightsHolder
+# dctypes:Text # Get vslue as text of paragraph
+# dctypes:Software
+# bf:Title, bf:title
+
+# Document description ontologies http://www.semantic-web-journal.net/system/files/swj1016_0.pdf
+
 
 class LearningData(object):
     def __init__(self):
@@ -478,7 +495,6 @@ class XMLTextPropertyExtractor(object):
         param_coding = LearningData()
         target_coding = LearningData()
         self.learn_coding = (param_coding, target_coding, teaching)
-
         for par in self.tree.iterfind("//par"):
             for k, v in par.attrib.items():
                 if k.startswith("t-"):
