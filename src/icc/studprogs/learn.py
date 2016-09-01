@@ -290,12 +290,12 @@ class XMLTextPropertyExtractor(object):
 
     def words(self, text, with_tokens=False):
         t = SPACE_LIKE_RE.sub(" ", text)
-        # TODO
         for token in self.tokenizer.tokens([t]):
             w = str(token)
             if token.type().startswith("WORD"):
-                p = self.morph.parse(w)[0]
-                w = p.normal_form
+                p = self.morph.parse(w)
+                token.morph = p
+                w = p[0].normal_form
             if with_tokens:
                 yield w, token
             else:
@@ -315,7 +315,7 @@ class XMLTextPropertyExtractor(object):
         if m:
             mark = m.group(2)
             preamble = m.group(1)
-            print (mark, preamble)
+
             if BAD_PREAMBLE_RE.match(preamble) is not None:  # A bad garbage ends with numbers.
                 return
             wm = WORD_PREAMBLE_RE.match(preamble)
@@ -362,6 +362,22 @@ class XMLTextPropertyExtractor(object):
             if not t.startswith("NUMBER"):
                 return
         par.set("only-numbers", "1")
+
+    def par_has_no_verbs(self, par, text, words, tokens):
+        if len(words)==0:
+            return
+        has_words = False
+        for token in tokens:
+            try:
+                p = token.morph
+            except AttributeError as a:
+                continue
+            tag = p[0].tag
+            if tag.POS == "VERB":
+                return
+            has_words=True
+        if has_words:
+            par.set("has-no-verbs","1")
 
     def par_opk_marks(self, par, text, words, tokens):
         m = WORD_OPK.search(text)
@@ -410,6 +426,7 @@ class XMLTextPropertyExtractor(object):
         par_processors = [
             self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
             self.par_has_URL_or_email, self.par_only_numbers,
+            self.par_has_no_verbs,
             (self.par_has_words,
              ["знать", "уметь", "владеть", "технология", "оценочный",
               "средства", "ресурс", "интернет", "квалификация", "овладеть",
@@ -513,9 +530,11 @@ class XMLTextPropertyExtractor(object):
             return param_rows, target_rows
         return param_rows, par_index
 
-    def fit(self, method="tree"):
+    def fit(self, method="tree", extract=True):
         """Prepare parameters for fitting and make a fit.
         """
+        if extract:
+            self.extract()
         if self.learn_coding is None:
             self.learning_params(teaching=True)
         x, y = self.prepare_params(teaching=True)
