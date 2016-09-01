@@ -147,7 +147,9 @@ class LinkGrammar(object):
                 yield par, rc, linkage
 
 
-SECTION_RE = re.compile("^.{0,8}?(\d{1,2}(\.\d{1,2})*\.?)")
+SECTION_RE = re.compile("^(.{0,8}?)(\d{1,2}(\.\d{1,2})*\.?)[ \t]")
+BAD_PREAMBLE_RE = re.compile("^.*?\d+$")
+WORD_PREAMBLE_RE = re.compile("^.*?(\w+).*?$")
 WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
@@ -309,9 +311,17 @@ class XMLTextPropertyExtractor(object):
         return t, [t[0] for t in tokens], [t[1] for t in tokens]
 
     def par_has_section_mark(self, par, text, words, tokens):
-        m = SECTION_RE.search(text)
+        m = SECTION_RE.match(text)
         if m:
-            mark = m.group(1)
+            mark = m.group(2)
+            preamble = m.group(1)
+            print (mark, preamble)
+            if BAD_PREAMBLE_RE.match(preamble) is not None:  # A bad garbage ends with numbers.
+                return
+            wm = WORD_PREAMBLE_RE.match(preamble)
+            if wm is not None:
+                word = wm.group(1)
+                par.set("section-type",word.lower())
             mark = mark.rstrip(".")
             par.set("section-mark", mark)
             cnt = mark.count(".")
