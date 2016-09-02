@@ -168,6 +168,11 @@ NS={
 # dctypes:Software
 # bf:Title, bf:title
 
+# deo:caption
+
+# http://www.sparontologies.net/ontologies - Description of published matter.
+#
+
 # Document description ontologies http://www.semantic-web-journal.net/system/files/swj1016_0.pdf
 
 
