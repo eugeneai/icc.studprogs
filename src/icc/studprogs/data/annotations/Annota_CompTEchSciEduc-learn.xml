@@ -27,52 +27,54 @@
   <section type="NEW-PAGE (2)"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)" word-аннотация="1"
-       t-clear-prev-context="1" has-no-verbs="1" t-a="schema:TechArticle
-                                                      doap:Project" t-id="study-prog-annotation">
+       c-clear-prev-context="1" has-no-verbs="1"
+       t-id="annotation-declaration">
     <style id="s1">АННОТАЦИЯ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)"
        compound-рабочий-программа-дисциплина="1"
        compound-программа-дисциплина="1"
-       t-a="schema:TechArticle doap:Project"
-       t-id="study-prog-annotation"
-       has-no-verbs="1" word-рабочий="1" t-clear-prev-context="1">
+       t-id="discipline-study-program"
+       has-no-verbs="1" word-рабочий="1"
+       c-clear-prev-context="1">
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1" t-ignore="1"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)" word-технология="1"
-       compound-наименование-дисциплина="1" t-id="discipline-name"
-       t-a="dc:Title" t-property="dc:title schema:name doap:name" has-no-verbs="1">
+       compound-наименование-дисциплина="1"
+       t-id="discipline-name"
+       has-no-verbs="1">
     <style id="s2b">КомпьюТерные Технологии в науке и образовании</style>
     <style id="s3"> (наименование дисциплины)</style>
   </par>
   <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" word-подготовка="1"
-       t-id="discipline-direction" t-a=""  has-no-verbs="1">
+       t-id="training-direction"
+       has-no-verbs="1">
     <style id="s3">Направление подготовки/специальность высшего образования:</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-content="direction" section-mark="23" section-level="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-id="training-direction-name" section-mark="23" section-level="1" has-no-verbs="1">
     <style id="s4b">---</style>
     <style id="s5u">230100 «Информатика и вычислительная   техника</style>
     <style id="s3"> </style>
   </par>
-  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-подготовка="1" compound-код-и-наименование="1" t-ignore="1" has-no-verbs="1">
+  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-подготовка="1" compound-код-и-наименование="1" t-id="ignore" has-no-verbs="1">
     <style id="s3">(код и наименование направления подготовки/специальности)</style>
   </par>
-  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-ignore="1"/>
-  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" compound-программа-магистратура="1" t-field-id="discipline-program" has-no-verbs="1">
+  <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-id="ignore"/>
+  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" compound-программа-магистратура="1" t-id="discipline-program" has-no-verbs="1">
     <style id="s3">Программа магистратуры:</style>
   </par>
-  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" t-content="study-name" has-no-verbs="1">
+  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" t-id="discipline-program-name" has-no-verbs="1">
     <style id="s5u">Сети ЭВМ и телекоммуникации</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-подготовка="1" compound-указать-профиль="1" t-ignore="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-подготовка="1" compound-указать-профиль="1" t-id="ignore" has-no-verbs="1">
     <style id="s3">(указать профиль подготовки/наименование магистерской программы/специализацию)</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-ignore="1"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-квалификация="1" t-field-id="qualification" t-content="study-qualification" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-id="ignore"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-квалификация="1" t-id="study-qualification" has-no-verbs="1">
     <style id="s3">Квалификация:        </style>
     <style id="s6u">МАГИСТР</style>
   </par>

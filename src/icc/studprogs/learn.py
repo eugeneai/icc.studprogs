@@ -184,7 +184,7 @@ NS={
 # <... rel="foaf:topic" href=.... content=... ...>....value...</....
 # <... prefix="foaf: http://xmlns.com/foaf/0.1/ dc: http://purl.org/dc/terms/" ...>
 # rev= is opposite direction w.r.t. rel=
-# <... datatype="xsd:dateTime" ....>
+# <... datatype="xsd:dateTime" ....> ... of literal
 # <... about="urn:ISBN:0091808189" ...> - another document inside
 # <... typeof="dc:Title" ...>
 # <... vocab="http://xmlns.com/foaf/0.1/" ....>
@@ -192,7 +192,42 @@ NS={
 
 # Feature interpretation
 
+INTERP={
+    "annotation-declaration":{
+        "a":"schema:TechArticle doap:Project"
+    },
+    "discipline-study-program":{
+        "a":"schema:TechArticle doap:Project",
+        "" : "NEXT"
+    },
+    "discipline-name":{
+        "a":"dc:Title",
+        "rel":"dc:title schema:name doap:name"
+    },
+    "training-direction":{
+        "rel":"dc:title schema:name doap:name",
+        "a":"dc:Title",
+        "" : "NEXT"
+    },
+    "training-direction-name":{
+        "a":"dctypes:Text",
+    },
+    "author": {
+        "rel":"schema:creator schema:publisher schema:contributor schema:author",
+        "a":"foaf:Person"
+    },
+    "discipline-program":{
+        "rel":"dc:title schema:name doap:name",
+        "a":"dc:Title",
+        "":"NEXT"
+    },
+    "discipline-program-name":{
+        "a":"dctypes:Text",
+    },
+    "study-qualification":{
 
+    }
+}
 
 
 class LearningData(object):
