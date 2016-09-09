@@ -9,7 +9,7 @@ import os.path
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
-DOC_DIR = os.path.join(DATA_DIR,"documents")
+DOC_DIR = os.path.join(DATA_DIR, "documents")
 EXT_PATTERN = "*.docx"
 LEARN_PATTERN = "*-learn.xml"
 
@@ -34,6 +34,7 @@ class TestBasicLoad:
         print(self.output_filename)
         self.e.write(self.output_filename)
 
+
 class TestLearning:
     """TEsts the process of learning.
     """
@@ -47,7 +48,7 @@ class TestLearning:
 
     def test_update(self):
         self.e.update()
-        self.e.write(self.docname+"-updated")
+        self.e.write(self.docname + "-updated")
 
     def test_learning_params_self(self):
         self.e.learning_params(teaching=True)
@@ -66,14 +67,16 @@ class TestLearning:
         for docx_file in FILES:
             xml = XMLTextPropertyExtractor(
                 filename=docx_file, importer=msdocx.Importer)
-            output_filename = docx_file.replace("annotations","out").replace(".docx","-extracted.xml")
+            output_filename = docx_file.replace("annotations", "out").replace(
+                ".docx", "-extracted.xml")
             xml.load()
             xml.extract()
             xml.write(output_filename)
             xml.set_learn_coding(self.e.learn_coding)
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
-            output_filename = docx_file.replace("annotations","out").replace(".docx","-predicted.xml")
+            output_filename = docx_file.replace("annotations", "out").replace(
+                ".docx", "-predicted.xml")
             xml.write(output_filename)
             assert ny is not None
 

@@ -8,6 +8,7 @@ package = __name__
 TEST_FILE1 = resource_filename("icc.studprogs", "data/xml-1-240-059285.xml")
 OFILE = TEST_FILE1.replace(".xml", "-{}.xml").replace("data/", "data/out/")
 
+
 @SkipTest
 class TestBasicXMLProc:
     def setUp(self):
@@ -57,8 +58,8 @@ class TestBasicXMLProc:
         self.xml.remove_pages()
         self.xml.style_names()
         self.xml.reduce_pars()
-        of=OFILE.format("final")
+        of = OFILE.format("final")
         self.xml.write(of)
         self.xml.as_xhtml()
-        of=OFILE.format("xhtml")
+        of = OFILE.format("xhtml")
         self.xml.write(of)

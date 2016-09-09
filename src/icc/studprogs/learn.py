@@ -175,6 +175,8 @@ NS={
 
 # Document description ontologies http://www.semantic-web-journal.net/system/files/swj1016_0.pdf
 
+# pimspace: http://www.w3.org/ns/pim/space#     # Not found
+# # # fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp#
 
 class LearningData(object):
     def __init__(self):
@@ -266,6 +268,7 @@ CONVERT_VALUE = {
 }
 CONTEXTUAL_FEATURES = set([
     "section-mark",
+    "t-field-id",     # rel="schema:hasPart" resource="#....."
     #    "section-level",
     #    "compound-программа-дисциплина",
 ])

@@ -12,9 +12,11 @@ develop: requirements setup
 
 requirements:
 	pip install -r requirements.txt
-	
+
 upgrade:
 	pip install --upgrade -r requirements.txt
+
+dev: requirements setup
 
 setup:
 	python setup.py develop
