@@ -178,6 +178,23 @@ NS={
 # pimspace: http://www.w3.org/ns/pim/space#     # Not found
 # # # fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: http://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp#
 
+# RDFa is the basis of the following interpretation (by example)
+
+# <... property="dc:title">...Title...</...
+# <... rel="foaf:topic" href=.... content=... ...>....value...</....
+# <... prefix="foaf: http://xmlns.com/foaf/0.1/ dc: http://purl.org/dc/terms/" ...>
+# rev= is opposite direction w.r.t. rel=
+# <... datatype="xsd:dateTime" ....>
+# <... about="urn:ISBN:0091808189" ...> - another document inside
+# <... typeof="dc:Title" ...>
+# <... vocab="http://xmlns.com/foaf/0.1/" ....>
+# <... resource="http://dbpedia.org/resource/German_Empire" ...> - Create new Subject
+
+# Feature interpretation
+
+
+
+
 class LearningData(object):
     def __init__(self):
         self.encoding = {
