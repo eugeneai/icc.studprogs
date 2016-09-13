@@ -17,178 +17,178 @@
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" par-is-empty="1" no-words="1" contextual-no-context="1" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-type="б1" section-mark="1.2" section-level="2" has-no-verbs="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-type="б1" section-mark="1.2" section-level="2" has-no-verbs="1" t-id="discipline-study_program-name">
     <style id="s2bu">Б1.В.ДВ.1.2 Культура организации технического обслуживания и ремонта автомобилей в автотранспортных предприятиях</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" compound-наименование-дисциплина="1" contextual-section-mark="1.2" t-id="ignore">
     <style id="s1">(наименование дисциплины)</style>
   </par>
   <par indent="-255.15" left-indent="255.15" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="-255.15" left-indent="255.15" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-подготовка="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="-255.15" left-indent="255.15" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-подготовка="1" contextual-section-mark="1.2" t-id="discipline-training-direction-name">
     <style id="s1">Направление подготовки высшего образования: </style>
     <style id="s2bu">23.03.03 Эксплуатация транспортно-технологических машин и комплексов</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-profile-name">
     <style id="s1">Профили: </style>
     <style id="s2bu">Автомобили и автомобильное хозяйство</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="discipline-qualification-name">
     <style id="s1">Квалификация: </style>
     <style id="s2bu">бакалавр</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-цель="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-цель="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-purpose-header">
     <style id="s3b">Цели и задачи освоения дисциплины </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-цель="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-цель="1" contextual-section-mark="1.2" t-id="discipline-purpose-aim-declaration">
     <style id="s3b">Цели:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" word-формировать="1" word-цель="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" word-формировать="1" word-цель="1" contextual-section-mark="1.2" t-id="discipline-purpose-aim-declaration">
     <style id="s1">Изучение дисциплины «Культура организации технического обслуживания и ремонта автомобилей в автотранспортных предприятиях» является одной из целей университетского образования, формирующей у студента:</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-aim-item">
     <style id="s1">1)	во-первых, знания по формированию структуры и организации деятельности автотранспортных предприятий, обеспечения их конкурентоспособности;</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-aim-item">
     <style id="s1">2)	во-вторых, знания в области сертификации услуг и систем менеджмента качества.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-задача="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-purpose-task-declaration">
     <style id="s3b"> Задачи:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" word-задача="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" word-задача="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s1">В дисциплине рассматриваются указанные в ФГОС  задачи профессиональной деятельности выпускника:</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Определение в составе коллектива исполнителей производственной программы по техническому обслуживанию, сервису, ремонту и другим услугам при эксплуатации транспорта или изготовлении оборудования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Участие в составе коллектива исполнителей в разработке и совершенствовании технологических процессов и документации;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Эффективное использование материалов, оборудования, соответствующих алгоритмов и программ расчетов параметров технологических процессов;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Организация и эффективное осуществление контроля качества запасных частей, комплектующих изделий и материалов, производственного контроля технологических процессов, качества продукции и услуг;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4"> Обеспечение безопасности эксплуатации (в том числе экологической), хранения, обслуживания, ремонта и сервиса транспорта и транспортного оборудования, безопасных условий труда персонала;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4"> Внедрение эффективных инженерных решений в практику;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4"> Организация и осуществление технического контроля при эксплуатации транспорта и транспортного оборудования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4"> Участие в составе коллектива исполнителей в организации работы коллектива, выборе, обосновании, принятии и реализации управленческих решений;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4"> Участие в составе коллектива исполнителей в совершенствовании организационно-управленческой структуры предприятий по эксплуатации, хранению, техническому обслуживанию, ремонту и сервису транспорта и транспортного оборудования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Участие в составе коллектива исполнителей в организации и совершенствовании системы учета и документооборота;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Участие в составе коллектива исполнителей в выборе и, при необходимости, разработке рациональных нормативов эксплуатации, технического обслуживания, ремонта и хранения транспорта и оборудования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Участие в составе коллектива исполнителей в нахождении компромисса между различными требованиями (стоимости, качества, безопасности и сроков исполнения) при долгосрочном и краткосрочном планировании и определение рационального решения;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-task-item">
     <style id="s4">Участие в составе коллектива исполнителей в оценке производственных и непроизводственных затрат на обеспечение качества продукции и услуг;участие в составе коллектива исполнителей в осуществлении технического контроля и управлении качеством изделий, продукции и услуг.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-формировать="1" compound-компетенция-обучающийся="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-формировать="1" compound-компетенция-обучающийся="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-competentions">
     <style id="s3b">Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="1.2" t-id="ignore">
     <style id="s1">Освоение программы настоящей дисциплины позволит сформировать у обучающегося следующие компетенции:</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" opk-sign="1" opk="опк-1" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" opk-sign="1" opk="опк-1" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-competention-item">
     <style id="s1">способность решать стандартные задачи профессиональной деятельности на основе информационной и библиографической культуры с применением информационно-коммуникационных технологий и с учётом основных требований информационной безопасности (ОПК-1);</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" opk-sign="1" opk="опк-2" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" opk-sign="1" opk="опк-2" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-competention-item">
     <style id="s1">владение научными основами технологических процессов в области эксплуатации транспортно-технологических машин и комплексов (ОПК-2).</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration">
     <style id="s1">В результате изучения дисциплины студенты должны:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-знать="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-знать="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-knowlege-declaration">
     <style id="s3b">знать:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-основной="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-основной="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Основные положения и нормативную документацию необходимую для организации автотранспортных предприятий и его функционирования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Требования, предъявляемые к автотранспортным предприятиям  на современном рынке;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Информационное обеспечение деятельности автотранспортного предприятия;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Особенности сервиса грузовых, специальных, строительно-дорожных и сельскохозяйственных машин;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-средство="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-средство="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Правила и систему сертификации услуг по техническому облуживанию и ремонту автотранспортных средств;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Организацию и сертификацию систем менеджмента качества;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-средство="1" contextual-section-mark="1.2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-средство="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Технологическое содержание, правила и условия выполнения работ (предоставления услуг) по техническому обслуживанию и ремонту автомототранспортных средств;</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-уметь="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-уметь="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-skills-declaration">
     <style id="s3b">уметь: </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Оценить перспективы создания автотранспортных предприятий или выявить причины существующих недостатков и принять меры по их устранению и повышению эффективности предприятия;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Подготовить документацию необходимую для создания автотранспортных предприятий и в процессе его функционирования;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Организовать работу предприятия соответственно положениям государственных стандартов, правил обязательной сертификации, стандартов ИСО 9000, правил и норм охраны труда, техники безопасности, производственной санитарии и противопожарной защиты;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Организовать работу по повышению квалификации работников;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Консультировать по вопросам проектирования автотранспортных предприятий, разработке и реализации прогрессивных технологических процессов;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Внедрять передовой опыт и достижения техники в работу автотранспортных предприятий.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-владеть="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-владеть="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-posesses-declaration">
     <style id="s3b">владеть:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-метод="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-метод="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Приемами и методами оценки деятельности автотранспортных предприятий или выявить причины существующих недостатков и принять меры по их устранению и повышению эффективности предприятия;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Владением необходимого документооборота, организации работы исполнителей согласно требований стандартов, правил и норм по охране труда, технике безопасности, производственной санитарии и противопожарной защиты; </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-квалификация="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s1">Повышения квалификации работников; внедрение прогрессивных технологических процессов, передового опыта достижений науки и техники.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-структура-дисциплина="1" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-структура-дисциплина="1" contextual-section-mark="1.2" t-id="discipline-structure-header">
     <style id="s3b">Основная структура дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="1.2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="1.2" t-id="discipline-structure-amount">
     <style id="s1">Объем дисциплины:</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="1.2" t-id="ignore">
@@ -201,16 +201,16 @@
     <style id="s1">в 5-ом семестре – экзамен.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-type="таблица" section-mark="1" section-level="1" has-no-verbs="1" word-таблица="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-type="таблица" section-mark="1" section-level="1" has-no-verbs="1" word-таблица="1"  t-id="discipline-structure-table-header">
     <style id="s5bi">Таблица 1 – Количество академических часов, выделенных на дисциплину</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-содержание-дисциплина="1" contextual-section-mark="1" t-id="discipline-purpose-description-task-item">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-содержание-дисциплина="1" contextual-section-mark="1" t-id="discipline-content-header">
     <style id="s3b">Содержание дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-раздел="1" word-перечень="1" contextual-section-mark="1" t-id="discipline-purpose-description-task-item">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-раздел="1" word-перечень="1" contextual-section-mark="1" t-id="discipline-content-list">
     <style id="s3b">Перечень разделов и тем дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
@@ -256,7 +256,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="2.9" section-level="2" has-no-verbs="1" word-обеспечение="1" word-рабочий="1" t-id="discipline-content-section">
     <style id="s1">2.9. Обеспечение качества работ на рабочих местах </style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="2.10" section-level="2" has-no-verbs="1" word-рабочий="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="2.10" section-level="2" has-no-verbs="1" word-рабочий="1" t-id="discipline-laboratory-tasks-item">
     <style id="s1">2.10. Мероприятия по охране труда на рабочих местах. </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="3" section-level="1" has-no-verbs="1" t-id="discipline-content-section">
@@ -307,56 +307,57 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="4.8" section-level="2" has-no-verbs="1" t-id="discipline-content-section">
     <style id="s1">4.8. Культура организации работ на слесарно- механическом участке</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="5" section-level="1" has-no-verbs="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0"
+       space-after="0.0" section-mark="5" section-level="1" has-no-verbs="1" t-id="discipline-content-section">
     <style id="s1">5. Пути повышения культуры производства в АТП.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-лабораторный="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-лабораторный="1" contextual-section-mark="5" t-id="discipline-laboratory-tasks-header">
     <style id="s3b">Перечень лабораторных работ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="5" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="5" t-id="discipline-list-item-none">
     <style id="s6i">Не предусмотрены учебным планом.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-практический="1" word-семинарский="1" word-занятие="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-практический="1" word-семинарский="1" word-занятие="1" contextual-section-mark="5" t-id="discipline-seminar-header">
     <style id="s3b">Перечень практических (семинарских)  занятий</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа  1. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Разработка технологических процессов ТО и ремонта для АТП различной мощности.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа  2. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Подбор оборудования и инструмента для постов КТП, их эскизная компоновка.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа 3. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Подбор оборудования, приборов и инструментов для участка </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа 4. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Подбор оборудования, оснастки инструмента для постов ТО и ТР автомобилей, эскизная компоновка.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа  5. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Разработка технологического процесса моторного цеха, подбор оборудования, оснастки и инструмента, эскизная компоновка. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа  6. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Разработка технологического процесса агрегатного цеха, подбор оборудования, оснастки и инструмента, эскизная компоновка.</style>
   </par>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
@@ -365,56 +366,56 @@
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
     <style id="s1">Разработка технологического процесса кузовного цеха, подбор оборудования, оснастки и инструмента, эскизная компоновка.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа 8. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Разработка технологического процесса малярного цеха, подбор оборудования, оснастки и инструмента, эскизная компоновка.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Практическая работа 9. </style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-seminar-item">
     <style id="s1">Разработка технологического процесса электротехнического цеха, подбор оборудования, оснастки и инструмента, эскизная компоновка.</style>
   </par>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-самостоятельный="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-самостоятельный="1" contextual-section-mark="5" t-id="discipline-independent_work-header">
     <style id="s3b">Перечень заданий по  самостоятельной работе студентов (включая курсовой проект, курсовую работу)</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-independent_work-item"t-id="ignore">
     <style id="s7">Реферат;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-практический="1" word-занятие="1" word-подготовка="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-практический="1" word-занятие="1" word-подготовка="1" contextual-section-mark="5" t-id="discipline-independent_work-item">
     <style id="s7">Подготовка отчетов по практическим занятиям;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-самостоятельный="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-самостоятельный="1" contextual-section-mark="5" t-id="discipline-independent_work-item">
     <style id="s7">Самостоятельное изучение дисциплины;</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-подготовка="1" word-экзамен="1" contextual-section-mark="5" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" word-подготовка="1" word-экзамен="1" contextual-section-mark="5" t-id="discipline-independent_work-item">
     <style id="s7">Подготовка к экзамену</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" contextual-section-mark="5" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" contextual-section-mark="5" t-id="discipline-educational_technologies-header">
     <style id="s3b">Образовательные технологии, применяемые для реализации программы</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-технология="1" word-таблица="1" contextual-section-mark="5" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-технология="1" word-таблица="1" contextual-section-mark="5" t-id="discipline-educational_technologies-declaration">
     <style id="s1">При реализации данной программы применяются образовательные технологии, описанные в таблице 2. </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-type="таблица" section-mark="2" section-level="1" has-no-verbs="1" word-технология="1" word-таблица="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-type="таблица" section-mark="2" section-level="1" has-no-verbs="1" word-технология="1" word-таблица="1" t-id="discipline-educational_technologies-table-header">
     <style id="s5bi">Таблица 2 - Применяемые образовательные технологии</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-лекция="1" word-средство="1" word-рисунок="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-лекция="1" word-средство="1" word-рисунок="1" contextual-section-mark="2" t-id="discipline-educational_technologies-item">
     <style id="s1">Слайд-материалы – в данном типе лекции передача преподавателем информации студентам сопровождается показом различных рисунков, структурно-логических схем, формул, диаграмм и т.п. с помощью технических средств обучения и компьютерной техники в виде слайдов. </style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-учебный="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-учебный="1" contextual-section-mark="2"  t-id="discipline-educational_technologies-item">
     <style id="s1">Работа в команде – форма познавательной деятельности обучающихся, в которой субъекты образовательного процесса упорядоченно и целенаправленно обмениваются своими мнениями, идеями, суждениями по обсуждаемой учебной проблеме. В процессе обмена мнениями формируются следующие компетенции: коммуникативные (умения общаться, формулировать и задавать вопросы, отстаивать свою точку зрения, уважение и принятие собеседника и др.), способности к анализу, брать на себя ответственность, умения отстаивать свою точку зрения, т.е. навыки социального общения и др.</style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-самостоятельный="1" word-оформление="1" contextual-section-mark="2" t-id="ignore">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-самостоятельный="1" word-оформление="1" contextual-section-mark="2"  t-id="discipline-educational_technologies-item">
     <style id="s1">Творческое задание представляет собой отчёт по самостоятельной работе в соответствии с требованиями по оформлению. (</style>
     <style id="s6i">Например в виде реферата</style>
     <style id="s1">)</style>
@@ -424,388 +425,72 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" word-оценочный="1" word-средство="1" compound-оценочный-средство="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" word-оценочный="1" word-средство="1" compound-оценочный-средство="1" contextual-section-mark="2" t-id="discipline-evaluation-header">
     <style id="s3b">Оценочные средства и технологии </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-экзамен="1" contextual-section-mark="2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-экзамен="1" contextual-section-mark="2" t-id="discipline-evaluation-item">
     <style id="s1">Экзамен. Проводится в устной форме по билетам. В каждом билете содержится три вопроса.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-together="True" keep-with-next="True" word-практический="1" word-самостоятельный="1" word-экзамен="1" word-оформление="1" contextual-section-mark="2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-together="True" keep-with-next="True" word-практический="1" word-самостоятельный="1" word-экзамен="1" word-оформление="1" contextual-section-mark="2" t-id="discipline-evaluation-item">
     <style id="s1">Обучающийся допускается до сдачи экзамена (зачёта) после оформления и защиты отчётов по практическим и самостоятельной работам.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="2" t-id="discipline-resources-header">
     <style id="s3b">Рекомендуемое информационное обеспечение дисциплины</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-header">
     <style id="s3b">Основная литература</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">В.С. Колчин. Технологические процессы технического обслуживания и ремонта автомобилей. учеб. пособие. – Иркутск: Изд-во ИрГТУ, 2013. – 37с. ДСК-3679</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">Автомобильный сервис: станции технического обслуживания автомобиля: учеб. Для вузов по специальности 100101 «Сервис» / И.Э Грибут и др.: под ред. В.С. Шуплякова, Ю.П. Свириденко. – М.: Альфа – М, 2008. – 476 с.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-экзамен="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-экзамен="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">Миротин Л.Б. Управление автосервисом. Учеб. Пособие для транс вузов. – М.: Экзамен 2004. 318с.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">Головин С.Ф. Технический сервис транспортных машин и оборудования. – М.: Альфа – М. 2008. 284 с.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-дополнительный="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-дополнительный="1" contextual-section-mark="2" t-id="discipline-resources-literature-auxiliary">
     <style id="s3b">Дополнительная литература</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" contextual-section-mark="2" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">Марков О.Д. Автосервис: Рынок. Автомобиль. Клиент / О.Д. Марков. – М.: Транспорт, 1999. – 270 с.: а-а-ил.</style>
   </par>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" has-no-verbs="1" word-метод="1" contextual-section-mark="2" t-id="discipline-purpose-description-attainments-posesses-declaration-item">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" has-no-verbs="1" word-метод="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
     <style id="s1">Технологические процессы технического обслуживания и ремонта автомобилей</style>
     <style id="s3b">:</style>
     <style id="s1"> метод. указания по курсовой работе /  сост.: Д.И. Каспришин, В.С. Колчин, Маломыжев О.Л.. – Иркутск: Изд-во ИрГТУ, 2013. – 19с." ДСК – 3678 </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" word-электронный="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" word-электронный="1" contextual-section-mark="2" t-id="discipline-resources-electronic-header">
     <style id="s3b">Электронные образовательные ресурсы</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" contextual-section-mark="2" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" contextual-section-mark="2" t-id="discipline-resources-electronic-item">
     <style id="s1">Ресурсы ИРНИТУ, доступные в библиотеке университета или в локальной сети университета</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="7.4" section-level="2" has-no-verbs="1" word-ресурс="1" word-интернет="1" t-id="discipline-content-section">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="7.4" section-level="2" has-no-verbs="1" word-ресурс="1" word-интернет="1" t-id="discipline-resources-internet-header">
     <style id="s3b">7.4  Ресурсы сети «Интернет»</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="7.4" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" has-no-verbs="1" word-ресурс="1" word-интернет="1" contextual-section-mark="7.4" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" has-no-verbs="1" word-ресурс="1" word-интернет="1" contextual-section-mark="7.4" t-id="discipline-resources-electronic-item">
     <style id="s1">Ресурсы «Интернет» доступные в сети</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="7.4" t-id="ignore"/>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="8" section-level="1" has-no-verbs="1" word-средство="1" t-id="discipline-content-topic">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="8" section-level="1" has-no-verbs="1" word-средство="1" t-id="discipline-resources-programs">
     <style id="s3b">8  Рекомендуемые специализированные программные средства</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="8" t-id="ignore"/>
-  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="8" t-id="ignore">
+  <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="8" t-id="discipline-list-item-none">
     <style id="s1">Не разрабатывались</style>
   </par>
-  <table num-rows="10" num-columns="3">
-    <cell x="0" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="8" t-id="discipline-content-topic">
-        <style id="s3b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" contextual-section-mark="8" t-id="ignore">
-        <style id="s3b">Трудоёмкость, часов</style>
-      </par>
-    </cell>
-    <cell x="2" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" contextual-section-mark="8" t-id="ignore">
-        <style id="s3b">Трудоёмкость, часов</style>
-      </par>
-    </cell>
-    <cell x="0" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="8" t-id="discipline-content-topic">
-        <style id="s3b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" contextual-section-mark="8" t-id="ignore">
-        <style id="s3b">Всего</style>
-      </par>
-    </cell>
-    <cell x="2" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" contextual-section-mark="8" t-id="ignore">
-        <style id="s3b">Семестр</style>
-      </par>
-    </cell>
-    <cell x="0" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="8" t-id="discipline-content-topic">
-        <style id="s3b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" has-no-verbs="1" contextual-section-mark="8" t-id="ignore">
-        <style id="s3b">Всего</style>
-      </par>
-    </cell>
-    <cell x="2" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="5" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s3b">5</style>
-      </par>
-    </cell>
-    <cell x="0" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="1" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s5bi">1</style>
-      </par>
-    </cell>
-    <cell x="1" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="2" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s5bi">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="3" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s5bi">3</style>
-      </par>
-    </cell>
-    <cell x="0" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" contextual-section-mark="3" t-id="ignore">
-        <style id="s1">Общая трудоёмкость дисциплины</style>
-      </par>
-    </cell>
-    <cell x="1" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" no-words="1" only-numbers="1" contextual-section-mark="3" t-id="ignore">
-        <style id="s1">108</style>
-      </par>
-    </cell>
-    <cell x="2" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" no-words="1" only-numbers="1" contextual-section-mark="3" t-id="ignore">
-        <style id="s1">108</style>
-      </par>
-    </cell>
-    <cell x="0" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" word-занятие="1" contextual-section-mark="3" t-id="ignore">
-        <style id="s1">Аудиторные занятия, в том числе:</style>
-      </par>
-    </cell>
-    <cell x="1" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="36" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">36</style>
-      </par>
-    </cell>
-    <cell x="2" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="36" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">36</style>
-      </par>
-    </cell>
-    <cell x="0" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" word-лекция="1" contextual-section-mark="36" t-id="ignore">
-        <style id="s1">лекции</style>
-      </par>
-    </cell>
-    <cell x="1" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="18" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">18</style>
-      </par>
-    </cell>
-    <cell x="2" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="18" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">18</style>
-      </par>
-    </cell>
-    <cell x="0" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" word-лабораторный="1" word-занятие="1" contextual-section-mark="18" t-id="ignore">
-        <style id="s1">лабораторные занятия</style>
-      </par>
-    </cell>
-    <cell x="1" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" no-words="1" contextual-section-mark="18" t-id="ignore">
-        <style id="s1">-</style>
-      </par>
-    </cell>
-    <cell x="2" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" no-words="1" contextual-section-mark="18" t-id="ignore">
-        <style id="s1">-</style>
-      </par>
-    </cell>
-    <cell x="0" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" word-практический="1" word-семинарский="1" word-занятие="1" contextual-section-mark="18" t-id="ignore">
-        <style id="s1">практические/семинарские занятия</style>
-      </par>
-    </cell>
-    <cell x="1" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="18" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">18</style>
-      </par>
-    </cell>
-    <cell x="2" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="18" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">18</style>
-      </par>
-    </cell>
-    <cell x="0" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" widow-control="False" has-no-verbs="1" word-самостоятельный="1" contextual-section-mark="18" t-id="ignore">
-        <style id="s1">Самостоятельная работа (в том числе курсовое проектирование)</style>
-      </par>
-    </cell>
-    <cell x="1" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="36" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">36</style>
-      </par>
-    </cell>
-    <cell x="2" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" widow-control="False" section-mark="36" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">36</style>
-      </par>
-    </cell>
-  </table>
-  <table num-rows="6" num-columns="6">
-    <cell x="0" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" contextual-section-mark="36" t-id="ignore" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">№ п.п</style>
-      </par>
-    </cell>
-    <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-технология="1" contextual-section-mark="36" t-id="discipline-content-topic" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">Технологии</style>
-      </par>
-    </cell>
-    <cell x="2" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-занятие="1" word-учебный="1" contextual-section-mark="36" t-id="discipline-content-topic">
-        <style id="s3b">Количество часов по учебному плану (по видам занятий)</style>
-      </par>
-    </cell>
-    <cell x="3" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-занятие="1" word-учебный="1" contextual-section-mark="36" t-id="discipline-content-topic">
-        <style id="s3b">Количество часов по учебному плану (по видам занятий)</style>
-      </par>
-    </cell>
-    <cell x="4" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-занятие="1" word-учебный="1" contextual-section-mark="36" t-id="discipline-content-topic">
-        <style id="s3b">Количество часов по учебному плану (по видам занятий)</style>
-      </par>
-    </cell>
-    <cell x="5" y="0" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-занятие="1" word-учебный="1" contextual-section-mark="36" t-id="discipline-content-topic">
-        <style id="s3b">Количество часов по учебному плану (по видам занятий)</style>
-      </par>
-    </cell>
-    <cell x="0" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" contextual-section-mark="36" t-id="ignore" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">№ п.п</style>
-      </par>
-    </cell>
-    <cell x="1" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-технология="1" contextual-section-mark="36" t-id="discipline-content-topic" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">Технологии</style>
-      </par>
-    </cell>
-    <cell x="2" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" word-лекция="1" contextual-section-mark="36" t-id="ignore">
-        <style id="s3b">Лекции</style>
-      </par>
-    </cell>
-    <cell x="3" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" contextual-section-mark="36" t-id="ignore" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">ЛР</style>
-      </par>
-    </cell>
-    <cell x="4" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" contextual-section-mark="36" t-id="ignore" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">ПЗ (СЕМ)</style>
-      </par>
-    </cell>
-    <cell x="5" y="1" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" has-no-verbs="1" contextual-section-mark="36" t-id="ignore" t-dcterms-bibliographicCitation="1">
-        <style id="s3b">КР</style>
-      </par>
-    </cell>
-    <cell x="0" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="1" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s3b">1</style>
-      </par>
-    </cell>
-    <cell x="1" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="2" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s3b">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="3" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s3b">3</style>
-      </par>
-    </cell>
-    <cell x="3" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="4" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s3b">4</style>
-      </par>
-    </cell>
-    <cell x="4" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="5" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s3b">5</style>
-      </par>
-    </cell>
-    <cell x="5" y="2" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="6" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s3b">6</style>
-      </par>
-    </cell>
-    <cell x="0" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="1" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">1</style>
-      </par>
-    </cell>
-    <cell x="1" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" has-no-verbs="1" contextual-section-mark="1" t-id="discipline-purpose-description-task-item">
-        <style id="s1">Слайд-материалы</style>
-      </par>
-    </cell>
-    <cell x="2" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="10" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">10</style>
-      </par>
-    </cell>
-    <cell x="3" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="10" t-id="ignore"/>
-    </cell>
-    <cell x="4" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="10" t-id="ignore"/>
-    </cell>
-    <cell x="5" y="3" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="10" t-id="ignore"/>
-    </cell>
-    <cell x="0" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="2" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">2</style>
-      </par>
-    </cell>
-    <cell x="1" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" has-no-verbs="1" contextual-section-mark="2" t-id="ignore">
-        <style id="s1">Работа в команде</style>
-      </par>
-    </cell>
-    <cell x="2" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-    </cell>
-    <cell x="3" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
-    </cell>
-    <cell x="4" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="18" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">18</style>
-      </par>
-    </cell>
-    <cell x="5" y="4" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="18" t-id="ignore"/>
-    </cell>
-    <cell x="0" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="3" section-level="1" no-words="1" only-numbers="1" t-id="discipline-content-section">
-        <style id="s1">3</style>
-      </par>
-    </cell>
-    <cell x="1" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="LEFT (0)" has-no-verbs="1" contextual-section-mark="3" t-id="ignore">
-        <style id="s1">Творческое задание</style>
-      </par>
-    </cell>
-    <cell x="2" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="3" t-id="ignore"/>
-    </cell>
-    <cell x="3" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="3" t-id="ignore"/>
-    </cell>
-    <cell x="4" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" par-is-empty="1" no-words="1" contextual-section-mark="3" t-id="ignore"/>
-    </cell>
-    <cell x="5" y="5" w="0" h="0" p="-1">
-      <par indent="1.7" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" alignment="CENTER (1)" section-mark="30" section-level="1" no-words="1" only-numbers="1" t-id="ignore">
-        <style id="s1">30</style>
-      </par>
-    </cell>
-  </table>
 </document>

@@ -40,8 +40,14 @@ class TestLearning:
     """
 
     def setUp(self):
+        print("Learning data taken from:", LEARN_FILES)
         docname = self.docname = LEARN_FILES[0]
+        others = LEARN_FILES[1:]
         self.e = XMLTextPropertyExtractor(filename=docname)
+        self.others = [XMLTextPropertyExtractor(filename=docname)
+                       for filename in others]
+        for o in self.others:
+            self.e.join_fit(o)
 
     def tearDown(self):
         pass
@@ -50,17 +56,17 @@ class TestLearning:
         self.e.update()
         self.e.write(self.docname + "-updated")
 
-    def test_learning_params_self(self):
-        self.e.learning_params(teaching=True)
-        #[print(x) for x in self.e.learn_coding]
-        x, y = self.e.prepare_params(teaching=True)
-        #print(x,y)
-        assert len(x[0]) > 0 or len(y[0]) > 0
-        assert len(x) == len(y)
-        m = self.e.fit()
-        assert m is not None
-        recon = self.e.predict(rows=x[:, :])
-        # print("Declinations:", recon - y)
+    # def test_learning_params_self(self):
+    #     self.e.learning_params(teaching=True)
+    #     #[print(x) for x in self.e.learn_coding]
+    #     x, y = self.e.prepare_params(teaching=True)
+    #     #print(x,y)
+    #     assert len(x[0]) > 0 or len(y[0]) > 0
+    #     assert len(x) == len(y)
+    #     m = self.e.fit()
+    #     assert m is not None
+    #     recon = self.e.predict(rows=x[:, :])
+    #     # print("Declinations:", recon - y)
 
     def test_predict_on_annotations(self):
         self.e.fit()

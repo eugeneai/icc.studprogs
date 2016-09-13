@@ -153,11 +153,11 @@ WORD_PREAMBLE_RE = re.compile("^.*?(\w+).*?$")
 WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
 SPACE_LIKE_RE = re.compile("(\s|\n|\r)+")
 
-NS={
-    None:"http://irnok.net/data/document-structure",
-    "dcterms":"http://purl.org/dc/terms/",
-    "dctypes":"http://purl.org/dc/dcmitype/",
-    "dc":"http://dublincore.org/2012/06/14/dcelements.rdf",
+NS = {
+    None: "http://irnok.net/data/document-structure",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dctypes": "http://purl.org/dc/dcmitype/",
+    "dc": "http://dublincore.org/2012/06/14/dcelements.rdf",
 }
 
 # Interpretations
@@ -320,7 +320,7 @@ CONVERT_VALUE = {
 }
 CONTEXTUAL_FEATURES = set([
     "section-mark",
-    "t-field-id",     # rel="schema:hasPart" resource="#....."
+    "t-field-id",  # rel="schema:hasPart" resource="#....."
     #    "section-level",
     #    "compound-программа-дисциплина",
 ])
@@ -338,8 +338,11 @@ class XMLTextPropertyExtractor(object):
         self.xmlprocessor = None
         self.learn_coding = None
         self.extracted = False
+        self.prop_extractors = []
 
     def load(self):
+        for o in self.prop_extractors:
+            o.load()
         if self.tree is not None:
             return self.tree
         if self.importer is None:
@@ -393,12 +396,13 @@ class XMLTextPropertyExtractor(object):
             mark = m.group(2)
             preamble = m.group(1)
 
-            if BAD_PREAMBLE_RE.match(preamble) is not None:  # A bad garbage ends with numbers.
+            if BAD_PREAMBLE_RE.match(
+                    preamble) is not None:  # A bad garbage ends with numbers.
                 return
             wm = WORD_PREAMBLE_RE.match(preamble)
             if wm is not None:
                 word = wm.group(1)
-                par.set("section-type",word.lower())
+                par.set("section-type", word.lower())
             mark = mark.rstrip(".")
             par.set("section-mark", mark)
             cnt = mark.count(".")
@@ -432,7 +436,7 @@ class XMLTextPropertyExtractor(object):
             par.set("no-words", "1")
 
     def par_only_numbers(self, par, text, words, tokens):
-        if len(words)==0:
+        if len(words) == 0:
             return
         for token in tokens:
             t = token.type()
@@ -441,7 +445,7 @@ class XMLTextPropertyExtractor(object):
         par.set("only-numbers", "1")
 
     def par_has_no_verbs(self, par, text, words, tokens):
-        if len(words)==0:
+        if len(words) == 0:
             return
         has_words = False
         for token in tokens:
@@ -452,9 +456,9 @@ class XMLTextPropertyExtractor(object):
             tag = p[0].tag
             if tag.POS == "VERB":
                 return
-            has_words=True
+            has_words = True
         if has_words:
-            par.set("has-no-verbs","1")
+            par.set("has-no-verbs", "1")
 
     def par_opk_marks(self, par, text, words, tokens):
         m = WORD_OPK.search(text)
@@ -515,17 +519,19 @@ class XMLTextPropertyExtractor(object):
               "оформление", "занятие", "оценочный", "средство",
               "информационный", "обеспечение", "основной", "информационный",
               "дополнительный", "электронный", "ресурс", "цель", "задача",
-              "рисунок", "таблица", "аннотация","рабочий", "учебный"]), (self.par_has_compounds, list(
-                  map(lambda x: x.split(" "), [
-                      "рабочий программа дисциплина",
-                      "специальность высший образование",
-                      "программа магистратура", "программа бакалавриат",
-                      "программа дисциплина", "задачи освоение дисциплина",
-                      "компетенция обучающийся", "обучающийся должный",
-                      "структура дисциплина", "содержание дисциплина",
-                      "оценочный средство", "код и наименование",
-                      "наименование дисциплина", "указать профиль"
-                  ])))
+              "рисунок", "таблица", "аннотация", "рабочий", "учебный",
+              "бакалавр", "магистр", "специалист", "аспирант", "профессор"]), (
+                  self.par_has_compounds, list(
+                      map(lambda x: x.split(" "), [
+                          "рабочий программа дисциплина",
+                          "специальность высший образование",
+                          "программа магистратура", "программа бакалавриат",
+                          "программа дисциплина", "задачи освоение дисциплина",
+                          "компетенция обучающийся", "обучающийся должный",
+                          "структура дисциплина", "содержание дисциплина",
+                          "оценочный средство", "код и наименование",
+                          "наименование дисциплина", "указать профиль"
+                      ])))
         ]
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
@@ -533,8 +539,7 @@ class XMLTextPropertyExtractor(object):
             self.xmlprocessor.style_names()
             self.expand_context()
 
-            self.extracted = True
-
+        self.extracted = True
 
     def expand_context(self):
         context = {}
@@ -555,12 +560,14 @@ class XMLTextPropertyExtractor(object):
         param_coding = LearningData()
         target_coding = LearningData()
         self.learn_coding = (param_coding, target_coding, teaching)
-        for par in self.tree.iterfind("//par"):
-            for k, v in par.attrib.items():
-                if k.startswith("t-"):
-                    target_coding.encode(k, v, teaching=teaching)
-                else:
-                    param_coding.encode(k, v, teaching=teaching)
+        trees = [self]+self.prop_extractors
+        for tr in trees:
+            for par in tr.tree.iterfind("//par"):
+                for k, v in par.attrib.items():
+                    if k.startswith("t-"):
+                        target_coding.encode(k, v, teaching=teaching)
+                    else:
+                        param_coding.encode(k, v, teaching=teaching)
 
     def set_learn_coding(self, learn_coding):
         self.learn_coding = learn_coding
@@ -574,31 +581,33 @@ class XMLTextPropertyExtractor(object):
         if teaching:
             target_rows = []
         par_index = {}
-        for par in self.tree.iterfind("//par"):
-            param_row = [0] * lparam_coding
-            if teaching:
-                target_row = [0] * ltarget_coding
-            a = par.attrib
-            for k, v in a.items():
-                if k.startswith("t-"):
-                    if not teaching:
-                        continue
-                    i, code = target_coding.encode(k, v)
-                    if i is not None:
-                        target_row[i] = code
-                else:
-                    i, code = param_coding.encode(k, v)
-                    if i is not None:
-                        param_row[i] = code
-            if len([x for x in param_row if x != 0]) == 0:
-                continue
-            if teaching and len([x for x in target_row if x != 0]) == 0:
-                continue
-            l = len(param_rows)
-            par_index[l] = par
-            param_rows.append(param_row)
-            if teaching:
-                target_rows.append(target_row)
+        trees = [self]+self.prop_extractors
+        for tr in trees:
+            for par in tr.tree.iterfind("//par"):
+                param_row = [0] * lparam_coding
+                if teaching:
+                    target_row = [0] * ltarget_coding
+                a = par.attrib
+                for k, v in a.items():
+                    if k.startswith("t-"):
+                        if not teaching:
+                            continue
+                        i, code = target_coding.encode(k, v)
+                        if i is not None:
+                            target_row[i] = code
+                    else:
+                        i, code = param_coding.encode(k, v)
+                        if i is not None:
+                            param_row[i] = code
+                if len([x for x in param_row if x != 0]) == 0:
+                    continue
+                if teaching and len([x for x in target_row if x != 0]) == 0:
+                    continue
+                l = len(param_rows)
+                par_index[l] = par
+                param_rows.append(param_row)
+                if teaching:
+                    target_rows.append(target_row)
 
         param_rows = np.array(param_rows, dtype=np.uint8)
         if teaching:
@@ -606,11 +615,16 @@ class XMLTextPropertyExtractor(object):
             return param_rows, target_rows
         return param_rows, par_index
 
+    def join_fit(self, prop_extractor):
+        self.prop_extractors.append(prop_extractor)
+
     def fit(self, method="tree", extract=True):
         """Prepare parameters for fitting and make a fit.
         """
-        if extract:
-            self.extract()
+        for tr in [self]+self.prop_extractors:
+            #print("+++",tr.filename)
+            tr.extract()
+            #print("---",tr.filename)
         if self.learn_coding is None:
             self.learning_params(teaching=True)
         x, y = self.prepare_params(teaching=True)

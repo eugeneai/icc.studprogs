@@ -67,7 +67,7 @@
   <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" compound-программа-магистратура="1" t-id="discipline-program-header" has-no-verbs="1">
     <style id="s3">Программа магистратуры:</style>
   </par>
-  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" t-id="discipline-program-name" has-no-verbs="1">
+  <par indent="-216.0" left-indent="216.0" right-indent="0" space-before="0" space-after="0" t-id="discipline-profile-name" has-no-verbs="1">
     <style id="s5u">Сети ЭВМ и телекоммуникации</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-подготовка="1" compound-указать-профиль="1" t-id="ignore" has-no-verbs="1">
@@ -84,12 +84,12 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="1" section-level="1" word-цель="1" word-задача="1" t-id="discipline-purpose-header" has-no-verbs="1">
     <style id="s4b">1. Цели и задачи освоения дисциплины </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-метод="1" word-применение="1" word-средство="1" word-информационный="1" word-цель="1" t-id="discipline-purpose-description-aim">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" word-метод="1" word-применение="1" word-средство="1" word-информационный="1" word-цель="1" t-id="discipline-purpose-aim-declaration">
     <style id="s7">Целью освоения дисциплины</style>
     <style id="s4b"> </style>
     <style id="s7">является изучение слушателями основных методов и средств применения современных информационных технологий в научно-исследовательской и образовательной деятельности. </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-задача="1" t-id="discipline-purpose-description-task-declaration">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-задача="1" t-id="discipline-purpose-task-declaration">
     <style id="s7">Основными </style>
     <style id="s8i">задачами курса</style>
     <style id="s7"> являются:</style>
@@ -152,17 +152,17 @@
   <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0"
        space-after="0.0" alignment="JUSTIFY (3)" widow-control="True"
        has-no-verbs="1"
-       t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+       t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s3">современное состояние исследований и разработок в области информатики и вычислительной техники;</style>
   </par>
   <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0"
        space-after="0.0" alignment="JUSTIFY (3)" word-задача="1"
-       has-no-verbs="1" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+       has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s9">задачи развития информатизации в сфере науки и образования;</style>
   </par>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0"
        space-after="0.0" alignment="JUSTIFY (3)" word-технология="1"
-       has-no-verbs="1" t-id="discipline-purpose-description-attainments-knowlege-declaration-item">
+       has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s9">современный инструментарий компьютерных  технологий в науке и образовании;</style>
   </par>
   <par indent="0" left-indent="18.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>
@@ -172,16 +172,16 @@
   </par>
   <par indent="28.35" left-indent="0.0" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" widow-control="True"
-       word-технология="1" word-задача="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-skills-declaration-item">
+       word-технология="1" word-задача="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s3">применять современный инструментарий компьютерных  технологий для  решения исследовательских задач в своей предметной области; </style>
   </par>
   <par indent="28.35" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" word-технология="1" has-no-verbs="1"
-    t-id="discipline-purpose-description-attainments-skills-declaration-item">
+    t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s3">Применять принципы обучения и современные инструменты компьютерных технологий для разработки курсов дистанционного образования; </style>
   </par>
   <par indent="21.25" left-indent="0.0" right-indent="0" space-before="0"
        space-after="6.0" alignment="JUSTIFY (3)" word-технология="1"
-       has-no-verbs="1" t-id="discipline-purpose-description-attainments-skills-declaration-item">
+       has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s9">готовить аналитические обзоры по перспективным направлениям компьютерных  технологий в науке и образовании.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
@@ -190,12 +190,12 @@
     <style id="s3">владеть:</style>
   </par>
   <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0"
-       space-after="0" word-метод="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-posesses-declaration-item">
+       space-after="0" word-метод="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s7">навыками саморазвития, самообучения, методами извлечения новых знаний;</style>
   </par>
   <par indent="28.35" left-indent="7.1" right-indent="0" space-before="0"
        space-after="0.0" alignment="JUSTIFY (3)" widow-control="False"
-       word-метод="1" word-оформление="1" word-средство="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-posesses-declaration-item">
+       word-метод="1" word-оформление="1" word-средство="1" has-no-verbs="1" t-id="discipline-purpose-description-attainments-declaration-item">
     <style id="s9">методами и средствами разработки и оформления технической документации, а также  научно-технических отчётов, обзоров, публикаций по результатам выполненных исследований</style>
     <style id="s10">.</style>
   </par>
@@ -344,7 +344,7 @@
     <style id="s3">4.2. Перечень лабораторных работ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
-       space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1"  t-id="discipline-laboratory-tasks-item-none">
+       space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1"  t-id="discipline-list-item-none">
     <style id="s3">Не предусмотрены</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4.3" section-level="2" word-перечень="1" word-практический="1" word-семинарский="1" word-занятие="1" t-id="discipline-seminar-header" has-no-verbs="1">
@@ -452,27 +452,29 @@
     <style id="s3">7.1. Основная литература</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
-       space-after="0" word-технология="1" t-dcterms-bibliographicCitation="1"
+       space-after="0" word-технология="1"
        has-no-verbs="1" t-id="discipline-resources-literature-item">
     <style id="s3">Компьютерные технологии в науке, технике и образовании : учеб. пособие / Б. Б. Пономарев [и др.]; под общ. ред. А. И. Промптова. - Иркутск : ИрГТУ, 2000. - 395 с. : a-ил </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" word-технология="1" word-информационный="1"
-       t-dcterms-bibliographicCitation="1" has-no-verbs="1" t-id="discipline-resources-literature-item">
+       has-no-verbs="1" t-id="discipline-resources-literature-item">
     <style id="s3">Трайнев Владимир Алексеевич Новые информационные коммуникационные технологии в образовании / В. А. Трайнев, В. Ю. Теплышев, И. В. Трайнев. - 2-е изд. - Москва : Дашков и К°, 2013. - 317 с. </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="False" section-mark="7.2" section-level="2" word-дополнительный="1" t-id="literature-auxiliary" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0"
+       space-after="0.0" alignment="JUSTIFY (3)" widow-control="False"
+       section-mark="7.2" section-level="2" word-дополнительный="1" t-id="discipline-resources-literature-auxiliary" has-no-verbs="1">
     <style id="s3">7.2. Дополнительная литература</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" widow-control="True"
-       word-информационный="1" t-dcterms-bibliographicCitation="1"
+       word-информационный="1"
        has-no-verbs="1" t-id="discipline-resources-literature-item">
     <style id="s3">О государственной программе Российской Федерации "Информационное общество  (2011 - 2020 годы)". Распоряжение от 20 октября 2010 г. n 1815-р</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" word-технология="1" word-информационный="1"
-       t-dcterms-bibliographicCitation="1" word-учебный="1" t-id="discipline-resources-literature-item">
+       word-учебный="1" t-id="discipline-resources-literature-item">
     <style id="s3">Логинов Владимир Николаевич Информационные технологии управления : учебное пособие по специальности "Государственное и муниципальное управление" / В. Н. Логинов. - 2-е изд., стер. - М. : КНОРУС, 2012. - 238 с. : a-ил </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
@@ -506,286 +508,4 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
-  <table num-rows="10" num-columns="3">
-    <cell x="0" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1" word-учебный="1">
-        <style id="s4b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1">
-        <style id="s4b">Количество часов</style>
-      </par>
-    </cell>
-    <cell x="2" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1">
-        <style id="s4b">Количество часов</style>
-      </par>
-    </cell>
-    <cell x="0" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1" word-учебный="1">
-        <style id="s4b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="1" w="0" h="0" p="-1">
-      <par indent="2.3" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1">
-        <style id="s4b">Всего</style>
-      </par>
-    </cell>
-    <cell x="2" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1">
-        <style id="s4b">Семестр</style>
-      </par>
-    </cell>
-    <cell x="0" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1" word-учебный="1">
-        <style id="s4b">Вид учебной работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="2" w="0" h="0" p="-1">
-      <par indent="2.3" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" has-no-verbs="1">
-        <style id="s4b">Всего</style>
-      </par>
-    </cell>
-    <cell x="2" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" section-mark="2" section-level="1" has-no-verbs="1">
-        <style id="s4b">№ 2</style>
-      </par>
-    </cell>
-    <cell x="0" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1">
-        <style id="s3">Общая трудоемкость дисциплины</style>
-      </par>
-    </cell>
-    <cell x="1" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="14" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">144</style>
-      </par>
-    </cell>
-    <cell x="2" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="14" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">144</style>
-      </par>
-    </cell>
-    <cell x="0" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-занятие="1" has-no-verbs="1">
-        <style id="s3">Аудиторные занятия, в том числе:</style>
-      </par>
-    </cell>
-    <cell x="1" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="39" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">39</style>
-      </par>
-    </cell>
-    <cell x="2" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="39" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">39</style>
-      </par>
-    </cell>
-    <cell x="0" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-лекция="1" has-no-verbs="1">
-        <style id="s3">лекции</style>
-      </par>
-    </cell>
-    <cell x="1" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="13" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">13</style>
-      </par>
-    </cell>
-    <cell x="2" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="13" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">13</style>
-      </par>
-    </cell>
-    <cell x="0" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-лабораторный="1" has-no-verbs="1">
-        <style id="s3">лабораторные работы</style>
-      </par>
-    </cell>
-    <cell x="1" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="26" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">26</style>
-      </par>
-    </cell>
-    <cell x="2" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="26" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">26</style>
-      </par>
-    </cell>
-    <cell x="0" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="30.65" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-практический="1" word-занятие="1" has-no-verbs="1">
-        <style id="s3">практические занятия</style>
-      </par>
-    </cell>
-    <cell x="1" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="2" y="7" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="0" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-самостоятельный="1" has-no-verbs="1">
-        <style id="s3">Самостоятельная работа (в том числе курсовое проектирование, курсовая работа)</style>
-      </par>
-    </cell>
-    <cell x="1" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="69" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">69</style>
-      </par>
-    </cell>
-    <cell x="2" y="8" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="69" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">69</style>
-      </par>
-    </cell>
-    <cell x="0" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1">
-        <style id="s3">Вид промежуточной аттестации (итогового контроля по дисциплине)</style>
-      </par>
-    </cell>
-    <cell x="1" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="36" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">36</style>
-      </par>
-    </cell>
-    <cell x="2" y="9" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="36" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">36</style>
-      </par>
-    </cell>
-  </table>
-  <table num-rows="7" num-columns="4">
-    <cell x="0" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-технология="1" has-no-verbs="1">
-        <style id="s4b">Технологии</style>
-      </par>
-    </cell>
-    <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" word-лекция="1" has-no-verbs="1">
-        <style id="s4b">Лекции</style>
-      </par>
-    </cell>
-    <cell x="2" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" has-no-verbs="1">
-        <style id="s4b">Прак. раб.</style>
-      </par>
-    </cell>
-    <cell x="3" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" has-no-verbs="1">
-        <style id="s4b">СРС</style>
-      </par>
-    </cell>
-    <cell x="0" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" has-no-verbs="1">
-        <style id="s3">Проблемное обучение  </style>
-      </par>
-    </cell>
-    <cell x="1" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="3" y="1" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">4</style>
-      </par>
-    </cell>
-    <cell x="0" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" has-no-verbs="1">
-        <style id="s3">Разбор конкретных ситуаций </style>
-      </par>
-    </cell>
-    <cell x="1" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="3" y="2" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">4</style>
-      </par>
-    </cell>
-    <cell x="0" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" word-применение="1" has-no-verbs="1">
-        <style id="s3">Применение слайд-материалов</style>
-      </par>
-    </cell>
-    <cell x="1" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="3" y="3" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">4</style>
-      </par>
-    </cell>
-    <cell x="0" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" has-no-verbs="1">
-        <style id="s3">Общая дискуссия </style>
-      </par>
-    </cell>
-    <cell x="1" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="2" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="3" y="4" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="0" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" alignment="LEFT (0)" word-метод="1" has-no-verbs="1">
-        <style id="s3">Проектный метод</style>
-      </par>
-    </cell>
-    <cell x="1" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="2" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="2" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">2</style>
-      </par>
-    </cell>
-    <cell x="3" y="5" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">4</style>
-      </par>
-    </cell>
-    <cell x="0" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="5.3" right-indent="0" space-before="0" space-after="0" alignment="LEFT (0)" has-no-verbs="1">
-        <style id="s3">Командная работа</style>
-      </par>
-    </cell>
-    <cell x="1" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="2" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" par-is-empty="1" no-words="1"/>
-    </cell>
-    <cell x="3" y="6" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="4" section-level="1" no-words="1" only-numbers="1">
-        <style id="s3">4</style>
-      </par>
-    </cell>
-  </table>
 </document>
