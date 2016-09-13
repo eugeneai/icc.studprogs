@@ -40,7 +40,7 @@
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-цель="1" word-задача="1" contextual-section-mark="1.2" t-id="discipline-purpose-header">
-    <style id="s3b">Цели и задачи освоения дисциплины </style>
+    <style id="s3b">1. Цели и задачи освоения дисциплины </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-цель="1" contextual-section-mark="1.2" t-id="discipline-purpose-aim-declaration">
@@ -105,7 +105,7 @@
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" word-формировать="1" compound-компетенция-обучающийся="1" contextual-section-mark="1.2" t-id="discipline-purpose-description-competentions">
-    <style id="s3b">Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
+    <style id="s3b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="1.2" t-id="ignore">
@@ -185,7 +185,7 @@
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-структура-дисциплина="1" contextual-section-mark="1.2" t-id="discipline-structure-header">
-    <style id="s3b">Основная структура дисциплины</style>
+    <style id="s3b">3. Основная структура дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1.2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="1.2" t-id="discipline-structure-amount">
@@ -207,11 +207,11 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" compound-содержание-дисциплина="1" contextual-section-mark="1" t-id="discipline-content-header">
-    <style id="s3b">Содержание дисциплины</style>
+    <style id="s3b">4. Содержание дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-раздел="1" word-перечень="1" contextual-section-mark="1" t-id="discipline-content-list">
-    <style id="s3b">Перечень разделов и тем дисциплины</style>
+    <style id="s3b">4.1. Перечень разделов и тем дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" section-mark="1" section-level="1" has-no-verbs="1" t-id="discipline-content-section">
@@ -313,7 +313,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-лабораторный="1" contextual-section-mark="5" t-id="discipline-laboratory-tasks-header">
-    <style id="s3b">Перечень лабораторных работ</style>
+    <style id="s3b">4.2. Перечень лабораторных работ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-учебный="1" contextual-section-mark="5" t-id="discipline-list-item-none">
@@ -321,7 +321,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-практический="1" word-семинарский="1" word-занятие="1" contextual-section-mark="5" t-id="discipline-seminar-header">
-    <style id="s3b">Перечень практических (семинарских)  занятий</style>
+    <style id="s3b">4.3. Перечень практических (семинарских)  занятий</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-практический="1" contextual-section-mark="5" t-id="discipline-seminar-item">
@@ -380,7 +380,7 @@
   </par>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-перечень="1" word-самостоятельный="1" contextual-section-mark="5" t-id="discipline-independent_work-header">
-    <style id="s3b">Перечень заданий по  самостоятельной работе студентов (включая курсовой проект, курсовую работу)</style>
+    <style id="s3b">4.4. Перечень заданий по  самостоятельной работе студентов (включая курсовой проект, курсовую работу)</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="5" t-id="discipline-independent_work-item">
@@ -397,7 +397,7 @@
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" contextual-section-mark="5" t-id="discipline-educational_technologies-header">
-    <style id="s3b">Образовательные технологии, применяемые для реализации программы</style>
+    <style id="s3b">5. Образовательные технологии, применяемые для реализации программы</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-технология="1" word-таблица="1" contextual-section-mark="5" t-id="discipline-educational_technologies-declaration">
@@ -426,7 +426,7 @@
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-технология="1" word-оценочный="1" word-средство="1" compound-оценочный-средство="1" contextual-section-mark="2" t-id="discipline-evaluation-header">
-    <style id="s3b">Оценочные средства и технологии </style>
+    <style id="s3b">6. Оценочные средства и технологии </style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" word-экзамен="1" contextual-section-mark="2" t-id="discipline-evaluation-item">
@@ -437,11 +437,11 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="2" t-id="discipline-resources-header">
-    <style id="s3b">Рекомендуемое информационное обеспечение дисциплины</style>
+    <style id="s3b">7. Рекомендуемое информационное обеспечение дисциплины</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-header">
-    <style id="s3b">Основная литература</style>
+    <style id="s3b">7.1. Основная литература</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" contextual-section-mark="2" t-id="discipline-resources-literature-item">
@@ -458,7 +458,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-дополнительный="1" contextual-section-mark="2" t-id="discipline-resources-literature-auxiliary">
-    <style id="s3b">Дополнительная литература</style>
+    <style id="s3b">7.2. Дополнительная литература</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" contextual-section-mark="2" t-id="discipline-resources-literature-item">
@@ -471,7 +471,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" word-электронный="1" contextual-section-mark="2" t-id="discipline-resources-electronic-header">
-    <style id="s3b">Электронные образовательные ресурсы</style>
+    <style id="s3b">7.3. Электронные образовательные ресурсы</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" has-no-verbs="1" word-ресурс="1" contextual-section-mark="2" t-id="discipline-resources-electronic-item">
@@ -479,7 +479,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="2" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="7.4" section-level="2" has-no-verbs="1" word-ресурс="1" word-интернет="1" t-id="discipline-resources-internet-header">
-    <style id="s3b">7.4  Ресурсы сети «Интернет»</style>
+    <style id="s3b">7.4.  Ресурсы сети «Интернет»</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="7.4" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" keep-with-next="True" has-no-verbs="1" word-ресурс="1" word-интернет="1" contextual-section-mark="7.4" t-id="discipline-resources-electronic-item">
@@ -487,7 +487,7 @@
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="7.4" t-id="ignore"/>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" section-mark="8" section-level="1" has-no-verbs="1" word-средство="1" t-id="discipline-resources-programs">
-    <style id="s3b">8  Рекомендуемые специализированные программные средства</style>
+    <style id="s3b">8.  Рекомендуемые специализированные программные средства</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" par-is-empty="1" no-words="1" contextual-section-mark="8" t-id="ignore"/>
   <par indent="35.45" left-indent="0.0" right-indent="0" space-before="0.0" space-after="0.0" widow-control="False" contextual-section-mark="8" t-id="discipline-list-item-none">
