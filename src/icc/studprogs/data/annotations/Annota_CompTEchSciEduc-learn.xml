@@ -27,35 +27,35 @@
   <section type="NEW-PAGE (2)"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)" word-аннотация="1"
-       c-clear-prev-context="1" has-no-verbs="1"
-       t-id="annotation-declaration-header">
+       has-no-verbs="1"
+       t-id="discipline-annotation-header">
     <style id="s1">АННОТАЦИЯ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)"
        compound-рабочий-программа-дисциплина="1"
        compound-программа-дисциплина="1"
-       t-id="discipline-study-program-header"
+       t-id="discipline-study_program-header"
        has-no-verbs="1" word-рабочий="1"
-       c-clear-prev-context="1">
+       >
     <style id="s1">РАБОЧЕЙ ПРОГРАММЫ ДИСЦИПЛИНЫ</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" par-is-empty="1" no-words="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="CENTER (1)" word-технология="1"
        compound-наименование-дисциплина="1"
-       t-id="discipline-study-name"
+       t-id="discipline-study_program-name"
        has-no-verbs="1">
     <style id="s2b">КомпьюТерные Технологии в науке и образовании</style>
     <style id="s3"> (наименование дисциплины)</style>
   </par>
   <par indent="-212.25" left-indent="212.25" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" word-подготовка="1"
-       t-id="training-direction-header"
+       t-id="discipline-training-direction-header"
        has-no-verbs="1">
     <style id="s3">Направление подготовки/специальность высшего образования:</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-id="training-direction-name" section-mark="23" section-level="1" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" t-id="discipline-training-direction-name" section-mark="23" section-level="1" has-no-verbs="1">
     <style id="s4b">---</style>
     <style id="s5u">230100 «Информатика и вычислительная   техника</style>
     <style id="s3"> </style>
@@ -76,11 +76,11 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
        space-after="0" alignment="JUSTIFY (3)" word-квалификация="1"
-       t-id="study-qualification-name" has-no-verbs="1">
+       t-id="discipline-qualification-name" has-no-verbs="1">
     <style id="s3">Квалификация:        </style>
     <style id="s6u">МАГИСТР</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-ignore="1"/>
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="1" section-level="1" word-цель="1" word-задача="1" t-id="discipline-purpose-header" has-no-verbs="1">
     <style id="s4b">1. Цели и задачи освоения дисциплины </style>
   </par>
@@ -107,7 +107,7 @@
     <style id="s7">− формирование практических навыков использования научно-образовательных ресурсов Internet в повседневной профессиональной деятельности исследователя и педагога. </style>
   </par>
   <par indent="13.65" left-indent="21.75" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="2" section-level="1" word-формировать="1" compound-компетенция-обучающийся="1" t-section="discipline-purpose-description-competentions" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="2" section-level="1" word-формировать="1" compound-компетенция-обучающийся="1" t-id="discipline-purpose-description-competentions" has-no-verbs="1">
     <style id="s4b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="28.35" left-indent="0" right-indent="0" space-before="0"
@@ -211,7 +211,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4" section-level="1" compound-содержание-дисциплина="1" t-id="discipline-content-header" has-no-verbs="1">
     <style id="s4b">4. Содержание дисциплины</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4.1" section-level="2" word-раздел="1" word-перечень="1" t-id="discipline-contents" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4.1" section-level="2" word-раздел="1" word-перечень="1" t-id="discipline-content-list" has-no-verbs="1">
     <style id="s3">4.1. Перечень разделов и тем дисциплины</style>
   </par>
   <par indent="0" left-indent="28.35" right-indent="0" space-before="0" space-after="0" alignment="CENTER (1)" word-технология="1" word-раздел="1" word-информационный="1" t-id="discipline-content-section" section-mark="1" section-level="1" section-type="раздел" has-no-verbs="1">
@@ -461,7 +461,7 @@
        t-dcterms-bibliographicCitation="1" has-no-verbs="1" t-id="discipline-resources-literature-item">
     <style id="s3">Трайнев Владимир Алексеевич Новые информационные коммуникационные технологии в образовании / В. А. Трайнев, В. Ю. Теплышев, И. В. Трайнев. - 2-е изд. - Москва : Дашков и К°, 2013. - 317 с. </style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="False" section-mark="7.2" section-level="2" word-дополнительный="1" t-section="literature-auxiliary" has-no-verbs="1">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="False" section-mark="7.2" section-level="2" word-дополнительный="1" t-id="literature-auxiliary" has-no-verbs="1">
     <style id="s3">7.2. Дополнительная литература</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0"
