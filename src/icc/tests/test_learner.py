@@ -86,18 +86,18 @@ class TestLearning:
             xml.write(output_filename)
             assert ny is not None
 
-    def test_predict_on_documens(self):
-        self.e.fit()
-        for docx_file in DOCS:
-            xml = XMLTextPropertyExtractor(
-                filename=docx_file, importer=msdocx.Importer)
-            output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-extracted.xml")
-            xml.load()
-            xml.extract()
-            xml.write(output_filename)
-            xml.set_learn_coding(self.e.learn_coding)
-            nx = xml.prepare_params()
-            ny = self.e.predict(extractor=xml)
-            output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-predicted.xml")
-            xml.write(output_filename)
-            assert ny is not None
+    # def test_predict_on_documens(self):
+    #     self.e.fit()
+    #     for docx_file in DOCS:
+    #         xml = XMLTextPropertyExtractor(
+    #             filename=docx_file, importer=msdocx.Importer)
+    #         output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-extracted.xml")
+    #         xml.load()
+    #         xml.extract()
+    #         xml.write(output_filename)
+    #         xml.set_learn_coding(self.e.learn_coding)
+    #         nx = xml.prepare_params()
+    #         ny = self.e.predict(extractor=xml)
+    #         output_filename = docx_file.replace("annotations/documents","out").replace(".docx","-document-predicted.xml")
+    #         xml.write(output_filename)
+    #         assert ny is not None

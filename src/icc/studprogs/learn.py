@@ -325,16 +325,20 @@ CONTEXTUAL_FEATURES = set([
     #    "compound-программа-дисциплина",
 ])
 
+TOKENISER=None
 
 class XMLTextPropertyExtractor(object):
     def __init__(self, tree=None, filename=None, importer=None, lang="ru"):
+        global TOKENISER
         if tree is None and filename is None:
             raise ValueError("either tree or filename must be set")
         self.tree = tree
         self.filename = filename
         self.importer = importer
         self.morph = pymorphy2.MorphAnalyzer()
-        self.tokenizer = ucto.Tokenizer()
+        if TOKENISER is None:
+            TOKENISER = ucto.Tokenizer()
+        self.tokenizer = TOKENISER
         self.xmlprocessor = None
         self.learn_coding = None
         self.extracted = False
@@ -380,6 +384,36 @@ class XMLTextPropertyExtractor(object):
                 yield w, token
             else:
                 yield w
+
+    def rake_prases(self, text, stop_words, stop_werb=True, genitiv=True):
+        phrase=[]
+        prevcase=None
+        for word, token in self.words(text, with_tokens=True):
+            ttype = token.type()
+            shift = word not in stop_words and (ttype.startswith("WORD") or ttype=="ABBREVIATION")
+            while not shift:
+                p = token.morph
+                mf = p[0]
+                if mf.tag in {'COMP','VERB','INFN','PRTS','GRND','NUMR','NPRO',
+                              'PRED','PREP','CONJ','PRCL','INTJ'}:
+                    shift=True
+                    break
+                phrase.append(word)
+                if 'ADVB' in mf.tag:
+                    break
+                if 'NOUN' in mf.tag and mf.case=="gent":
+                    yield phrase
+                    break
+                if mf.tag in {'ADJF','ADJS'} and mf.case=='gent':
+                    break
+                raise RuntimeError(mf.tag)
+            if shift:
+                prevcase=None
+            if shift and phrase:
+                yield phrase
+                phrase=[]
+        if phrase:
+            yield phrase
 
     def preporocess_text(self, text):
         t = ""
