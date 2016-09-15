@@ -44,7 +44,7 @@ class TestLearning:
         docname = self.docname = LEARN_FILES[0]
         others = LEARN_FILES[1:]
         self.e = XMLTextPropertyExtractor(filename=docname)
-        self.others = [XMLTextPropertyExtractor(filename=docname)
+        self.others = [XMLTextPropertyExtractor(filename=filename)
                        for filename in others]
         for o in self.others:
             self.e.join_fit(o)
@@ -56,7 +56,9 @@ class TestLearning:
         self.e.update(others=True)
         self.e.write(self.docname + "-updated")
         for o in self.e.prop_extractors:
-            o.write(o.filename+"-updated")
+            ofilename=o.filename+"-updated"
+            # print("RENEW: {}".format(ofilename))
+            o.write(ofilename)
 
     # def test_learning_params_self(self):
     #     self.e.learning_params(teaching=True)
