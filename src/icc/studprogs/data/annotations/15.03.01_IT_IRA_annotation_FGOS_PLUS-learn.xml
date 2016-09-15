@@ -19,16 +19,16 @@
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-no-context="1" t-id="ignore"/>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-no-context="1" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="1" section-level="1" has-no-verbs="1" word-цель="1" word-задача="1" t-id="discipline-purpose-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="1" section-level="1" has-no-verbs="1" word-цель="1" word-задача="1" t-id="discipline-purpose-header" bold="1">
     <style id="s2b">1. Цели и задачи освоения дисциплины </style>
   </par>
-  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-метод="1" word-применение="1" word-информационный="1" word-цель="1" contextual-section-mark="1"  t-id="discipline-purpose-aim-declaration">
+  <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-метод="1" word-применение="1" word-информационный="1" word-цель="1" contextual-section-mark="1" t-id="discipline-purpose-aim-declaration">
     <style id="s1">Целью изучения курса является ознакомление студентов с основами современных информационных технологий, тенденциями их развития, проведению анализа полученных результатов, применению современных информационных технологий в профессиональной деятельности. Информатика является базовой для всех курсов, использующих автоматизированные методы анализа и расчетов, и так или иначе использующих компьютерную технику.</style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-технология="1" word-обеспечение="1" word-задача="1" contextual-section-mark="1" t-id="discipline-purpose-task-declaration">
     <style id="s1">Задачами изучения курса информатики являются: ознакомление студентов с основными принципами построения компьютеров, их характеристиками; получение навыков использования прикладного программного обеспечения для решения задач по обработке информации; освоение принципов алгоритмизации и объектно-ориентированного программирования; формирование навыков грамотного и рационального использования компьютерных технологий при выполнении теоретических и экспериментальных работ во время обучения и в последующей профессиональной деятельности.</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="6.0" space-after="0" alignment="JUSTIFY (3)" section-mark="2" section-level="1" has-no-verbs="1" word-формировать="1" compound-компетенция-обучающийся="1" t-id="discipline-purpose-description-competentions">
+  <par indent="0" left-indent="0" right-indent="0" space-before="6.0" space-after="0" alignment="JUSTIFY (3)" section-mark="2" section-level="1" has-no-verbs="1" word-формировать="1" compound-компетенция-обучающийся="1" t-id="discipline-purpose-description-competentions" bold="1">
     <style id="s2b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="35.45" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="2" t-id="ignore">
@@ -58,17 +58,14 @@
     <style id="s2b">владеть</style>
     <style id="s1"> приемами самостоятельного поиска информации в соответствии с потребностями, возникающими в ходе обучения; техническими и программными средствами защиты информации при работе с компьютерными системами, включая приемы антивирусной защиты.</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="12.0" space-after="0" section-mark="3" section-level="1" has-no-verbs="1" compound-структура-дисциплина="1" t-id="discipline-structure-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="12.0" space-after="0" section-mark="3" section-level="1" has-no-verbs="1" compound-структура-дисциплина="1" t-id="discipline-structure-header" bold="1">
     <style id="s2b">3. Основная структура дисциплины</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="6.0"
-       space-after="0" alignment="JUSTIFY (3)" section-type="таблица"
-       section-mark="1" section-level="1" has-no-verbs="1" word-таблица="1"
-       compound-структура-дисциплина="1" t-id="discipline-structure-table-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="6.0" space-after="0" alignment="JUSTIFY (3)" section-type="таблица" section-mark="1" section-level="1" has-no-verbs="1" word-таблица="1" compound-структура-дисциплина="1" t-id="discipline-structure-table-header">
     <style id="s1">Таблица 1 – Структура дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="1" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4" section-level="1" has-no-verbs="1" compound-содержание-дисциплина="1" t-id="discipline-content-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4" section-level="1" has-no-verbs="1" compound-содержание-дисциплина="1" t-id="discipline-content-header" bold="1">
     <style id="s2b">4. Содержание дисциплины</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="4.1" section-level="2" has-no-verbs="1" word-раздел="1" word-перечень="1" t-id="discipline-content-list">
@@ -185,21 +182,21 @@
   <par indent="-0.55" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1" word-подготовка="1" word-экзамен="1" contextual-section-mark="4.4" t-id="discipline-independent_work-item">
     <style id="s1">Подготовка к экзамену</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="5" section-level="1" has-no-verbs="1" word-технология="1" t-id="discipline-educational_technologies-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="5" section-level="1" has-no-verbs="1" word-технология="1" t-id="discipline-educational_technologies-header" bold="1">
     <style id="s2b">5. Образовательные технологии, применяемые для реализации программы</style>
   </par>
   <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" word-метод="1" word-занятие="1" word-учебный="1" contextual-section-mark="5" t-id="discipline-educational_technologies-declaration">
     <style id="s1">В учебном процессе используются активные и интерактивные формы проведения занятий: разбор конкретных ситуаций, метод работы в малых группах, проектный метод (не менее 8 часов в семестр).</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="5" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="6" section-level="1" has-no-verbs="1" word-технология="1" word-оценочный="1" word-средство="1" compound-оценочный-средство="1" t-id="discipline-evaluation-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="6" section-level="1" has-no-verbs="1" word-технология="1" word-оценочный="1" word-средство="1" compound-оценочный-средство="1" t-id="discipline-evaluation-header" bold="1">
     <style id="s2b">6. Оценочные средства и технологии</style>
   </par>
   <par indent="28.35" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" contextual-section-mark="6" t-id="discipline-evaluation-declaration">
     <style id="s1">Контроль качества подготовленности по дисциплине осуществляется с использованием рейтинговой системы оценки знаний.</style>
   </par>
   <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" par-is-empty="1" no-words="1" contextual-section-mark="6" t-id="ignore"/>
-  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="7" section-level="1" has-no-verbs="1" word-информационный="1" word-обеспечение="1" t-id="discipline-resources-header">
+  <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" section-mark="7" section-level="1" has-no-verbs="1" word-информационный="1" word-обеспечение="1" t-id="discipline-resources-header" bold="1">
     <style id="s2b">7. Рекомендуемое информационное обеспечение дисциплины</style>
   </par>
   <par indent="0.0" left-indent="0" right-indent="0" space-before="0" space-after="0" section-mark="7.1" section-level="2" has-no-verbs="1" t-id="discipline-resources-literature-header">
@@ -214,11 +211,7 @@
   <par indent="18.0" left-indent="0.0" right-indent="0" space-before="0" space-after="0.0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" contextual-section-mark="7.1" t-id="discipline-resources-literature-item">
     <style id="s1">Симонович С.В. и др. Информатика. Базовый курс. - СПб.: Питер. – 2010. – 639c.</style>
   </par>
-  <par indent="0" left-indent="0" right-indent="0" space-before="6.0"
-       space-after="0.0" alignment="JUSTIFY (3)" section-mark="7.2"
-       section-level="2" has-no-verbs="1" word-дополнительный="1"
-       t-id="discipline-resources-literature-auxiliary"
-       >
+  <par indent="0" left-indent="0" right-indent="0" space-before="6.0" space-after="0.0" alignment="JUSTIFY (3)" section-mark="7.2" section-level="2" has-no-verbs="1" word-дополнительный="1" t-id="discipline-resources-literature-auxiliary">
     <style id="s1">7.2. Дополнительная литература</style>
   </par>
   <par indent="18.0" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-лабораторный="1" word-самостоятельный="1" contextual-section-mark="7.2" t-id="discipline-resources-literature-item">
@@ -236,7 +229,7 @@
   <par indent="0" left-indent="0" right-indent="0" space-before="6.0" space-after="0" alignment="JUSTIFY (3)" section-mark="7.3" section-level="2" has-no-verbs="1" word-ресурс="1" word-электронный="1" t-id="discipline-resources-electronic-header">
     <style id="s1">7.3. Электронные образовательные ресурсы</style>
   </par>
-  <par indent="18.0" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-практический="1" contextual-section-mark="7.3" t-id="discipline-resources-literature-item">
+  <par indent="18.0" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-практический="1" contextual-section-mark="7.3" t-id="discipline-resources-literature-item" word-специалист="1">
     <style id="s1">Практическая информатика : учеб. пособие для студентов и специалистов / В. В. Ломтадзе, Л. П. Шишкина; Иркут. гос. техн. ун-т . – Иркутск: Изд-во ИрГТУ, 2010 [2011]. – ДСК-2123.</style>
   </par>
   <par indent="18.0" left-indent="0.0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" widow-control="True" has-no-verbs="1" word-лабораторный="1" contextual-section-mark="7.3" t-id="discipline-resources-literature-item">
@@ -321,7 +314,7 @@
       </par>
     </cell>
     <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="15.03.01" t-id="ignorediscipline-qualification-name">
+      <par indent="0" left-indent="0" right-indent="0" space-before="0" space-after="0" alignment="JUSTIFY (3)" has-no-verbs="1" contextual-section-mark="15.03.01" t-id="ignorediscipline-qualification-name" word-бакалавр="1">
         <style id="s1">академический бакалавр</style>
       </par>
     </cell>
