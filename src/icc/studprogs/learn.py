@@ -325,7 +325,8 @@ CONTEXTUAL_FEATURES = set([
     #    "compound-программа-дисциплина",
 ])
 
-TOKENISER=None
+TOKENISER = None
+
 
 class XMLTextPropertyExtractor(object):
     def __init__(self, tree=None, filename=None, importer=None, lang="ru"):
@@ -343,6 +344,7 @@ class XMLTextPropertyExtractor(object):
         self.learn_coding = None
         self.extracted = False
         self.prop_extractors = []
+        self.styles = None
 
     def load(self):
         for o in self.prop_extractors:
@@ -357,7 +359,14 @@ class XMLTextPropertyExtractor(object):
             self.tree = importer.as_xml()
         if self.xmlprocessor is None:
             self.xmlprocessor = XMLProcessor(tree=self.tree)
+        self.load_styles()
         return self.tree
+
+    def load_styles(self):
+        if self.styles is None:
+            self.styles = s = {}
+            for sd in self.tree.iterfind("//styledef"):
+                s[sd.get("id")] = sd.attrib
 
     def par_process(self, proc_list):
         self.load()
@@ -386,32 +395,33 @@ class XMLTextPropertyExtractor(object):
                 yield w
 
     def rake_prases(self, text, stop_words, stop_werb=True, genitiv=True):
-        phrase=[]
-        prevcase=None
+        phrase = []
+        prevcase = None
         for word, token in self.words(text, with_tokens=True):
             ttype = token.type()
-            shift = word not in stop_words and (ttype.startswith("WORD") or ttype=="ABBREVIATION")
+            shift = word not in stop_words and (ttype.startswith("WORD") or
+                                                ttype == "ABBREVIATION")
             while not shift:
                 p = token.morph
                 mf = p[0]
-                if mf.tag in {'COMP','VERB','INFN','PRTS','GRND','NUMR','NPRO',
-                              'PRED','PREP','CONJ','PRCL','INTJ'}:
-                    shift=True
+                if mf.tag in {'COMP', 'VERB', 'INFN', 'PRTS', 'GRND', 'NUMR',
+                              'NPRO', 'PRED', 'PREP', 'CONJ', 'PRCL', 'INTJ'}:
+                    shift = True
                     break
                 phrase.append(word)
                 if 'ADVB' in mf.tag:
                     break
-                if 'NOUN' in mf.tag and mf.case=="gent":
+                if 'NOUN' in mf.tag and mf.case == "gent":
                     yield phrase
                     break
-                if mf.tag in {'ADJF','ADJS'} and mf.case=='gent':
+                if mf.tag in {'ADJF', 'ADJS'} and mf.case == 'gent':
                     break
                 raise RuntimeError(mf.tag)
             if shift:
-                prevcase=None
+                prevcase = None
             if shift and phrase:
                 yield phrase
-                phrase=[]
+                phrase = []
         if phrase:
             yield phrase
 
@@ -422,7 +432,7 @@ class XMLTextPropertyExtractor(object):
             t += word
             if not token.nospace():
                 t += " "
-        return t, [t[0] for t in tokens], [t[1] for t in tokens]
+        return t.strip(), [t[0] for t in tokens], [t[1] for t in tokens]
 
     def par_has_section_mark(self, par, text, words, tokens):
         m = SECTION_RE.match(text)
@@ -500,6 +510,42 @@ class XMLTextPropertyExtractor(object):
             par.set("opk-sign", "1")
             par.set("opk", m.group(1))
 
+    def par_text_styles(self, par, text, words, token):
+        textsize = {'italic': [0, 0], 'bold': [0, 0], 'underline': [0, 0]}
+        ttl=0
+        t=""
+        for style in par.iterfind("./style"):
+            sid = style.get("id")
+            # print(sid, etree.tostring(style, encoding=str))
+            a={}
+            if sid is not None:
+                attrib = self.styles.get(sid, {})
+                a.update(attrib)
+            a.update(style.attrib)
+            attrib = a
+            # print(attrib)
+            tt =self.preporocess_text(style.text)[0]
+            tl = len(tt)
+            t+=tt
+            ttl+=tl
+            for sm in textsize.keys():
+                v = attrib.get(sm, "0")
+                if v == "0":
+                    v = 0
+                else:
+                    v = 1
+                textsize[sm][v] += tl
+        l = list(textsize.items())
+        l.sort(key=lambda x: x[1][1], reverse=True)
+        mostkey = l[0][0]
+        mostval = l[0][1][1]
+        if mostval>0:
+            hf = ttl // 2
+            mosts = [i[0] for i in l if i[1][1] >= hf]
+            for m in mosts:
+                par.set(m, "1")
+            # print(par.attrib, t)
+
     def par_has_compounds(self,
                           par,
                           text,
@@ -541,7 +587,7 @@ class XMLTextPropertyExtractor(object):
         par_processors = [
             self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
             self.par_has_URL_or_email, self.par_only_numbers,
-            self.par_has_no_verbs,
+            self.par_has_no_verbs, self.par_text_styles,
             (self.par_has_words,
              ["знать", "уметь", "владеть", "технология", "оценочный",
               "средства", "ресурс", "интернет", "квалификация", "овладеть",
@@ -586,15 +632,18 @@ class XMLTextPropertyExtractor(object):
             if len(context) == 0:
                 par.set("contextual-no-context", "1")
 
-    def update(self):
+    def update(self, others=False):
         self.extract(update=True)
+        if others:
+            for o in self.prop_extractors:
+                o.update(others=others)
 
     def learning_params(self, teaching=False):
         self.load()
         param_coding = LearningData()
         target_coding = LearningData()
         self.learn_coding = (param_coding, target_coding, teaching)
-        trees = [self]+self.prop_extractors
+        trees = [self] + self.prop_extractors
         for tr in trees:
             for par in tr.tree.iterfind("//par"):
                 for k, v in par.attrib.items():
@@ -615,7 +664,7 @@ class XMLTextPropertyExtractor(object):
         if teaching:
             target_rows = []
         par_index = {}
-        trees = [self]+self.prop_extractors
+        trees = [self] + self.prop_extractors
         for tr in trees:
             for par in tr.tree.iterfind("//par"):
                 param_row = [0] * lparam_coding
@@ -655,7 +704,7 @@ class XMLTextPropertyExtractor(object):
     def fit(self, method="tree", extract=True):
         """Prepare parameters for fitting and make a fit.
         """
-        for tr in [self]+self.prop_extractors:
+        for tr in [self] + self.prop_extractors:
             #print("+++",tr.filename)
             tr.extract()
             #print("---",tr.filename)
@@ -670,11 +719,13 @@ class XMLTextPropertyExtractor(object):
 
         models = []
         for i in range(y.shape[1]):
-            # clf = tree.DecisionTreeClassifier()
-            clf = GaussianNB()
+            clf = tree.DecisionTreeClassifier()
+            # clf = GaussianNB()
             _y = y[:, i]
             m = clf.fit(x, _y)
             models.append(m)
+            fnexport=self.filename+"-{}.dot".format(i)
+            tree.export_graphviz(clf, out_file=open(fnexport,"w"))
         self.fit_model = models
         return self.fit_model
 

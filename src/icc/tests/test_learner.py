@@ -53,8 +53,10 @@ class TestLearning:
         pass
 
     def test_update(self):
-        self.e.update()
+        self.e.update(others=True)
         self.e.write(self.docname + "-updated")
+        for o in self.e.prop_extractors:
+            o.write(o.filename+"-updated")
 
     # def test_learning_params_self(self):
     #     self.e.learning_params(teaching=True)
