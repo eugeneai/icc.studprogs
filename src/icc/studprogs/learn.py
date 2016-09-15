@@ -275,6 +275,20 @@ class LearningData(object):
         name, d = self.decoding[index]
         return name, d[code]
 
+    def target_coding(self, index=0):
+        name, codes = self.decoding[index]
+        codes = list(codes.items())
+        codes.sort()
+        # print ("RC:", rc)
+        return [c[1] for c in codes]
+
+    def source_coding(self):
+        names = list(self.decoding.items())
+        names.sort()
+        names=[i[1][0] for i in names]
+        # print(names)
+        return names
+
     def __str__(self):
         s = "A " + self.__class__.__name__ + " object \n"
         l = "=" * len(s) + "\n\n"
@@ -316,6 +330,8 @@ CONVERT_VALUE = {
     'space-after': None,
     'space-before': None,
     'widow-control': None,
+    'par-is-empty': None,
+    'no-words': None,
     "_": as_number,
 }
 CONTEXTUAL_FEATURES = set([
@@ -512,22 +528,22 @@ class XMLTextPropertyExtractor(object):
 
     def par_text_styles(self, par, text, words, token):
         textsize = {'italic': [0, 0], 'bold': [0, 0], 'underline': [0, 0]}
-        ttl=0
-        t=""
+        ttl = 0
+        t = ""
         for style in par.iterfind("./style"):
             sid = style.get("id")
             # print(sid, etree.tostring(style, encoding=str))
-            a={}
+            a = {}
             if sid is not None:
                 attrib = self.styles.get(sid, {})
                 a.update(attrib)
             a.update(style.attrib)
             attrib = a
             # print(attrib)
-            tt =self.preporocess_text(style.text)[0]
+            tt = self.preporocess_text(style.text)[0]
             tl = len(tt)
-            t+=tt
-            ttl+=tl
+            t += tt
+            ttl += tl
             for sm in textsize.keys():
                 v = attrib.get(sm, "0")
                 if v == "0":
@@ -539,7 +555,7 @@ class XMLTextPropertyExtractor(object):
         l.sort(key=lambda x: x[1][1], reverse=True)
         mostkey = l[0][0]
         mostval = l[0][1][1]
-        if mostval>0:
+        if mostval > 0:
             hf = ttl // 2
             mosts = [i[0] for i in l if i[1][1] >= hf]
             for m in mosts:
@@ -585,7 +601,8 @@ class XMLTextPropertyExtractor(object):
         if self.extracted and not update:
             return
         par_processors = [
-            self.par_has_section_mark, self.par_opk_marks, self.par_is_empty,
+            self.par_has_section_mark, self.par_opk_marks,
+            # self.par_is_empty,
             self.par_has_URL_or_email, self.par_only_numbers,
             self.par_has_no_verbs, self.par_text_styles,
             (self.par_has_words,
@@ -610,7 +627,8 @@ class XMLTextPropertyExtractor(object):
                           "компетенция обучающийся", "обучающийся должный",
                           "структура дисциплина", "содержание дисциплина",
                           "оценочный средство", "код и наименование",
-                          "наименование дисциплина", "указать профиль"
+                          "наименование дисциплина", "указать профиль",
+                          "Не предусмотреть",
                       ])))
         ]
         self.xmlprocessor.reduce_style()
@@ -712,10 +730,14 @@ class XMLTextPropertyExtractor(object):
             self.learning_params(teaching=True)
         x, y = self.prepare_params(teaching=True)
 
+        # print(x, y)
+
         # clf = svm.SVC()
         # m = clf.fit(x, y)
         # clf = GaussianNB()
         # m = clf.fit(x,y)
+
+        param_coding, target_coding, _ = self.learn_coding
 
         models = []
         for i in range(y.shape[1]):
@@ -724,8 +746,15 @@ class XMLTextPropertyExtractor(object):
             _y = y[:, i]
             m = clf.fit(x, _y)
             models.append(m)
-            fnexport=self.filename+"-{}.dot".format(i)
-            tree.export_graphviz(clf, out_file=open(fnexport,"w"))
+            fnexport = self.filename + "-{}.dot".format(i)
+            tree.export_graphviz(
+                clf,
+                out_file=open(fnexport, "w"),
+                feature_names=param_coding.source_coding(),
+                class_names=target_coding.target_coding(),
+                # filled=True,
+                # rounded=True,
+                special_characters=True)
         self.fit_model = models
         return self.fit_model
 
