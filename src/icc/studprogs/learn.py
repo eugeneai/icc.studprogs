@@ -658,7 +658,7 @@ class XMLTextPropertyExtractor(object):
             attrib = {}
             attrib.update(par.attrib)
             par.attrib.clear()
-            a={k:v for k,v in attrib.items() if k in FIXED_ATTRS or k.strartswith("t-")}
+            a={k:v for k,v in attrib.items() if k in FIXED_ATTRS or k.startswith("t-")}
             par.attrib.update(a)
 
         self.extract(update=True)
