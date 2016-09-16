@@ -7,6 +7,8 @@ from nose.plugins.skip import SkipTest
 from glob import glob
 import os.path
 
+NO_LONG_DOCS = True
+
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
 DOC_DIR = os.path.join(DATA_DIR, "documents")
@@ -40,7 +42,7 @@ class TestLearning:
     """
 
     def setUp(self):
-        print("Learning data taken from:", LEARN_FILES)
+        # print("Learning data taken from:", LEARN_FILES)
         docname = self.docname = LEARN_FILES[0]
         others = LEARN_FILES[1:]
         self.e = XMLTextPropertyExtractor(filename=docname)
@@ -91,7 +93,11 @@ class TestLearning:
             assert ny is not None
 
     def test_predict_on_documens(self):
-        # return
+        global NO_LONG_DOCS
+        if NO_LONG_DOCS:
+            print ("Long documents skipped")
+            return
+
         self.e.fit()
         for docx_file in DOCS:
             xml = XMLTextPropertyExtractor(
