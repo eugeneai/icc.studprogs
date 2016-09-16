@@ -211,7 +211,7 @@
   <par left-indent="0.0" space-after="0.0" widow-control="True" indent="18.0" space-before="0" right-indent="0" t-id="discipline-resources-literature-item" has-no-verbs="1" contextual-section-mark="7.1">
     <style id="s1">Симонович С.В. и др. Информатика. Базовый курс. - СПб.: Питер. – 2010. – 639c.</style>
   </par>
-  <par indent="0" space-after="0.0" left-indent="0" space-before="6.0" right-indent="0" t-id="discipline-resources-literature-auxiliary" section-mark="7.2" section-level="2" has-no-verbs="1" word-дополнительный="1">
+  <par indent="0" space-after="0.0" left-indent="0" space-before="6.0" right-indent="0" t-id="discipline-resources-literature-auxiliary-header" section-mark="7.2" section-level="2" has-no-verbs="1" word-дополнительный="1">
     <style id="s1">7.2. Дополнительная литература</style>
   </par>
   <par left-indent="0.0" t-id="discipline-resources-literature-item" widow-control="True" space-before="0" indent="18.0" right-indent="0" space-after="0" has-no-verbs="1" word-лабораторный="1" word-самостоятельный="1" contextual-section-mark="7.2">

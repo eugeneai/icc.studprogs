@@ -66,7 +66,7 @@
   <par left-indent="0" t-id="discipline-purpose-header" indent="0" space-before="0" right-indent="0" space-after="0" section-mark="1" section-level="1" has-no-verbs="1" bold="1" word-цель="1" word-задача="1">
     <style id="s4b">1. Цели и задачи освоения дисциплины </style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-aim-declaration" indent="0" space-before="0" right-indent="0" space-after="0" word-технология="1" word-метод="1" word-применение="1" word-средство="1" word-информационный="1" word-цель="1" contextual-section-mark="1">
+  <par left-indent="0" t-id="discipline-purpose-aim-item" indent="0" space-before="0" right-indent="0" space-after="0" word-технология="1" word-метод="1" word-применение="1" word-средство="1" word-информационный="1" word-цель="1" contextual-section-mark="1">
     <style id="s7">Целью освоения дисциплины</style>
     <style id="s4b"> </style>
     <style id="s7">является изучение слушателями основных методов и средств применения современных информационных технологий в научно-исследовательской и образовательной деятельности. </style>
@@ -383,7 +383,7 @@
   <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-resources-literature-item" has-no-verbs="1" word-технология="1" word-информационный="1" contextual-section-mark="7.1">
     <style id="s3">Трайнев Владимир Алексеевич Новые информационные коммуникационные технологии в образовании / В. А. Трайнев, В. Ю. Теплышев, И. В. Трайнев. - 2-е изд. - Москва : Дашков и К°, 2013. - 317 с. </style>
   </par>
-  <par left-indent="0" t-id="discipline-resources-literature-auxiliary" widow-control="False" indent="0" space-before="0" right-indent="0" space-after="0.0" section-mark="7.2" section-level="2" has-no-verbs="1" word-дополнительный="1">
+  <par left-indent="0" t-id="discipline-resources-literature-auxiliary-header" widow-control="False" indent="0" space-before="0" right-indent="0" space-after="0.0" section-mark="7.2" section-level="2" has-no-verbs="1" word-дополнительный="1">
     <style id="s3">7.2. Дополнительная литература</style>
   </par>
   <par indent="0" space-after="0" widow-control="True" right-indent="0" space-before="0" left-indent="0" t-id="discipline-resources-literature-item" has-no-verbs="1" word-информационный="1" contextual-section-mark="7.2">
