@@ -285,7 +285,7 @@ class LearningData(object):
     def source_coding(self):
         names = list(self.decoding.items())
         names.sort()
-        names=[i[1][0] for i in names]
+        names = [i[1][0] for i in names]
         # print(names)
         return names
 
@@ -334,12 +334,11 @@ CONVERT_VALUE = {
     'no-words': None,
     "_": as_number,
 }
-CONTEXTUAL_FEATURES = set([
-    "section-mark",
-])
+CONTEXTUAL_FEATURES = set(["section-mark", ])
 
 FIXED_ATTRS = {
-    "indent", "left-indent", "right-indent", "space-before", "space-after", "widow-control"
+    "indent", "left-indent", "right-indent", "space-before", "space-after",
+    "widow-control"
 }
 
 TOKENISER = None
@@ -602,10 +601,13 @@ class XMLTextPropertyExtractor(object):
         if self.extracted and not update:
             return
         par_processors = [
-            self.par_has_section_mark, self.par_opk_marks,
+            self.par_has_section_mark,
+            self.par_opk_marks,
             # self.par_is_empty,
-            self.par_has_URL_or_email, self.par_only_numbers,
-            self.par_has_no_verbs, self.par_text_styles,
+            self.par_has_URL_or_email,
+            self.par_only_numbers,
+            self.par_has_no_verbs,
+            self.par_text_styles,
             (self.par_has_words,
              ["знать", "уметь", "владеть", "технология", "оценочный",
               "средства", "ресурс", "интернет", "квалификация", "овладеть",
@@ -619,19 +621,25 @@ class XMLTextPropertyExtractor(object):
               "дополнительный", "электронный", "ресурс", "цель", "задача",
               "рисунок", "таблица", "аннотация", "рабочий", "учебный",
               "бакалавр", "магистр", "специалист", "аспирант", "профессор",
-              "код", "наименование", "профиль", "указать"]), (
-                  self.par_has_compounds, list(
-                      map(lambda x: x.split(" "), [
-                          "рабочий программа дисциплина",
-                          "специальность высший образование",
-                          "программа магистратура", "программа бакалавриат",
-                          "программа дисциплина", "задачи освоение дисциплина",
-                          "компетенция обучающийся", "обучающийся должный",
-                          "структура дисциплина", "содержание дисциплина",
-                          "оценочный средство",
-                          "наименование дисциплина",
-                          "Не предусмотреть",
-                      ])))
+              "код", "наименование", "профиль", "указать"]),
+            (self.par_has_compounds, list(
+                map(lambda x: x.split(" "), [
+                    "рабочий программа дисциплина",
+                    "специальность высший образование",
+                    "программа магистратура",
+                    "программа бакалавриат",
+                    "программа дисциплина",
+                    "задачи освоение дисциплина",
+                    "компетенция обучающийся",
+                    "обучающийся должный",
+                    "структура дисциплина",
+                    "содержание дисциплина",
+                    "оценочный средство",
+                    "российский федерация",
+                    "министерство образование"
+                    "наименование дисциплина",
+                    "Не предусмотреть",
+                ])))
         ]
         self.xmlprocessor.reduce_style()
         self.par_process(par_processors)
@@ -658,7 +666,9 @@ class XMLTextPropertyExtractor(object):
             attrib = {}
             attrib.update(par.attrib)
             par.attrib.clear()
-            a={k:v for k,v in attrib.items() if k in FIXED_ATTRS or k.startswith("t-")}
+            a = {k: v
+                 for k, v in attrib.items()
+                 if k in FIXED_ATTRS or k.startswith("t-")}
             par.attrib.update(a)
 
         self.extract(update=True)
