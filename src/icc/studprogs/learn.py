@@ -147,7 +147,7 @@ class LinkGrammar(object):
                 yield par, rc, linkage
 
 
-SECTION_RE = re.compile("^(.{0,8}?)(\d{1,2}(\.\d{1,2})*\.?)[ \t]")
+SECTION_RE = re.compile("^(.{0,8}?)(\d{1,2}(\.\d{1,2}){0,1}\.?)[ \t]")
 BAD_PREAMBLE_RE = re.compile("^.*?\d+$")
 WORD_PREAMBLE_RE = re.compile("^.*?(\w+).*?$")
 WORD_OPK = re.compile("\((о?п?к.+\d{1,2})\)")
@@ -336,10 +336,11 @@ CONVERT_VALUE = {
 }
 CONTEXTUAL_FEATURES = set([
     "section-mark",
-    "t-field-id",  # rel="schema:hasPart" resource="#....."
-    #    "section-level",
-    #    "compound-программа-дисциплина",
 ])
+
+FIXED_ATTRS = {
+    "indent", "left-indent", "right-indent", "space-before", "space-after", "widow-control"
+}
 
 TOKENISER = None
 
@@ -617,7 +618,8 @@ class XMLTextPropertyExtractor(object):
               "информационный", "обеспечение", "основной", "информационный",
               "дополнительный", "электронный", "ресурс", "цель", "задача",
               "рисунок", "таблица", "аннотация", "рабочий", "учебный",
-              "бакалавр", "магистр", "специалист", "аспирант", "профессор"]), (
+              "бакалавр", "магистр", "специалист", "аспирант", "профессор",
+              "код", "наименование", "профиль", "указать"]), (
                   self.par_has_compounds, list(
                       map(lambda x: x.split(" "), [
                           "рабочий программа дисциплина",
@@ -626,8 +628,8 @@ class XMLTextPropertyExtractor(object):
                           "программа дисциплина", "задачи освоение дисциплина",
                           "компетенция обучающийся", "обучающийся должный",
                           "структура дисциплина", "содержание дисциплина",
-                          "оценочный средство", "код и наименование",
-                          "наименование дисциплина", "указать профиль",
+                          "оценочный средство",
+                          "наименование дисциплина",
                           "Не предусмотреть",
                       ])))
         ]
@@ -635,7 +637,7 @@ class XMLTextPropertyExtractor(object):
         self.par_process(par_processors)
         if not update:
             self.xmlprocessor.style_names()
-            self.expand_context()
+        self.expand_context()
 
         self.extracted = True
 
@@ -651,6 +653,14 @@ class XMLTextPropertyExtractor(object):
                 par.set("contextual-no-context", "1")
 
     def update(self, others=False):
+        self.load()
+        for par in self.tree.iterfind("//par"):
+            attrib = {}
+            attrib.update(par.attrib)
+            par.attrib.clear()
+            a={k:v for k,v in attrib.items() if k in FIXED_ATTRS or k.strartswith("t-")}
+            par.attrib.update(a)
+
         self.extract(update=True)
         if others:
             for o in self.prop_extractors:
