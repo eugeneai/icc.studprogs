@@ -623,7 +623,7 @@ class XMLTextPropertyExtractor(object):
               "дополнительный", "электронный", "ресурс", "цель", "задача",
               "рисунок", "таблица", "аннотация", "рабочий", "учебный",
               "бакалавр", "магистр", "специалист", "аспирант", "профессор",
-              "код", "наименование", "профиль", "указать"]),
+              "код", "наименование", "профиль", "указать","примечание"]),
             (self.par_has_compounds, list(
                 map(lambda x: x.split(" "), [
                     "рабочий программа дисциплина",
@@ -747,6 +747,7 @@ class XMLTextPropertyExtractor(object):
     def fit(self, method="tree", extract=True, debug=False):
         """Prepare parameters for fitting and make a fit.
         """
+        des_tree = False
         for tr in [self] + self.prop_extractors:
             #print("+++",tr.filename)
             tr.extract()
@@ -771,19 +772,22 @@ class XMLTextPropertyExtractor(object):
 
         models = []
         for i in range(y.shape[1]):
-            clf = tree.DecisionTreeClassifier()
-            # clf = GaussianNB()
+            if des_tree:
+                clf = tree.DecisionTreeClassifier()
+            else:
+                clf = GaussianNB()
             _y = y[:, i]
             m = clf.fit(x, _y)
             models.append(m)
-            fnexport = self.filename + "-{}.dot".format(i)
-            tree.export_graphviz(
-                clf,
-                out_file=open(fnexport, "w"),
-                feature_names=param_coding.source_coding(),
-                class_names=target_coding.target_coding(),
-                # filled=True,
-                # rounded=True,
+            if des_tree:
+                fnexport = self.filename + "-{}.dot".format(i)
+                tree.export_graphviz(
+                    clf,
+                    out_file=open(fnexport, "w"),
+                    feature_names=param_coding.source_coding(),
+                    class_names=target_coding.target_coding(),
+                    # filled=True,
+                    # rounded=True,
                 special_characters=True)
         self.fit_model = models
         return self.fit_model
