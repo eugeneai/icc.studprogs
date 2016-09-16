@@ -76,91 +76,91 @@
     <style id="s8i">задачами курса</style>
     <style id="s7"> являются:</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-метод="1" word-средство="1" contextual-section-mark="1">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-метод="1" word-средство="1" contextual-section-mark="1">
     <style id="s7">− овладение современными методами и средствами автоматизированного анализа и систематизации научных данных;</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-технология="1" word-информационный="1" contextual-section-mark="1">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-технология="1" word-информационный="1" contextual-section-mark="1">
     <style id="s7">−  освоение технологий модернизации образовательных программ на основе внедрения современных информационных технологий;</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-средство="1" word-электронный="1" contextual-section-mark="1">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-средство="1" word-электронный="1" contextual-section-mark="1">
     <style id="s7">− изучение современных электронных средств поддержки образовательного процесса и приемов их интеграции с традиционными учебно-методическими материалами;</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-ресурс="1" word-практический="1" contextual-section-mark="1">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-ресурс="1" word-практический="1" contextual-section-mark="1">
     <style id="s7">− формирование практических навыков использования научно-образовательных ресурсов Internet в повседневной профессиональной деятельности исследователя и педагога. </style>
   </par>
   <par space-before="0" right-indent="0" indent="13.65" left-indent="21.75" space-after="0" contextual-section-mark="1"/>
-  <par left-indent="0" t-id="discipline-purpose-description-competentions" indent="0" space-before="0" right-indent="0" space-after="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
+  <par left-indent="0" t-id="discipline-purpose-competentions-declaration" indent="0" space-before="0" right-indent="0" space-after="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
     <style id="s4b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="28.35" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="ignore" contextual-section-mark="2">
     <style id="s3">Освоение программы настоящей дисциплины позволит сформировать у обучающегося следующие компетенции: </style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="ок-1" has-no-verbs="1" word-способный="1" word-совершенствовать="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="ок-1" has-no-verbs="1" word-способный="1" word-совершенствовать="1" contextual-section-mark="2">
     <style id="s9">Способен совершенствовать и развивать свой интеллектуальный и общекультурный уровень (ОК-1);</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="ок-2" has-no-verbs="1" word-понимать="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="ок-2" has-no-verbs="1" word-понимать="1" contextual-section-mark="2">
     <style id="s9">способность понимать роль науки в развитии цивилизации, соотношение науки и техники, иметь представление о связанных с ними современных социальных и этических проблемах, понимать ценность научной рациональности и ее исторических типов (ОК-2);</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="ок-3" has-no-verbs="1" word-метод="1" word-самостоятельный="1" word-профиль="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="ок-3" has-no-verbs="1" word-метод="1" word-самостоятельный="1" word-профиль="1" contextual-section-mark="2">
     <style id="s3">Способность к самостоятельному обучению новым методам исследования, к изменению научного и научно-производственного профиля своей профессиональной деятельности (ОК-3);</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="ок-4" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="ок-4" has-no-verbs="1" contextual-section-mark="2">
     <style id="s3">способность заниматься научными исследованиями (ОК-4);</style>
   </par>
-  <par left-indent="0" space-after="0" space-before="0" indent="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="опк-5" has-no-verbs="1" word-технология="1" word-метод="1" word-средство="1" contextual-section-mark="2">
+  <par left-indent="0" space-after="0" space-before="0" indent="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="опк-5" has-no-verbs="1" word-технология="1" word-метод="1" word-средство="1" contextual-section-mark="2">
     <style id="s3">владение методами и средствами получения, хранения, переработки и трансляции информации посредством современных компьютерных технологий, в том числе, в глобальных компьютерных сетях (ОПК-5);</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="пк-1" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="пк-1" has-no-verbs="1" contextual-section-mark="2">
     <style id="s3">знание основ философии и методологии науки (ПК-1);</style>
   </par>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="пк-2" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="пк-2" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
     <style id="s3">знание методов научных исследований и владение навыками их проведения (ПК-2);</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="пк-4" has-no-verbs="1" word-метод="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="пк-4" has-no-verbs="1" word-метод="1" word-задача="1" contextual-section-mark="2">
     <style id="s3">владение существующими методами и алгоритмами решения задач распознавания и обработки данных (ПК-4);</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="пк-7" has-no-verbs="1" word-технология="1" word-метод="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-competention-item" space-before="0" indent="0" right-indent="0" space-after="0" opk-sign="1" opk="пк-7" has-no-verbs="1" word-технология="1" word-метод="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
     <style id="s3">применение перспективных методов исследования и решения профессиональных задач на основе знания мировых тенденций развития вычислительной техники и информационных технологий (ПК-7)</style>
   </par>
   <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration" has-no-verbs="1" compound-обучающийся-должный="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration" has-no-verbs="1" compound-обучающийся-должный="1" contextual-section-mark="2">
     <style id="s3">В результате освоения программы обучающийся должен:</style>
   </par>
-  <par left-indent="18.0" space-after="0.0" widow-control="True" indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-knowlege-declaration" has-no-verbs="1" word-знать="1" contextual-section-mark="2">
+  <par left-indent="18.0" space-after="0.0" widow-control="True" indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-knowlege-declaration" has-no-verbs="1" word-знать="1" contextual-section-mark="2">
     <style id="s3">знать:</style>
     <style id="s1"> </style>
   </par>
-  <par left-indent="7.1" space-after="0.0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par left-indent="7.1" space-after="0.0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s3">современное состояние исследований и разработок в области информатики и вычислительной техники;</style>
   </par>
-  <par indent="28.35" space-after="0.0" left-indent="7.1" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-задача="1" contextual-section-mark="2">
+  <par indent="28.35" space-after="0.0" left-indent="7.1" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-задача="1" contextual-section-mark="2">
     <style id="s9">задачи развития информатизации в сфере науки и образования;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
     <style id="s9">современный инструментарий компьютерных  технологий в науке и образовании;</style>
   </par>
   <par space-before="0" right-indent="0" indent="0" left-indent="18.0" space-after="0" contextual-section-mark="2"/>
-  <par left-indent="21.3" space-after="0" widow-control="True" indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-skills-declaration" has-no-verbs="1" word-уметь="1" contextual-section-mark="2">
+  <par left-indent="21.3" space-after="0" widow-control="True" indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-skills-declaration" has-no-verbs="1" word-уметь="1" contextual-section-mark="2">
     <style id="s3">уметь:</style>
     <style id="s1"> </style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-технология="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-технология="1" word-задача="1" contextual-section-mark="2">
     <style id="s3">применять современный инструментарий компьютерных  технологий для  решения исследовательских задач в своей предметной области; </style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="28.35" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
     <style id="s3">Применять принципы обучения и современные инструменты компьютерных технологий для разработки курсов дистанционного образования; </style>
   </par>
-  <par indent="21.25" space-after="6.0" left-indent="0.0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
+  <par indent="21.25" space-after="6.0" left-indent="0.0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-технология="1" contextual-section-mark="2">
     <style id="s9">готовить аналитические обзоры по перспективным направлениям компьютерных  технологий в науке и образовании.</style>
   </par>
   <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-posesses-declaration" has-no-verbs="1" word-владеть="1" contextual-section-mark="2">
+  <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-posesses-declaration" has-no-verbs="1" word-владеть="1" contextual-section-mark="2">
     <style id="s3">владеть:</style>
   </par>
-  <par indent="28.35" space-after="0" left-indent="7.1" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
+  <par indent="28.35" space-after="0" left-indent="7.1" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
     <style id="s7">навыками саморазвития, самообучения, методами извлечения новых знаний;</style>
   </par>
-  <par left-indent="7.1" t-id="discipline-purpose-description-attainments-declaration-item" widow-control="False" space-before="0" indent="28.35" right-indent="0" space-after="0.0" has-no-verbs="1" word-метод="1" word-оформление="1" word-средство="1" contextual-section-mark="2">
+  <par left-indent="7.1" t-id="discipline-purpose-attainments-declaration-item" widow-control="False" space-before="0" indent="28.35" right-indent="0" space-after="0.0" has-no-verbs="1" word-метод="1" word-оформление="1" word-средство="1" contextual-section-mark="2">
     <style id="s9">методами и средствами разработки и оформления технической документации, а также  научно-технических отчётов, обзоров, публикаций по результатам выполненных исследований</style>
     <style id="s10">.</style>
   </par>

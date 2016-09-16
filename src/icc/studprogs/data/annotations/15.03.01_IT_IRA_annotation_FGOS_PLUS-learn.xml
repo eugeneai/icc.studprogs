@@ -28,33 +28,33 @@
   <par indent="35.45" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-task-declaration" word-технология="1" word-обеспечение="1" word-задача="1" contextual-section-mark="1">
     <style id="s1">Задачами изучения курса информатики являются: ознакомление студентов с основными принципами построения компьютеров, их характеристиками; получение навыков использования прикладного программного обеспечения для решения задач по обработке информации; освоение принципов алгоритмизации и объектно-ориентированного программирования; формирование навыков грамотного и рационального использования компьютерных технологий при выполнении теоретических и экспериментальных работ во время обучения и в последующей профессиональной деятельности.</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-competentions" indent="0" space-before="6.0" right-indent="0" space-after="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
+  <par left-indent="0" t-id="discipline-purpose-competentions-declaration" indent="0" space-before="6.0" right-indent="0" space-after="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
     <style id="s2b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="35.45" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="ignore" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Выпускник должен обладать следующими компетенциями </style>
   </par>
-  <par left-indent="0.0" t-id="discipline-purpose-description-competention-item" space-before="0" indent="18.0" right-indent="0" space-after="0" opk-sign="1" opk="опк-1" has-no-verbs="1" word-метод="1" word-основной="1" contextual-section-mark="2">
+  <par left-indent="0.0" t-id="discipline-purpose-competention-item" space-before="0" indent="18.0" right-indent="0" space-after="0" opk-sign="1" opk="опк-1" has-no-verbs="1" word-метод="1" word-основной="1" contextual-section-mark="2">
     <style id="s1">умением использовать основные законы естественнонаучных дисциплин в профессиональной деятельности, применять методы математического анализа и моделирования, теоретического и экспериментального исследования (ОПК-1);</style>
   </par>
-  <par left-indent="0.0" space-after="0" space-before="0" indent="18.0" right-indent="0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="опк-3" has-no-verbs="1" word-метод="1" word-средство="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0" space-before="0" indent="18.0" right-indent="0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="опк-3" has-no-verbs="1" word-метод="1" word-средство="1" contextual-section-mark="2">
     <style id="s1">владением основными методами, способами и средствами получения, хранения, переработки информации (ОПК-3);</style>
   </par>
-  <par left-indent="0.0" t-id="discipline-purpose-description-competention-item" space-before="0" indent="18.0" right-indent="0" space-after="0" opk-sign="1" opk="опк-5" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0.0" t-id="discipline-purpose-competention-item" space-before="0" indent="18.0" right-indent="0" space-after="0" opk-sign="1" opk="опк-5" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
     <style id="s1">способностью решать стандартные задачи профессиональной деятельности на основе информационной и библиографической культуры с применением информационно-коммуникационных технологий и с учетом основных требований информационной безопасности (ОПК-5).</style>
   </par>
-  <par indent="35.45" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration" has-no-verbs="1" compound-обучающийся-должный="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-purpose-attainments-declaration" has-no-verbs="1" compound-обучающийся-должный="1" contextual-section-mark="2">
     <style id="s1">В результате освоения программы обучающийся должен:</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-знать="1" word-технология="1" word-информационный="1" word-основной="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-знать="1" word-технология="1" word-информационный="1" word-основной="1" contextual-section-mark="2">
     <style id="s2b">знать</style>
     <style id="s1"> основные понятия информации и информационных технологий; основные понятия языков программирования, понятие алгоритма и его свойства, технологию составления программ.</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-уметь="1" word-средство="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-уметь="1" word-средство="1" word-задача="1" contextual-section-mark="2">
     <style id="s2b">уметь</style>
     <style id="s1"> работать в качестве пользователя персонального компьютера, использовать языки и системы программирования для решения профессиональных задач, работать с программными средствами общего назначения.</style>
   </par>
-  <par left-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-владеть="1" word-самостоятельный="1" word-средство="1" contextual-section-mark="2">
+  <par left-indent="0" t-id="discipline-purpose-attainments-declaration-item" space-before="0" indent="35.45" right-indent="0" space-after="0" has-no-verbs="1" word-владеть="1" word-самостоятельный="1" word-средство="1" contextual-section-mark="2">
     <style id="s2b">владеть</style>
     <style id="s1"> приемами самостоятельного поиска информации в соответствии с потребностями, возникающими в ходе обучения; техническими и программными средствами защиты информации при работе с компьютерными системами, включая приемы антивирусной защиты.</style>
   </par>

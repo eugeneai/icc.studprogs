@@ -50,10 +50,10 @@
   <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-aim-declaration" word-формировать="1" word-цель="1" contextual-section-mark="1">
     <style id="s1">Изучение дисциплины «Культура организации технического обслуживания и ремонта автомобилей в автотранспортных предприятиях» является одной из целей университетского образования, формирующей у студента:</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-aim-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
+  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-aim-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
     <style id="s1">1)	во-первых, знания по формированию структуры и организации деятельности автотранспортных предприятий, обеспечения их конкурентоспособности;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-aim-item" has-no-verbs="1" contextual-section-mark="1">
+  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-aim-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s1">2)	во-вторых, знания в области сертификации услуг и систем менеджмента качества.</style>
   </par>
   <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="1"/>
@@ -61,126 +61,126 @@
     <style id="s3b"> Задачи:</style>
   </par>
   <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="1"/>
-  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-task-item" word-задача="1" contextual-section-mark="1">
+  <par indent="35.45" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="discipline-purpose-task-item" word-задача="1" contextual-section-mark="1">
     <style id="s1">В дисциплине рассматриваются указанные в ФГОС  задачи профессиональной деятельности выпускника:</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Определение в составе коллектива исполнителей производственной программы по техническому обслуживанию, сервису, ремонту и другим услугам при эксплуатации транспорта или изготовлении оборудования;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Участие в составе коллектива исполнителей в разработке и совершенствовании технологических процессов и документации;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Эффективное использование материалов, оборудования, соответствующих алгоритмов и программ расчетов параметров технологических процессов;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Организация и эффективное осуществление контроля качества запасных частей, комплектующих изделий и материалов, производственного контроля технологических процессов, качества продукции и услуг;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
     <style id="s4"> Обеспечение безопасности эксплуатации (в том числе экологической), хранения, обслуживания, ремонта и сервиса транспорта и транспортного оборудования, безопасных условий труда персонала;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4"> Внедрение эффективных инженерных решений в практику;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4"> Организация и осуществление технического контроля при эксплуатации транспорта и транспортного оборудования;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4"> Участие в составе коллектива исполнителей в организации работы коллектива, выборе, обосновании, принятии и реализации управленческих решений;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4"> Участие в составе коллектива исполнителей в совершенствовании организационно-управленческой структуры предприятий по эксплуатации, хранению, техническому обслуживанию, ремонту и сервису транспорта и транспортного оборудования;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Участие в составе коллектива исполнителей в организации и совершенствовании системы учета и документооборота;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Участие в составе коллектива исполнителей в выборе и, при необходимости, разработке рациональных нормативов эксплуатации, технического обслуживания, ремонта и хранения транспорта и оборудования;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" contextual-section-mark="1">
     <style id="s4">Участие в составе коллектива исполнителей в нахождении компромисса между различными требованиями (стоимости, качества, безопасности и сроков исполнения) при долгосрочном и краткосрочном планировании и определение рационального решения;</style>
   </par>
-  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-description-task-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
+  <par left-indent="0.0" space-after="0" widow-control="True" indent="35.45" space-before="0" right-indent="0" t-id="discipline-purpose-task-item" has-no-verbs="1" word-обеспечение="1" contextual-section-mark="1">
     <style id="s4">Участие в составе коллектива исполнителей в оценке производственных и непроизводственных затрат на обеспечение качества продукции и услуг;участие в составе коллектива исполнителей в осуществлении технического контроля и управлении качеством изделий, продукции и услуг.</style>
   </par>
   <par left-indent="0" space-after="0" widow-control="True" indent="0" space-before="0" right-indent="0" t-id="ignore" contextual-section-mark="1"/>
-  <par left-indent="0.0" t-id="discipline-purpose-description-competentions" indent="35.45" space-before="0.0" right-indent="0" space-after="0.0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
+  <par left-indent="0.0" t-id="discipline-purpose-competentions-header" indent="35.45" space-before="0.0" right-indent="0" space-after="0.0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1">
     <style id="s3b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
   <par indent="0" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2">
+  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-competention-declaration" contextual-section-mark="2">
     <style id="s1">Освоение программы настоящей дисциплины позволит сформировать у обучающегося следующие компетенции:</style>
   </par>
-  <par left-indent="0.0" t-id="discipline-purpose-description-competention-item" widow-control="False" space-before="0.0" indent="35.45" right-indent="0" space-after="0.0" opk-sign="1" opk="опк-1" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
+  <par left-indent="0.0" t-id="discipline-purpose-competention-item" widow-control="False" space-before="0.0" indent="35.45" right-indent="0" space-after="0.0" opk-sign="1" opk="опк-1" has-no-verbs="1" word-технология="1" word-применение="1" word-информационный="1" word-задача="1" contextual-section-mark="2">
     <style id="s1">способность решать стандартные задачи профессиональной деятельности на основе информационной и библиографической культуры с применением информационно-коммуникационных технологий и с учётом основных требований информационной безопасности (ОПК-1);</style>
   </par>
-  <par indent="35.45" space-after="0.0" widow-control="False" right-indent="0" space-before="0.0" left-indent="0.0" t-id="discipline-purpose-description-competention-item" opk-sign="1" opk="опк-2" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" widow-control="False" right-indent="0" space-before="0.0" left-indent="0.0" t-id="discipline-purpose-competention-item" opk-sign="1" opk="опк-2" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">владение научными основами технологических процессов в области эксплуатации транспортно-технологических машин и комплексов (ОПК-2).</style>
   </par>
-  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration" has-no-verbs="1" contextual-section-mark="2">
+  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">В результате изучения дисциплины студенты должны:</style>
   </par>
   <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-knowlege-declaration" has-no-verbs="1" bold="1" word-знать="1" contextual-section-mark="2">
+  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-knowlege-declaration" has-no-verbs="1" bold="1" word-знать="1" contextual-section-mark="2">
     <style id="s3b">знать:</style>
   </par>
   <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-основной="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-основной="1" contextual-section-mark="2">
     <style id="s1">Основные положения и нормативную документацию необходимую для организации автотранспортных предприятий и его функционирования;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Требования, предъявляемые к автотранспортным предприятиям  на современном рынке;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-информационный="1" word-обеспечение="1" contextual-section-mark="2">
     <style id="s1">Информационное обеспечение деятельности автотранспортного предприятия;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Особенности сервиса грузовых, специальных, строительно-дорожных и сельскохозяйственных машин;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-средство="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-средство="1" contextual-section-mark="2">
     <style id="s1">Правила и систему сертификации услуг по техническому облуживанию и ремонту автотранспортных средств;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Организацию и сертификацию систем менеджмента качества;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-средство="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-средство="1" contextual-section-mark="2">
     <style id="s1">Технологическое содержание, правила и условия выполнения работ (предоставления услуг) по техническому обслуживанию и ремонту автомототранспортных средств;</style>
   </par>
   <par indent="0" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-skills-declaration" has-no-verbs="1" bold="1" word-уметь="1" contextual-section-mark="2">
+  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-skills-declaration" has-no-verbs="1" bold="1" word-уметь="1" contextual-section-mark="2">
     <style id="s3b">уметь: </style>
   </par>
   <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Оценить перспективы создания автотранспортных предприятий или выявить причины существующих недостатков и принять меры по их устранению и повышению эффективности предприятия;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Подготовить документацию необходимую для создания автотранспортных предприятий и в процессе его функционирования;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Организовать работу предприятия соответственно положениям государственных стандартов, правил обязательной сертификации, стандартов ИСО 9000, правил и норм охраны труда, техники безопасности, производственной санитарии и противопожарной защиты;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-квалификация="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-квалификация="1" contextual-section-mark="2">
     <style id="s1">Организовать работу по повышению квалификации работников;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Консультировать по вопросам проектирования автотранспортных предприятий, разработке и реализации прогрессивных технологических процессов;</style>
   </par>
-  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par indent="35.45" space-after="0.0" left-indent="0.0" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Внедрять передовой опыт и достижения техники в работу автотранспортных предприятий.</style>
   </par>
   <par indent="0" space-after="0.0" left-indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-posesses-declaration" has-no-verbs="1" bold="1" word-владеть="1" contextual-section-mark="2">
+  <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-posesses-declaration" has-no-verbs="1" bold="1" word-владеть="1" contextual-section-mark="2">
     <style id="s3b">владеть:</style>
   </par>
   <par left-indent="0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
-  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-метод="1" contextual-section-mark="2">
     <style id="s1">Приемами и методами оценки деятельности автотранспортных предприятий или выявить причины существующих недостатков и принять меры по их устранению и повышению эффективности предприятия;</style>
   </par>
-  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" contextual-section-mark="2">
     <style id="s1">Владением необходимого документооборота, организации работы исполнителей согласно требований стандартов, правил и норм по охране труда, технике безопасности, производственной санитарии и противопожарной защиты; </style>
   </par>
-  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-description-attainments-declaration-item" has-no-verbs="1" word-квалификация="1" contextual-section-mark="2">
+  <par left-indent="0.0" space-after="0.0" widow-control="False" indent="35.45" space-before="0.0" right-indent="0" t-id="discipline-purpose-attainments-declaration-item" has-no-verbs="1" word-квалификация="1" contextual-section-mark="2">
     <style id="s1">Повышения квалификации работников; внедрение прогрессивных технологических процессов, передового опыта достижений науки и техники.</style>
   </par>
   <par left-indent="0" space-after="0.0" widow-control="False" indent="0" space-before="0.0" right-indent="0" t-id="ignore" contextual-section-mark="2"/>
