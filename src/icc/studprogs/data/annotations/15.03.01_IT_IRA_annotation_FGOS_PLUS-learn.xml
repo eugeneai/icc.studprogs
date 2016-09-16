@@ -314,7 +314,7 @@
       </par>
     </cell>
     <cell x="1" y="0" w="0" h="0" p="-1">
-      <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="ignorediscipline-qualification-name" has-no-verbs="1" word-бакалавр="1" contextual-section-mark="03.01">
+      <par indent="0" space-after="0" left-indent="0" space-before="0" right-indent="0" t-id="discipline-qualification-name" has-no-verbs="1" word-бакалавр="1" contextual-section-mark="03.01">
         <style id="s1">академический бакалавр</style>
       </par>
     </cell>
