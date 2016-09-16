@@ -75,7 +75,7 @@ class TestLearning:
     #     # print("Declinations:", recon - y)
 
     def test_predict_on_annotations(self):
-        self.e.fit()
+        self.e.fit(debug=True)
         for docx_file in FILES:
             xml = XMLTextPropertyExtractor(
                 filename=docx_file, importer=msdocx.Importer)

@@ -398,6 +398,8 @@ class XMLTextPropertyExtractor(object):
                 p(par, ntext, words, tokens, *args)
 
     def words(self, text, with_tokens=False):
+        if text is None:
+            return
         t = SPACE_LIKE_RE.sub(" ", text)
         for token in self.tokenizer.tokens([t]):
             w = str(token)
@@ -742,7 +744,7 @@ class XMLTextPropertyExtractor(object):
     def join_fit(self, prop_extractor):
         self.prop_extractors.append(prop_extractor)
 
-    def fit(self, method="tree", extract=True):
+    def fit(self, method="tree", extract=True, debug=False):
         """Prepare parameters for fitting and make a fit.
         """
         for tr in [self] + self.prop_extractors:
@@ -761,6 +763,11 @@ class XMLTextPropertyExtractor(object):
         # m = clf.fit(x,y)
 
         param_coding, target_coding, _ = self.learn_coding
+        if debug:
+            print("Features: -----------------------")
+            print(param_coding)
+            print("Target features: ----------------")
+            print(target_coding)
 
         models = []
         for i in range(y.shape[1]):
