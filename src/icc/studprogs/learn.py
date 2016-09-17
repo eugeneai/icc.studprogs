@@ -747,7 +747,7 @@ class XMLTextPropertyExtractor(object):
     def fit(self, method="tree", extract=True, debug=False):
         """Prepare parameters for fitting and make a fit.
         """
-        des_tree = False
+        des_tree = False # REMARK: This switches the fit to use decision trees instead of another method
         for tr in [self] + self.prop_extractors:
             #print("+++",tr.filename)
             tr.extract()
