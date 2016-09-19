@@ -623,7 +623,7 @@ class XMLTextPropertyExtractor(object):
               "дополнительный", "электронный", "ресурс", "цель", "задача",
               "рисунок", "таблица", "аннотация", "рабочий", "учебный",
               "бакалавр", "магистр", "специалист", "аспирант", "профессор",
-              "код", "наименование", "профиль", "указать","примечание","фонд"]),
+              "код", "наименование", "профиль", "указать","примечание","фонд","балл","рейтинг"]),
             (self.par_has_compounds, list(
                 map(lambda x: x.split(" "), [
                     "рабочий программа дисциплина",
@@ -661,7 +661,8 @@ class XMLTextPropertyExtractor(object):
             for cf in CONTEXTUAL_FEATURES:
                 if cf in par.attrib:
                     context[cf] = par.get(cf)
-                elif cf in context:
+                    del par.attrib[cf]
+                if cf in context:
                     par.set("contextual-" + cf, context[cf])
             if len(context) == 0:
                 par.set("contextual-no-context", "1")
