@@ -21,6 +21,8 @@ import re
 import locale
 locale.setlocale(locale.LC_ALL, "ru_RU.UTF-8")
 
+USE_TREE = True # Use decision trees for learning
+
 package = __name__
 TEST_FILE1 = resource_stream("icc.studprogs", "data/059285.txt")
 TEST_FILE2 = resource_stream("icc.studprogs", "data/059285.xml")
@@ -661,7 +663,7 @@ class XMLTextPropertyExtractor(object):
             for cf in CONTEXTUAL_FEATURES:
                 if cf in par.attrib:
                     context[cf] = par.get(cf)
-                    del par.attrib[cf]
+                    # del par.attrib[cf]
                 if cf in context:
                     par.set("contextual-" + cf, context[cf])
             if len(context) == 0:
@@ -749,7 +751,7 @@ class XMLTextPropertyExtractor(object):
     def fit(self, method="tree", extract=True, debug=False):
         """Prepare parameters for fitting and make a fit.
         """
-        des_tree = False # REMARK: This switches the fit to use decision trees instead of another method
+        des_tree = USE_TREE
         for tr in [self] + self.prop_extractors:
             #print("+++",tr.filename)
             tr.extract()
