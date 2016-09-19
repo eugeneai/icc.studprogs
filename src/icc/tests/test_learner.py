@@ -7,7 +7,7 @@ from nose.plugins.skip import SkipTest
 from glob import glob
 import os.path
 
-NO_LONG_DOCS = True
+NO_LONG_DOCS = False
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
