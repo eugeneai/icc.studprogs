@@ -1,18 +1,19 @@
 from nose.tools import raises, nottest
 from pkg_resources import resource_filename
 from icc.studprogs.learn import XMLTextPropertyExtractor
-from icc.studprogs.importer import msdocx
+#from icc.studprogs.importer import msdocx
+from icc.studprogs.importer import tdfodt
 from lxml import etree
 from nose.plugins.skip import SkipTest
 from glob import glob
 import os.path
 
-LONG_DOCS = True
+LONG_DOCS = False
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
 DOC_DIR = os.path.join(DATA_DIR, "documents")
-EXT_PATTERN = "*.docx"
+EXT_PATTERN = "*.odt"
 DOC_EXT_PATTERN = "**/"+EXT_PATTERN
 LEARN_PATTERN = "*-learn.xml"
 
@@ -34,9 +35,9 @@ class TestBasicLoad:
     def setUp(self):
         docname = self.docname = FILES[0]
         self.output_filename = \
-            self.docname.replace("annotations","out").replace(".docx",".xml")
+            self.docname.replace("annotations","out").replace(".odt",".xml")
         self.e = XMLTextPropertyExtractor(
-            filename=docname, importer=msdocx.Importer)
+            filename=docname, importer=tdfodt.Importer)
 
     def tearDown(self):
         pass
@@ -86,19 +87,19 @@ class TestLearning:
 
     def test_predict_on_annotations(self):
         self.e.fit(debug=False)
-        for docx_file in FILES:
+        for doc_file in FILES:
             xml = XMLTextPropertyExtractor(
-                filename=docx_file, importer=msdocx.Importer)
-            output_filename = docx_file.replace("annotations", "out").replace(
-                ".docx", "-extracted.xml")
+                filename=doc_file, importer=tdfodt.Importer)
+            output_filename = doc_file.replace("annotations", "out").replace(
+                ".odt", "-extracted.xml")
             xml.load()
             xml.extract()
             xml.write(output_filename)
             xml.set_learn_coding(self.e.learn_coding)
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
-            output_filename = docx_file.replace("annotations", "out").replace(
-                ".docx", "-predicted.xml")
+            output_filename = doc_file.replace("annotations", "out").replace(
+                ".odt", "-predicted.xml")
             xml.write(output_filename)
             assert ny is not None
 
@@ -112,12 +113,12 @@ class TestLearning:
 
         self.e.fit()
         ldocs=len(DOCS)
-        for i, docx_file in enumerate(DOCS):
+        for i, doc_file in enumerate(DOCS):
             #if i!=219:
             #    continue
-            print("{} of {}: {}".format(i+1, ldocs, docx_file))
-            fp,lp=docx_file.split("annotations/documents/")
-            lp.strip(".docx")
+            print("{} of {}: {}".format(i+1, ldocs, doc_file))
+            fp,lp=doc_file.split("annotations/documents/")
+            lp.strip(".odt")
             lp=lp.replace(" ","_")
             lp=lp.replace("/","__")
             fn=os.path.join(fp,"out",lp)
@@ -132,8 +133,8 @@ class TestLearning:
             except OSError:
                 pass
 
-            xml = XMLTextPropertyExtractor(filename=docx_file,
-                                           importer=msdocx.Importer)
+            xml = XMLTextPropertyExtractor(filename=doc_file,
+                                           importer=tdfodt.Importer)
             try:
                 xml.load()
             except etree.XMLSyntaxError:
