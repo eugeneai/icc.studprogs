@@ -1,17 +1,8 @@
 [RULE-ORDER]
-URL URL-WWW URL-DOMAIN
-E-MAIL
-BULLET
-WORD-PARPREFIX WORD-PARSUFFIX WORD-COMPOUND
-ABBREVIATION INITIAL
-# SMILEY
-# REVERSE-SMILEY
-PUNCTUATION-MULTI DATE-REVERSE DATE
-COMPETENTION-DESIGNATION
-STUDY-CODE
-ENUM
-NUMBER-YEAR TIME NUMBER-FRAC NUMBER CURRENCY WORD SPECIAL PUNCTUATION UNKNOWN
-
+TOKEN SUFFIX WORD-WITHSUFFIX WORD-TOKEN ABBREVIATION-KNOWN NUMBER-ORDINAL URL URL-WWW URL-DOMAIN
+E-MAIL WORD-PARPREFIX-PARSUFFIX WORD-PARPREFIX WORD-PARSUFFIX WORD-COMPOUND
+ABBREVIATION INITIALS INITIAL SMILEY REVERSE-SMILEY PUNCTUATION-MULTI DATE-REVERSE DATE
+NUMBER-YEAR TIME FRACNUMBER NUMBER CURRENCY WORD PUNCTUATION UNKNOWN
 
 [META-RULES]
 SPLITTER=%
@@ -29,10 +20,13 @@ SUFFIX = ((?:\p{L})+)( %SUFFIXES% )(?:\Z|\P{L})
 %include e-mail
 %include smiley
 
-#Ex: (dis)information
+#Ex (alt)-studente()
+WORD-PARPREFIX-PARSUFFIX=(?:\p{Ps}\p{L}+[\p{Pc}\p{Pd}]?\p{Pe}[\p{Pc}\p{Pd}]?)\p{L}+(?:[\p{Pc}\p{Pd}]\p{L}+)*(?:[\p{Pc}\p{Pd}]?\p{Ps}[\p{Pc}\p{Pd}]?\p{L}+\p{Pe})
+
+#Ex: (un)verstehbar,
 WORD-PARPREFIX=(?:\p{Ps}\p{L}+[\p{Pc}\p{Pd}]?\p{Pe}[\p{Pc}\p{Pd}]?)\p{L}+(?:[\p{Pc}\p{Pd}]\p{L}+)*
 
-#Ex: understand(s)
+#Ex: könig(in)
 WORD-PARSUFFIX=\p{L}+(?:[\p{Pc}\p{Pd}]\p{L}+)*(?:[\p{Pc}\p{Pd}]?\p{Ps}[\p{Pc}\p{Pd}]?\p{L}+\p{Pe})
 
 #Keep dash/underscore connected parts (even if they are in parenthesis)
@@ -45,28 +39,18 @@ ABBREVIATION=^(\p{L}{1,3}(?:\.\p{L}{1,3})+\.?)(?:\Z|[,:;])
 INITIAL=^(?:\p{Lt}|\p{Lu})\.$
 
 #Homogeneous punctuation (ellipsis etc)
-PUNCTUATION-MULTI=(?:\.|\-|_|[!\?]){2,}
+PUNCTUATION-MULTI=(?:\.|\-|[!\?]){2,}
 
 #Date
-DATE=\p{N}{1,2}[/\-]\p{N}{1,2}[/-]\p{N}{2,4}
-DATE-REVERSE=\p{N}{4}[/\-]\p{N}{1,2}[/\-]\p{N}{1,2}
+DATE=\p{N}{1,2}[\.-]\p{Ps}?\p{N}{1,2}[\.-]\p{Ps}?\p{N}{2,4}
+DATE-REVERSE=\p{N}{4}-\p{N}{1,2}[\.-]\p{N}{1,2}\.?
 
-NUMBER-FRAC=\p{N}+(?:/\p{N}+)+
+FRACNUMBER=\p{N}+(?:/\p{N}+)+
 
 NUMBER-YEAR=(['`’‘´]\p{N}{2})(?:\P{N}|\z)
 
 #Times
-TIME=\p{N}{1,2}:\p{N}{1,2}(?::\p{N})?(?i:a\.?m\.?|p\.?m\.?)?
-
-COMPETENTION-DESIGNATION=^О?П?К-\p{N}{1,2}\z
-
-BULLET=\uF0B7|\uF02D|\u2022
-
-SPECIAL=\u2116
-
-ENUM=^\p{Lu}?(?:\p{N}{1,3}\.){1,4}\p{N}{0,4}\.?
-
-STUDY-CODE=^(?:\p{Lu}(?:\p{Lu}|\p{N}){0,3}\.){1,4}(?:\p{Lu}|\p{N}){1,3}\z
+TIME=\p{N}{1,2}:\p{N}{1,2}(?::\p{N})?(?i:am|pm)?
 
 #retain digits, including those starting with initial period (.22), and negative numbers
 NUMBER=-?(?:[\.,]?\p{N}+)+
@@ -82,10 +66,10 @@ UNKNOWN=.
 [PREFIXES]
 
 [SUFFIXES]
-
-[ORDINALS]
+\['`’‘´][sS]
 
 [TOKENS]
+\['`’‘´][sS]
 
 [UNITS]
 km
@@ -102,34 +86,144 @@ min
 gb
 mb
 kb
-км
-м
-см
-г
-кг
-С
-с
-сек
-мин
-гб
-мб
-кб
-л
+St
+
 
 [CURRENCY]
-USD
-GBP
-CAD
-NZD
-AUD
-SGD
-HKD
 EUR
-HRK
-RUB
+DM
+USD
 
 [ABBREVIATIONS]
-
+Abb
+Abf
+Abk
+Abs
+Abt
+abzgl
+Adr
+am
+amtl
+Anh
+Anl
+Anm
+Aufl
+b
+Bd
+beil
+bes
+Betr
+Bez
+Bhf
+bzgl
+bzw
+ca
+Chr
+dgl
+Dir
+DM
+Dr
+dt
+Dtzd
+ehem
+eigtl
+eindschl
+entspr
+erb
+erw
+Erw
+etc
+ev
+evtl
+exkl
+f
+Fa
+Fam
+Ffm
+Fr
+Frl
+frz
+geb
+Gebr
+gedr
+gegr
+gek
+Ges
+gesch
+gest
+gez
+ggf
+ggfs
+Hbf
+Hg
+hpts
+Hptst
+Hr
+Hrn
+Hrsg
+Ing
+Inh
+inkl
+jew
+Jh
+jhrl
+Kap
+kath
+Kfm
+kfm
+kgl
+Kl
+l
+led
+Mio
+möbl
+Mr
+Mrd
+Msp
+mtl
+MwSt
+MWSt
+näml
+Nr
+o
+Obb
+od
+österr
+Pfd
+Pl
+Prof
+r
+Red
+röm
+röm\.-kath
+S
+s
+Sa
+schles
+schwäb
+schweiz
+So
+sog
+Spvgg
+St
+Str
+StR
+südd
+tägl
+Tel
+Ts
+u
+usw
+Verf
+verh
+verw
+vgl
+vorm
+z
+zur
+zus
+Ztr
+zzgl
 
 [FILTER]
 ﬂ fl
@@ -145,3 +239,4 @@ RUB
 
 [QUOTES]
 %include standard-quotes
+%include exotic-quotes
