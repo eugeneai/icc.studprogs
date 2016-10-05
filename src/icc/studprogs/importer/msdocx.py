@@ -1,33 +1,17 @@
 from lxml import etree
 from docx import Document
 from docx.shared import Pt
-
+from icc.studprogs.importer.base import BaseImporter
 
 # from docx.shared import Inches
 
-_mark = object()
 
-
-class Importer(object):
-    def __init__(self, filename):
-        self.filename = filename
-        self.doc = None
-        self.tree = None
-
-    def load(self):
-        """Lazy loading routine
-        """
-        if self.doc is not None:
-            return
-
+class Importer(BaseImporter):
+    def _load(self):
         self.doc = Document(self.filename)
         return self.doc
 
-    def as_xml(self):
-        if self.doc is None:
-            self.load()
-        root = etree.Element("document")
-        self.tree = etree.ElementTree(root)
+    def _as_xml(self, root, tree):
         for section in self.doc.sections:
             s = etree.SubElement(root, "section")
             s.set("type", str(section.start_type))
@@ -67,7 +51,8 @@ class Importer(object):
             self.set(p, "space-before", par_format.space_before, "0", pt=True)
             self.set(p, "space-after", par_format.space_after, "0", pt=True)
 
-            self.set(p, "keep-together", par_format.keep_together) # Paragraph have to be on the same page
+            self.set(p, "keep-together", par_format.
+                     keep_together)  # Paragraph have to be on the same page
             self.set(p, "keep-with-next", par_format.keep_with_next)
             self.set(p, "page-break-before", par_format.page_break_before)
 
@@ -84,20 +69,3 @@ class Importer(object):
                 self.set(r, "font-size", run.font.size, pt=True)
                 # TODO Color
                 r.text = run.text
-
-    def set(self, e, key, value, default=_mark, pt=None):
-        if value is None and default is not _mark:
-            value = default
-        if value is not None:
-            if pt and not isinstance(value, str):
-                value = value.pt
-            e.set(key, str(value))
-
-    def write_xml(self, filename):
-        if self.tree is None:
-            self.as_xml()
-        self.tree.write(
-            filename,
-            pretty_print=True,
-            encoding="UTF-8",
-            xml_declaration=True)

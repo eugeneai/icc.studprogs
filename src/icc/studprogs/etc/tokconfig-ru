@@ -1,3 +1,4 @@
+# coding: utf-8
 [RULE-ORDER]
 URL URL-WWW URL-DOMAIN
 E-MAIL
@@ -11,7 +12,6 @@ COMPETENTION-DESIGNATION
 STUDY-CODE
 ENUM
 NUMBER-YEAR TIME NUMBER-FRAC NUMBER CURRENCY WORD SPECIAL PUNCTUATION UNKNOWN
-
 
 [META-RULES]
 SPLITTER=%
@@ -48,8 +48,8 @@ INITIAL=^(?:\p{Lt}|\p{Lu})\.$
 PUNCTUATION-MULTI=(?:\.|\-|_|[!\?]){2,}
 
 #Date
-DATE=\p{N}{1,2}[/\-]\p{N}{1,2}[/-]\p{N}{2,4}
-DATE-REVERSE=\p{N}{4}[/\-]\p{N}{1,2}[/\-]\p{N}{1,2}
+DATE=\p{N}{1,2}/\p{Ps}?\p{N}{1,2}[/]\p{Ps}?\p{N}{2,4}
+DATE-REVERSE=\p{N}{4}/\p{N}{1,2}/\p{N}{1,2}
 
 NUMBER-FRAC=\p{N}+(?:/\p{N}+)+
 
@@ -57,7 +57,6 @@ NUMBER-YEAR=(['`’‘´]\p{N}{2})(?:\P{N}|\z)
 
 #Times
 TIME=\p{N}{1,2}:\p{N}{1,2}(?::\p{N})?(?i:a\.?m\.?|p\.?m\.?)?
-
 COMPETENTION-DESIGNATION=^О?П?К-\p{N}{1,2}\z
 
 BULLET=\uF0B7|\uF02D|\u2022
@@ -88,22 +87,9 @@ UNKNOWN=.
 [TOKENS]
 
 [UNITS]
-km
-m
-cm
-mm
-g
-kg
-C
-l
-s
-sec
-min
-gb
-mb
-kb
 км
 м
+ч
 см
 г
 кг
@@ -111,37 +97,51 @@ kb
 с
 сек
 мин
+мм
+мт
+см
+МБ
+ГБ
+КБ
 гб
 мб
 кб
 л
 
+
 [CURRENCY]
-USD
-GBP
-CAD
-NZD
-AUD
-SGD
-HKD
-EUR
-HRK
-RUB
 
 [ABBREVIATIONS]
+гл
+лат
+напр
+вкл
+вм
+ок
+приб
+им
+обл
+руб
+ст
+стр
+см
+шт
+тов
+пл
+США
+СЕ
+СССР
+РФ
+пер
 
 
 [FILTER]
-ﬂ fl
-ﬀ ff
-ﬃ ffi
-ﬄ ffl
 # also filter soft hyphen
 \u00AD
-
 
 [EOSMARKERS]
 %include standard-eos
 
 [QUOTES]
 %include standard-quotes
+%include exotic-quotes
