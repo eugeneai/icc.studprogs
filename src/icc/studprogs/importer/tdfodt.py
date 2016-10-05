@@ -33,7 +33,7 @@ class Importer(BaseImporter):
             elif t=="office:settings":
                 self.settings(e, root)
             else:
-                print(e.tagName, a)
+                print("Document", e.tagName, a)
 
     def meta(self, node, root):
         """
@@ -53,8 +53,10 @@ class Importer(BaseImporter):
                 continue
             if t == "text:p":
                 self.p(e, root)
+            elif t=="text:list":
+                self.list(e,root)
             else:
-                print(e.tagName, a)
+                print("body:", e.tagName, a)
 
     def p(self, node, root):
         par = etree.SubElement(root, "par")
@@ -71,3 +73,14 @@ class Importer(BaseImporter):
                 sty.text=text
             else:
                 print ("par:", t, a)
+
+    def list(self, node, root):
+        for e, t, a in self.iterchildren(node):
+            if t=="text:list-item":
+                self.list_item(e, root, node)
+            else:
+                print ("list:", t,a)
+
+    def list_item(self, node, root, list_node):
+        for e, t, a in self.iterchildren(node):
+            print ("list-item:", t,a)
