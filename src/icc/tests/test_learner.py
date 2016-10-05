@@ -121,7 +121,6 @@ class TestLearning:
             lp=lp.replace(" ","_")
             lp=lp.replace("/","__")
             fn=os.path.join(fp,"out",lp)
-            extracted_filename = fn+"-document-extracted.xml"
             predicted_filename = fn+"-document-predicted.xml"
             print(predicted_filename)
 
@@ -140,14 +139,12 @@ class TestLearning:
                 print ("Cannot load xml.")
                 continue
             xml.extract()
-            # print("OUT:",output_filename)
-            try:
-                xml.write(extracted_filename)
-            except OSError as e:
-                print("Cannot write:", extracted_filename, e)
-                continue
             xml.set_learn_coding(self.e.learn_coding)
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
-            xml.write(predicted_filename)
+            try:
+                xml.write(predicted_filename)
+            except OSError as e:
+                print("Cannot write:", predicted_filename, e)
+                continue
             assert ny is not None
