@@ -42,7 +42,53 @@ class Importer(BaseImporter):
         """
 
     def styles(self, node, root):
-        pass
+        styles=etree.SubElement(root,'styles')
+        for e, t, a in self.iterchildren(node):
+            if t in ["style:style","style:default-style", "style:list-style", "text:list-style"]:
+                name = a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'name'), None)
+                if name is None:
+                    continue
+                style=etree.SubElement(styles, "style")
+                style.set("id", name)
+                family=a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'family'), None)
+                if family is not None:
+                    style.set("family", family)
+                self.style(e, style)
+            else:
+                print("styles:", t)
+    def style(self, node, root):
+        sty=root
+        for e, t, a in self.iterchildren(node):
+            if t=="style:text-properties":
+                fs=a.get(('urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0', 'font-size'), None)
+                if fs is not None:
+                    sty.set("font-size", fs.replace("pt",''))
+                fp=a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'font-pitch'),"variable")
+                sty.set("font-pitch", fp)
+                fn=a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'font-name'), None)
+                if fn is not None:
+                    sty.set("font-name", fn)
+                fs=a.get(('urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0', 'font-style'), None)
+                if fs is not None:
+                    if fs=="italic":
+                        sty.set("italic", "1")
+                else:
+                    sty.set("italic", "0")
+                fw=a.get(('urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0', 'font-weight'), None)
+                if fw is not None and fw.endswith("bold"):
+                    sty.set("bold","1")
+                else:
+                    sty.set("bold","0")
+                fu=a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'text-underline-style'), None)
+                if fw is not None:
+                    sty.set("underline","1")
+                else:
+                    sty.set("underline","0")
+                # print ("TEXT:", a)
+            # TODO List styles
+            else:
+                pass # FIXME Some interpretation of paragraph styles needed
+                #print("style:", t,a)
 
     def settings(self, node, root):
         pass
