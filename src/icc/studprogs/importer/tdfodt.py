@@ -15,10 +15,12 @@ class Importer(BaseImporter):
         print(self.filename)
         self.document(self.doc.topnode, root)
 
-    def iterchildren(self, node):
+    def iterchildren(self, node, only_nodes=True):
         for e in node.childNodes:
             if e.nodeType == element.Node.ELEMENT_NODE:
                 yield e, e.tagName, e.attributes
+            elif not only_nodes:
+                yield e, None, None
 
     def document(self, node, root):
         for e, t, a in self.iterchildren(node):
@@ -63,24 +65,42 @@ class Importer(BaseImporter):
 
     def p(self, node, root):
         par = etree.SubElement(root, "par")
+        sty = etree.SubElement(par, "style")
         style = node.attributes[('urn:oasis:names:tc:opendocument:xmlns:text:1.0', 'style-name')]
-        par.set("style-id", style)
-        for e, t, a in self.iterchildren(node):
+        sty.set("style-id", style)
+        self.proc_p(node, par, sty, style)
+
+    def proc_p(self, node, par, sty_, style_):
+        if sty_.text is None:
+            sty_.text=''
+        for e, t, a in self.iterchildren(node, only_nodes=False):
             if t=="text:span":
                 sty=etree.SubElement(par, "style")
-                sty.set("id", a[('urn:oasis:names:tc:opendocument:xmlns:text:1.0', 'style-name')])
-                text=''
-                for tt in e.childNodes:
-                    if tt.nodeType == element.Node.TEXT_NODE:
-                        text+=tt.data
-                sty.text=text
+                style=a[('urn:oasis:names:tc:opendocument:xmlns:text:1.0', 'style-name')]
+                sty.set("id", style)
+                self.proc_p(e, par, sty, style)
+                gtext=sty.text
+                if gtext.strip():
+                    sty_=etree.SubElement(par, "style")
+                    sty_.set("style-id", style_)
+                    sty_.text=''
+                else:
+                    par.remove(sty)
+                    sty_.text+=gtext
             elif t=="text:a":
                 sty=etree.SubElement(par, "style")
                 sty.set("id", a[('urn:oasis:names:tc:opendocument:xmlns:text:1.0', 'style-name')])
                 URL=a[('http://www.w3.org/1999/xlink', 'href')]
                 sty.text=URL
+                sty_=etree.SubElement(par, "style")
+                sty_.set("style-id", style_)
+                sty_.text=''
+            elif t=="text:s":
+                sty_.text+=" "
+            elif e.nodeType == element.Node.TEXT_NODE:
+                sty_.text+=e.data
             else:
-                print ("par:", t, a)
+                print ("par:", t, a, e)
 
     def list(self, node, root):
         for e, t, a in self.iterchildren(node):
@@ -118,7 +138,7 @@ class Importer(BaseImporter):
         for e, t, a in self.iterchildren(node):
             if t=="table:table-cell":
                 span_rows=a.get(('urn:oasis:names:tc:opendocument:xmlns:table:1.0', 'number-rows-spanned'),'1')
-                span_cols=a.get(('urn:oasis:names:tc:opendocument:xmlns:table:1.0', 'number-cols-spanned'),'1')
+                span_cols=a.get(('urn:oasis:names:tc:opendocument:xmlns:table:1.0', 'number-columns-spanned'),'1')
                 cell=etree.SubElement(root, 'cell')
                 cell.set("x",str(col))
                 cell.set("y",str(row))
@@ -126,6 +146,7 @@ class Importer(BaseImporter):
                 cell.set("h",span_rows)
                 cell.get("p","-1")
                 self.body(e,cell)
+                col+=1
             else:
                 print ("table-row:", t,a)
 
