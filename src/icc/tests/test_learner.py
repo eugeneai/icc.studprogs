@@ -9,7 +9,7 @@ from glob import glob
 import os.path
 import pprint
 
-LONG_DOCS = False
+LONG_DOCS = True
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
@@ -50,7 +50,7 @@ class TestBasicLoad:
         print(self.output_filename)
         self.e.write(self.output_filename)
 
-@SkipTest
+#@SkipTest
 class TestLearning:
     """TEsts the process of learning.
     """

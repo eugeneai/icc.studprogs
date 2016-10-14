@@ -15,20 +15,20 @@
   <section type="NEW_PAGE (2)"/>
   <section type="NEW_PAGE (2)"/>
   <section type="NEW_PAGE (2)"/>
-  <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" compound-российский-федерация="1" contextual-no-context="1">
+  <par space-before="0" left-indent="0" indent="0" t-id="ministry-declaration" space-after="0" right-indent="0" has-no-verbs="1" compound-российский-федерация="1" contextual-no-context="1">
     <style id="s1">Министерство образования и науки Российской Федерации</style>
   </par>
   <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" contextual-no-context="1"/>
-  <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" contextual-no-context="1">
+  <par space-before="0" left-indent="0" indent="0" t-id="institution-type-declaration" space-after="0" right-indent="0" has-no-verbs="1" contextual-no-context="1">
     <style id="s1">Федеральное государственное бюджетное образовательное учреждение</style>
   </par>
   <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" contextual-no-context="1">
     <style id="s1">высшего образования</style>
   </par>
-  <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" compound-национальный-исследовательский="1" contextual-no-context="1">
+  <par space-before="0" left-indent="0" indent="0" t-id="institution-name" space-after="0" right-indent="0" has-no-verbs="1" compound-национальный-исследовательский="1" contextual-no-context="1">
     <style id="s1">«Иркутский национальный исследовательский</style>
   </par>
-  <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" compound-технический-университет="1" contextual-no-context="1">
+  <par space-before="0" left-indent="0" indent="0" t-id="institution-type" space-after="0" right-indent="0" has-no-verbs="1" compound-технический-университет="1" contextual-no-context="1">
     <style id="s1">технический университет»</style>
   </par>
   <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" contextual-no-context="1">
@@ -38,7 +38,7 @@
   <par space-before="0" left-indent="233.9" indent="0" t-id="ignore" space-after="0" right-indent="0" contextual-no-context="1">
     <style id="s1">УТВЕРЖДАЮ</style>
   </par>
-  <par space-before="0" left-indent="233.9" indent="0" t-id="ignore" space-after="0" right-indent="0" has-no-verbs="1" compound-директор-институт="1" contextual-no-context="1">
+  <par space-before="0" left-indent="233.9" indent="0" t-id="institution-director-declaration" space-after="0" right-indent="0" has-no-verbs="1" compound-директор-институт="1" contextual-no-context="1">
     <style id="s1">Директор института</style>
   </par>
   <par space-before="0" left-indent="0" indent="0" t-id="ignore" space-after="0" right-indent="0" contextual-no-context="1"/>
