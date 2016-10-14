@@ -14,6 +14,7 @@ class Importer(BaseImporter):
     def _as_xml(self, root, tree):
         print(self.filename)
         self.document(self.doc.topnode, root)
+        self.reduce(root)
 
     def iterchildren(self, node, only_nodes=True):
         for e in node.childNodes:
@@ -42,13 +43,18 @@ class Importer(BaseImporter):
         """
 
     def styles(self, node, root):
-        styles=etree.SubElement(root,'styles')
+        styles=root.xpath("./styles[@imported = 1]")
+        if len(styles)>0:
+            styles=styles[0]
+        else:
+            styles=etree.SubElement(root,'styles')
+        styles.set("imported","1")
         for e, t, a in self.iterchildren(node):
             if t in ["style:style","style:default-style", "style:list-style", "text:list-style"]:
                 name = a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'name'), None)
                 if name is None:
                     continue
-                style=etree.SubElement(styles, "style")
+                style=etree.SubElement(styles, "styledef")
                 style.set("id", name)
                 family=a.get(('urn:oasis:names:tc:opendocument:xmlns:style:1.0', 'family'), None)
                 if family is not None:
@@ -98,6 +104,8 @@ class Importer(BaseImporter):
             if t in {"text:tracked-changes","text:sequence-decls"}:
                 continue
             if t=="office:text":
+                self.body(e, root)
+            if t=="text:section":
                 self.body(e, root)
             elif t == "text:p":
                 self.p(e, root)
@@ -199,3 +207,14 @@ class Importer(BaseImporter):
     def cell(self, node, root):
         for e, t, a in self.iterchildren(node):
             print("cell:",t,a)
+
+    def reduce(self, tree):
+        it=tree.iterfind(".//par/style")
+        for style in it:
+            par=style.getparent()
+            if len(par)==1:
+                continue
+            if style.text is not None:
+                if style.text != "":
+                    continue
+                par.remove(style)

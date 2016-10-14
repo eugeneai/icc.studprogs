@@ -7,6 +7,7 @@ from lxml import etree
 from nose.plugins.skip import SkipTest
 from glob import glob
 import os.path
+import pprint
 
 LONG_DOCS = False
 
@@ -33,7 +34,9 @@ def absoluteFilePaths(directory):
 
 class TestBasicLoad:
     def setUp(self):
-        docname = self.docname = FILES[0]
+        pprint.pprint(FILES)
+        fl=[f for f in FILES if f.endswith('15.03.01_WP_IRA_FGOS_PLUS.odt')]
+        docname = self.docname = fl[0]
         self.output_filename = \
             self.docname.replace("annotations","out").replace(".odt",".xml")
         self.e = XMLTextPropertyExtractor(
