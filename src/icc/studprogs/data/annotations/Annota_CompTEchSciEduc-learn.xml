@@ -89,10 +89,10 @@
     <style id="s7">− формирование практических навыков использования научно-образовательных ресурсов Internet в повседневной профессиональной деятельности исследователя и педагога. </style>
   </par>
   <par space-before="0" left-indent="21.75" space-after="0" indent="13.65" right-indent="0" contextual-section-mark="1"/>
-  <par space-before="0" left-indent="0" indent="0" t-id="discipline-purpose-competentions-declaration" space-after="0" right-indent="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1" contextual-section-mark="2">
+  <par space-before="0" left-indent="0" indent="0" t-id="discipline-purpose-competentions-header" space-after="0" right-indent="0" section-mark="2" section-level="1" has-no-verbs="1" bold="1" word-формировать="1" compound-компетенция-обучающийся="1" contextual-section-mark="2">
     <style id="s4b">2. Компетенции обучающегося, формируемые в результате освоения дисциплины </style>
   </par>
-  <par space-before="0" left-indent="0" indent="28.35" t-id="ignore" space-after="0" right-indent="0" contextual-section-mark="2">
+  <par space-before="0" left-indent="0" indent="28.35" t-id="discipline-purpose-competention-declaration" space-after="0" right-indent="0" contextual-section-mark="2">
     <style id="s3">Освоение программы настоящей дисциплины позволит сформировать у обучающегося следующие компетенции: </style>
   </par>
   <par space-before="0" left-indent="0" indent="0" t-id="discipline-purpose-competention-item" space-after="0" right-indent="0" opk-sign="1" opk="ок-1" has-no-verbs="1" word-способный="1" word-совершенствовать="1" contextual-section-mark="2">
@@ -126,7 +126,7 @@
   <par space-before="0" left-indent="0" indent="0" t-id="discipline-purpose-attainments-declaration" space-after="0" right-indent="0" has-no-verbs="1" compound-обучающийся-должный="1" contextual-section-mark="2">
     <style id="s3">В результате освоения программы обучающийся должен:</style>
   </par>
-  <par space-before="0" left-indent="18.0" indent="0" t-id="discipline-purpose-attainments-knowlege-declaration" space-after="0.0" widow-control="True" right-indent="0" has-no-verbs="1" word-знать="1" contextual-section-mark="2">
+  <par space-before="0" left-indent="18.0" indent="0" t-id="discipline-purpose-attainments-knowledge-declaration" space-after="0.0" widow-control="True" right-indent="0" has-no-verbs="1" word-знать="1" contextual-section-mark="2">
     <style id="s3">знать:</style>
     <style id="s1"> </style>
   </par>
