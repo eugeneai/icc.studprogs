@@ -103,11 +103,9 @@ class Importer(BaseImporter):
         for e, t, a in self.iterchildren(node):
             if t in {"text:tracked-changes","text:sequence-decls"}:
                 continue
-            if t=="office:text":
+            if t in ["office:text","text:section"]:
                 self.body(e, root)
-            if t=="text:section":
-                self.body(e, root)
-            elif t == "text:p":
+            elif t in ["text:p","text:h"]:
                 self.p(e, root)
             elif t=="text:list":
                 list_=etree.SubElement(root,"list")
@@ -166,7 +164,7 @@ class Importer(BaseImporter):
 
     def list_item(self, node, root, list_node):
         for e, t, a in self.iterchildren(node):
-            if t=="text:p":
+            if t in ["text:p","text:h"]:
                 self.p(e,root)
             else:
                 print ("list-item:", t,a)

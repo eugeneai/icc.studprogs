@@ -8,8 +8,11 @@ from nose.plugins.skip import SkipTest
 from glob import glob
 import os.path
 import pprint
+from hashlib import sha1
 
 LONG_DOCS = True
+LONG_COUNT = 20
+LONG_REPLACE = True
 
 package = __name__
 DATA_DIR = resource_filename("icc.studprogs", "data/annotations/")
@@ -116,6 +119,7 @@ class TestLearning:
 
         self.e.fit()
         ldocs=len(DOCS)
+        count = LONG_COUNT
         for i, doc_file in enumerate(DOCS):
             #if i!=219:
             #    continue
@@ -125,13 +129,31 @@ class TestLearning:
             lp=lp.replace(" ","_")
             lp=lp.replace("/","__")
             fn=os.path.join(fp,"out",lp)
-            predicted_filename = fn+"-document-predicted.xml"
-            print(predicted_filename)
+            _dp="-document-predicted.xml"
+            predicted_filename = fn+_dp
+            comment = predicted_filename
+            if len(predicted_filename)>50:
+                pparts=predicted_filename.split("__",2)
+                lpart = pparts.pop(-1)
+                fp = lpart.replace(_dp,"")
+                f1,middle,f3=fp[:10],fp[10:-10],fp[-10:]
+                hh = sha1()
+                hh.update(middle.encode("utf-8"))
+                middle=hh.hexdigest()
+                fp=f1+'_'+middle+'_'+f3
+                lpart=fp+_dp
+                predicted_filename='__'.join(pparts+[lpart])
+            else:
+                comment=None
+            print("STARTING:",predicted_filename)
 
             try:
                 os.stat(predicted_filename)
                 print ("Already done.")
-                continue
+                if LONG_REPLACE:
+                    print("... but we will replace it!")
+                else:
+                    continue
             except OSError:
                 pass
 
@@ -147,8 +169,16 @@ class TestLearning:
             nx = xml.prepare_params()
             ny = self.e.predict(extractor=xml)
             try:
+                if comment is not None:
+                    root=xml.tree.getroot()
+                    comm = etree.Comment("\nOriginal file name:\n\t{}\n".format(comment))
+                    root.insert(0, comm)
                 xml.write(predicted_filename)
             except OSError as e:
                 print("Cannot write:", predicted_filename, e)
                 continue
             assert ny is not None
+            count-=1
+            if count==0:
+                print("Count [exhausted] for {}".format(LONG_COUNT))
+                break
