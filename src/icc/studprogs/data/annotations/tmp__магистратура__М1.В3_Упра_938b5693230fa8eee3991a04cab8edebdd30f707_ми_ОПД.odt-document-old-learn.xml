@@ -1,4 +1,4 @@
-bb<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <document>
   <!--
 Original file name:
@@ -1245,6 +1245,7 @@ Original file name:
   <list>
     <li/>
   </list>
+  <par>
     <style id="s10">5.5.1. Общий перечень видов самостоятельной работы </style>
   </par>
   <list>
@@ -1769,7 +1770,7 @@ Original file name:
       </par>
     </li>
     <li>
-        <par has-url="1" has-no-verbs="1" contextual-section-mark="3.2" t-id="discipline-resources-internet-URL"
+      <par has-url="1" has-no-verbs="1" contextual-section-mark="3.2" t-id="discipline-resources-internet-URL">
         <style id="s61">http://www.pmi.ru/</style>
         <style id="s5"> – сайт Московского отделения PMI</style>
       </par>
